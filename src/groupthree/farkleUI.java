@@ -9,8 +9,7 @@ public class farkleUI extends Application {
         launch(args);
     }
 
-    @Override
-    public void start(Stage primaryStage) {
+    @Override    public void start(Stage primaryStage) {
 
     }
 }
