@@ -11,7 +11,6 @@ public class dice {
     /** is the dice held? */
     public boolean hold;
 
-
     public boolean isHeld(){
         if(hold){
             return true;
