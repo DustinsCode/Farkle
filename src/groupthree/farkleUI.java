@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class farkleUI extends Application {
 
    private Stage window;
-   Scene scene1, scene2;
+   private Scene scene1, scene2;
     public static void main(String[] args) {
         launch(args);
     }
