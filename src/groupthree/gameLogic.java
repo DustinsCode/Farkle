@@ -32,14 +32,16 @@ public class gameLogic {
         inPlay.add(d4);
         inPlay.add(d5);
         inPlay.add(d6);
-	    dice[] heldThisRoll;
+	    ArrayList<dice> heldThisRoll = new ArrayList<>();
         ArrayList<dice> holdOverall = new ArrayList();
 
     
     }
 
     /**
-     * Checks for validity of hold values
+     * Checks for validity of hold values.
+     *
+     * TODO: go through dice in play, and dice held this roll
      *
      * @return if hold is valid
      */
