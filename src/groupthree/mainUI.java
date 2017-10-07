@@ -7,15 +7,13 @@ import javafx.scene.Scene;
 
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
-public class farkleHomePage extends Application {
+public class mainUI extends Application {
 
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("farkleHomePage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FarkleHomePage.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("Farkle Alpha Release 1.0");
         primaryStage.show();
