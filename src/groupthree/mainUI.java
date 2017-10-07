@@ -13,6 +13,7 @@ public class mainUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        int count = 0;
         Parent root = FXMLLoader.load(getClass().getResource("FarkleHomePage.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("Farkle Alpha Release 1.0");
