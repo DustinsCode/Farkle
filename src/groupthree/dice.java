@@ -29,6 +29,30 @@ public class dice {
         return val;
     }
 
+
+    /**************************************
+     * setDice changes the value of the dice to a new value
+     *
+     * @param diceVal is the value that the dice is to be set as
+     **************************************/
+    public void setDice(int diceVal){
+        val = diceVal;
+    }
+
+    /**************************************
+     * Hold dice sets dice being held to TRUE
+     **************************************/
+    public void holdDice(){
+        hold = true;
+    }
+
+    /**************************************
+     *Release dice sets dice being held to FALSE
+     **************************************/
+    public void releaseDice(){
+        hold = false;
+    }
+
     /**********************************
      * Rolls the dice
      * @return new value of the dice
