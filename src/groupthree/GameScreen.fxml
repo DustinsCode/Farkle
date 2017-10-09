@@ -9,8 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupthree.FarkleController">
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -25,32 +24,32 @@
             </Pane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
+                  <Rectangle fx:id="rect0" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
                   </Rectangle>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
+                  <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
                   </Rectangle>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
+                  <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
                   </Rectangle>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
+                  <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
                   </Rectangle>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
+                  <Rectangle fx:id="rect4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
                   </Rectangle>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
+                  <Rectangle fx:id="rect5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
                      <HBox.margin>
                         <Insets left="25.0" right="25.0" />
                      </HBox.margin>
@@ -64,12 +63,12 @@
                <children>
                   <HBox alignment="CENTER" layoutY="8.0" prefHeight="165.0" prefWidth="600.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="117.0" text="Roll The Dice">
+                        <Button fx:id="rollButton" mnemonicParsing="false" onAction="#rollTheDiceButtonPushed" prefHeight="39.0" prefWidth="117.0" text="Roll The Dice">
                            <font>
                               <Font name="Courier New Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="117.0" text="Bank Points">
+                        <Button fx:id="bankPointsButton" alignment="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="117.0" text="Bank Points">
                            <font>
                               <Font name="Courier New Bold" size="12.0" />
                            </font>
