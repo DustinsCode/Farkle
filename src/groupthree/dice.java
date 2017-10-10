@@ -11,8 +11,6 @@ public class dice {
     /** is the dice held? */
     public boolean hold;
 
-
-
     /*************************************
      * Obtains current value of dice
      *
@@ -22,6 +20,29 @@ public class dice {
         return val;
     }
 
+    /**************************************
+     * setDice changes the value of the dice to a new value
+     *
+     * @param diceVal is the value that the dice is to be set as
+     **************************************/
+    public void setDice(int diceVal){
+        val = diceVal;
+    }
+
+    /**************************************
+     * Hold dice sets dice being held to TRUE
+     **************************************/
+    public void holdDice(){
+        hold = true;
+    }
+
+    /**************************************
+     *Release dice sets dice being held to FALSE
+     **************************************/
+    public void releaseDice(){
+        hold = false;
+    }
+
     /**
      * Tells if the dice is currently held
      *
@@ -29,26 +50,6 @@ public class dice {
      */
     public boolean isHeld(){
         return hold;
-    }
-
-    /** Setters */
-    public void setVal(int val){
-        this.val = val;
-    }
-
-    public void setHold(boolean toHold){
-        hold = toHold;
-    }
-
-    /**
-     * Holds or un-holds the dice
-     */
-    public void hold(){
-        if(hold){
-            hold = false;
-        }else{
-            hold = true;
-        }
     }
 
     /**********************************
@@ -62,19 +63,5 @@ public class dice {
         }
         return val;
     }
-
-    /**
-     * Checks if value is 1 or 5 to be held
-     *
-     * @return true or false
-     */
-    public boolean validMove(){
-        if(val == 1 || val == 5){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
 
 }
