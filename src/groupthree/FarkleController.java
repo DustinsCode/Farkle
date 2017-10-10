@@ -67,6 +67,9 @@ public class FarkleController {
 
     public void bankPointsButtonPushed(ActionEvent event){
 
+        diceRollAnimate imgs = new diceRollAnimate();
+
+        imgs.cycleImages();
 
     }
 

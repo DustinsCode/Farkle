@@ -30,12 +30,6 @@ public class mainUI extends Application {
         primaryStage.setTitle("Farkle Alpha Release 1.0");
         primaryStage.show();
 
-
-
-
-
-
-
     }
 
     /**
@@ -43,6 +37,7 @@ public class mainUI extends Application {
      * @param args normal command line argument input
      */
     public static void main(String[] args) {
+
         launch(args);
 
     }
