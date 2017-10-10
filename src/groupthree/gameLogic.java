@@ -18,8 +18,6 @@ public class gameLogic {
                 j.roll();
             }
         }
-
-
     }
 
     /**@TODO add a score method to check score and try to prevent doubledipping.
@@ -147,16 +145,7 @@ public class gameLogic {
     public void bankPoints(){
 
     }
-
-
-
-
-
-
-
-
-
-
+  
     /**
      * @Param d = dice
      * @Param hand is the list of dices, including both held and active dice.

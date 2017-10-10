@@ -11,15 +11,6 @@ public class dice {
     /** is the dice held? */
     public boolean hold;
 
-
-    public boolean isHeld(){
-        if(hold){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     /*************************************
      * Obtains current value of dice
      *
@@ -28,7 +19,6 @@ public class dice {
     public int getVal(){
         return val;
     }
-
 
     /**************************************
      * setDice changes the value of the dice to a new value
@@ -53,14 +43,25 @@ public class dice {
         hold = false;
     }
 
+    /**
+     * Tells if the dice is currently held
+     *
+     * @return hold value
+     */
+    public boolean isHeld(){
+        return hold;
+    }
+
     /**********************************
      * Rolls the dice
      * @return new value of the dice
      **********************************/
     public int roll(){
 
-        val = (int)(Math.random() * 6 + 1);
-
+        if(!isHeld()) {
+            val = (int) (Math.random() * 6 + 1);
+        }
         return val;
     }
+
 }
