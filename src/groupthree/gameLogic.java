@@ -1,5 +1,7 @@
 package groupthree;
 
+import java.util.ArrayList;
+
 public class gameLogic {
 
 
@@ -7,12 +9,12 @@ public class gameLogic {
      * Turn is at the end of the turn, when you've decided to hold or not, and when it rolls the dice.
      * The button that ends turn should be calling this.
      */
-    public void turn(ArrayList hand()) {
+    public void turn(ArrayList<dice> hand) {
 
         //loops through hand with temp var j
         for(dice j: hand){
             // If the dice isn't held, roll it
-            if (!(j.isHeld()){
+            if (!(j.isHeld())){
                 j.roll();
             }
         }
@@ -23,9 +25,9 @@ public class gameLogic {
     /**@TODO add a score method to check score and try to prevent doubledipping.
      * Scoring determines points based off of which dice are held.
      * @param hand is the hand of dice
-     * @param diceCount is an array to list amount of dice values, e.g. how many fives.
+     *  diceCount is an array to list amount of dice values, e.g. how many fives.
      */
-    public int scoring(ArrayList hand()){
+    public int scoring(ArrayList<dice> hand){
 
         //This is a temp variable while I figure out how to score properly so that dice can't doubledip.
         int score = 0;
@@ -60,7 +62,7 @@ public class gameLogic {
                          pairCount+= 2;
                         break;
                     case 1: score = 100;
-                            straightcount++;
+                        straightCount++;
                         break;
                     default:
                         throw new IllegalArgumentException("Number of dice must be between 0 and 6.");
@@ -73,24 +75,27 @@ public class gameLogic {
             if(i != 0){
                 switch(diceCount[i]) {
                     // This will count as two three-pairs, except in the case of three twos where it'll count as three two-pairs
-                    case 6: score = ((i+1) * 100) * 2;
-                            if (score == 400)
-                                score = 500;
+                    case 6:
+                        score = ((i+1) * 100) * 2;
+                        if (score == 400)
+                            score = 500;
                         break;
                     //  counts as a three-pair, unless it's five in which case it's a three-pair plus two 5spots.
-                    case 5: if((i+1) == 5)
-                                score = 600;
-                            else{
-                                score = ((i+1)*100);
-                    }
+                    case 5:
+                        if((i+1) == 5)
+                            score = 600;
+                        else{
+                            score = ((i+1)*100);
+                        }
                         break;
                     // counts as a three-pair, unless it's five in which case it's a three-pair plus one 5spot. Adds two to paircount
                     case 4:
                         if((i+1) == 5)
-                        score = 550;
-                    else{
-                        score = ((i+1)*100);
-                        pairCount += 2;
+                            score = 550;
+                        else {
+                            score = ((i + 1) * 100);
+                            pairCount += 2;
+                        }
                         break;
                     case 3:
                         score = ((i+1)*100);
@@ -116,20 +121,24 @@ public class gameLogic {
                     default:
                         throw new IllegalArgumentException("Number of dice must be between 0 and 6.");
             }
-            //If theres a three-pair and there isn't a higher possible combination give 500
-            if(pairCount == 3){
-                        if(score < 500){
-                            score = 500;
-            }
-            //If there's a straight and if there isn't a higher possible combination give 1000
-            if(straightCount == 6){
-                            if(score < 1000){
-                                score = 1000;
-                            }
-            }
+                //If theres a three-pair and there isn't a higher possible combination give 500
+                if(pairCount == 3) {
+                    if (score < 500) {
+                        score = 500;
+                    }
+                }
+                //If there's a straight and if there isn't a higher possible combination give 1000
+                if(straightCount == 6){
+                    if(score < 1000){
+                        score = 1000;
+                    }
+                }
             }
         }
+        return score;
     }
+
+
 
 
     /**
@@ -153,7 +162,7 @@ public class gameLogic {
      * @Param hand is the list of dices, including both held and active dice.
      */
     public static void main() {
-	    ArrayList<dice> hand = new ArrayList<dice>;
+	    ArrayList<dice> hand = new ArrayList<>();
 	    // Adding 6 dice to the arraylist hand. Might need to do this manually to sync it up with buttons.
 	    for(int i = 0; i < 6; i++) {
             hand.add(new dice());
