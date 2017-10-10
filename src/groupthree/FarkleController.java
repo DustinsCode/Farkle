@@ -1,5 +1,8 @@
 package groupthree;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,10 +10,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * This is the controller class for Farkle. It is the class that interfaces between
@@ -21,10 +28,6 @@ import java.io.IOException;
  */
 public class FarkleController {
 
-    @FXML
-    protected Button rollButton;
-    @FXML
-    protected Button bankPointsButton;
     @FXML
     protected Rectangle rect0;
     @FXML
@@ -37,6 +40,15 @@ public class FarkleController {
     protected Rectangle rect4;
     @FXML
     protected Rectangle rect5;
+
+    Image d1 = new Image("d1.png");
+    Image d2 = new Image("d2.png");
+    Image d3 = new Image("d1.png");
+    Image d4 = new Image("d1.png");
+    Image d5 = new Image("d1.png");
+    Image d6 = new Image("d1.png");
+
+    ArrayList<Rectangle> dice = new ArrayList<>();
 
     /**
      * When this method is called, it will exit the application.
@@ -62,14 +74,54 @@ public class FarkleController {
 
     public void rollTheDiceButtonPushed(ActionEvent event) {
 
+        dice.add(rect0);
+        dice.add(rect1);
+        dice.add(rect2);
+        dice.add(rect3);
+        dice.add(rect4);
+        dice.add(rect5);
 
+        Timeline diceAnimate = new Timeline(
+
+                new KeyFrame(Duration.ZERO,
+                ae -> setRectFill(d1)),
+
+                new KeyFrame(Duration.millis(333),
+                        ae -> setRectFill(d2)),
+
+                new KeyFrame(Duration.millis(666),
+                        ae -> setRectFill(d3)),
+
+                new KeyFrame(Duration.millis(1333),
+                        ae -> setRectFill(d4)),
+
+                new KeyFrame(Duration.millis(1666),
+                        ae -> setRectFill(d5)),
+
+                new KeyFrame(Duration.millis(1999),
+                        ae -> setRectFill(d6))
+
+        );
+        diceAnimate.setCycleCount(1);
+        diceAnimate.play();
+
+
+
+
+
+    }
+
+    public void setRectFill(Image dnum) {
+        for (int i = 0; i < dice.size(); i++) {
+
+            dice.get(i).setFill(new ImagePattern(dnum));
+
+        }
     }
 
     public void bankPointsButtonPushed(ActionEvent event){
 
-        diceRollAnimate imgs = new diceRollAnimate();
 
-        imgs.cycleImages();
 
     }
 

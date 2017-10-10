@@ -63,7 +63,7 @@
                <children>
                   <HBox alignment="CENTER" layoutY="8.0" prefHeight="165.0" prefWidth="600.0">
                      <children>
-                        <Button fx:id="rollButton" mnemonicParsing="false" onAction="#rollTheDiceButtonPushed" prefHeight="39.0" prefWidth="117.0" text="Roll The Dice">
+                        <Button mnemonicParsing="false" onAction="#rollTheDiceButtonPushed" prefHeight="39.0" prefWidth="117.0" text="Roll The Dice">
                            <font>
                               <Font name="Courier New Bold" size="12.0" />
                            </font>
