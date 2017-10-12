@@ -6,14 +6,14 @@ public class gameLogic {
 
 
     /**
-     * Turn is at the end of the turn, when you've decided to hold or not, and when it rolls the dice.
+     * Turn is at the end of the turn, when you've decided to hold or not, and when it rolls the rectangles.
      * The button that ends turn should be calling this.
      */
     public void turn(ArrayList<dice> hand) {
 
         //loops through hand with temp var j
         for(dice j: hand){
-            // If the dice isn't held, roll it
+            // If the rectangles isn't held, roll it
             if (!(j.isHeld())){
                 j.roll();
             }
@@ -21,13 +21,13 @@ public class gameLogic {
     }
 
     /**@TODO add a score method to check score and try to prevent doubledipping.
-     * Scoring determines points based off of which dice are held.
-     * @param hand is the hand of dice
-     *  diceCount is an array to list amount of dice values, e.g. how many fives.
+     * Scoring determines points based off of which rectangles are held.
+     * @param hand is the hand of rectangles
+     *  diceCount is an array to list amount of rectangles values, e.g. how many fives.
      */
     public int scoring(ArrayList<dice> hand){
 
-        //This is a temp variable while I figure out how to score properly so that dice can't doubledip.
+        //This is a temp variable while I figure out how to score properly so that rectangles can't doubledip.
         int score = 0;
         //This counts the number of pairs, once it hits three you can use three pairs.
         int pairCount = 0;
@@ -35,7 +35,7 @@ public class gameLogic {
         int straightCount = 0;
 
         int diceCount[] = new int[6];
-        //If the dice isn't held, then +1 to the array spot corresponding with the dice val
+        //If the rectangles isn't held, then +1 to the array spot corresponding with the rectangles val
         for(dice j: hand){
             if (j.isHeld()){
                 diceCount[j.getVal()-1] += 1;
@@ -44,7 +44,7 @@ public class gameLogic {
         for(int i = 0;  i < diceCount.length;i++) {
 
 
-            // switch cases for 1spot dice.
+            // switch cases for 1spot rectangles.
             if(i == 0){
                 switch(diceCount[0]){
                     case 6: score = 1000;
@@ -63,7 +63,7 @@ public class gameLogic {
                         straightCount++;
                         break;
                     default:
-                        throw new IllegalArgumentException("Number of dice must be between 0 and 6.");
+                        throw new IllegalArgumentException("Number of rectangles must be between 0 and 6.");
 
                 }
             }
@@ -117,7 +117,7 @@ public class gameLogic {
                         straightCount = 0;
                         break;
                     default:
-                        throw new IllegalArgumentException("Number of dice must be between 0 and 6.");
+                        throw new IllegalArgumentException("Number of rectangles must be between 0 and 6.");
             }
                 //If theres a three-pair and there isn't a higher possible combination give 500
                 if(pairCount == 3) {
@@ -145,17 +145,6 @@ public class gameLogic {
     public void bankPoints(){
 
     }
-  
-    /**
-     * @Param d = dice
-     * @Param hand is the list of dices, including both held and active dice.
-     */
-    public static void main() {
-	    ArrayList<dice> hand = new ArrayList<>();
-	    // Adding 6 dice to the arraylist hand. Might need to do this manually to sync it up with buttons.
-	    for(int i = 0; i < 6; i++) {
-            hand.add(new dice());
-        }
 
-    }
+
 }

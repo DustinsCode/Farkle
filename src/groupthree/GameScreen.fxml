@@ -24,11 +24,6 @@
             </Pane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0">
                <children>
-                  <Rectangle fx:id="rect0" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
-                     <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin>
-                  </Rectangle>
                   <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
                      <HBox.margin>
                         <Insets left="25.0" />
@@ -50,6 +45,11 @@
                      </HBox.margin>
                   </Rectangle>
                   <Rectangle fx:id="rect5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </Rectangle>
+                  <Rectangle fx:id="rect6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeType="INSIDE" width="70.0">
                      <HBox.margin>
                         <Insets left="25.0" right="25.0" />
                      </HBox.margin>

@@ -5,56 +5,56 @@ package groupthree;
  */
 public class dice {
 
-    /** value of the dice */
-    public int val;
+    /** value of the rectangles */
+    int val;
 
-    /** is the dice held? */
-    public boolean hold;
+    /** is the rectangles held? */
+    private boolean hold;
 
     /*************************************
-     * Obtains current value of dice
+     * Obtains current value of rectangles
      *
-     * @return dice value
+     * @return rectangles value
      *************************************/
-    public int getVal(){
+    int getVal(){
         return val;
     }
 
     /**************************************
-     * setDice changes the value of the dice to a new value
+     * setDice changes the value of the rectangles to a new value
      *
-     * @param diceVal is the value that the dice is to be set as
+     * @param diceVal is the value that the rectangles is to be set as
      **************************************/
     public void setDice(int diceVal){
         val = diceVal;
     }
 
     /**************************************
-     * Hold dice sets dice being held to TRUE
+     * Hold rectangles sets rectangles being held to TRUE
      **************************************/
     public void holdDice(){
         hold = true;
     }
 
     /**************************************
-     *Release dice sets dice being held to FALSE
+     *Release rectangles sets rectangles being held to FALSE
      **************************************/
     public void releaseDice(){
         hold = false;
     }
 
     /**
-     * Tells if the dice is currently held
+     * Tells if the rectangles is currently held
      *
      * @return hold value
      */
-    public boolean isHeld(){
+    boolean isHeld(){
         return hold;
     }
 
     /**********************************
-     * Rolls the dice
-     * @return new value of the dice
+     * Rolls the rectangles
+     * @return new value of the rectangles
      **********************************/
     public int roll(){
 
