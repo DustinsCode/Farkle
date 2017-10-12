@@ -5,7 +5,7 @@ import org.junit.*;
 
 import static org.junit.Assert.*;
 
-public class diceTest {
+public class DiceTest {
 
     private dice d1 = new dice();
 
