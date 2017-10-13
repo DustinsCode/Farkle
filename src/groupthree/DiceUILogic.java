@@ -11,10 +11,10 @@ import java.util.HashMap;
 public class DiceUILogic {
     Image d1 = new Image("d1.png");
     Image d2 = new Image("d2.png");
-    Image d3 = new Image("d1.png");
-    Image d4 = new Image("d1.png");
-    Image d5 = new Image("d1.png");
-    Image d6 = new Image("d1.png");
+    Image d3 = new Image("d3.png");
+    Image d4 = new Image("d4.png");
+    Image d5 = new Image("d5.png");
+    Image d6 = new Image("d6.png");
 
     static ArrayList<dice> hand = new ArrayList<>();
     static ArrayList<Image> diceImages = new ArrayList<>();

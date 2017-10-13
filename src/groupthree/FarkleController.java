@@ -30,17 +30,17 @@ public class FarkleController {
      * All of these are the rectangles that represent rectangles on the application scene.
      */
     @FXML
-   static protected Rectangle rect1;
+   protected Rectangle rect1;
     @FXML
-   static protected Rectangle rect2;
+   protected Rectangle rect2;
     @FXML
-   static protected Rectangle rect3;
+   protected Rectangle rect3;
     @FXML
-   static protected Rectangle rect4;
+   protected Rectangle rect4;
     @FXML
-   static protected Rectangle rect5;
+   protected Rectangle rect5;
     @FXML
-   static protected Rectangle rect6;
+   protected Rectangle rect6;
 
     /**
      * These are all images of dice.
@@ -78,13 +78,22 @@ public class FarkleController {
      * onto each one.
      * @param event
      */
+
+    public void constructRectangles() {
+        rectangles.add(rect1);
+        rectangles.add(rect2);
+        rectangles.add(rect3);
+        rectangles.add(rect4);
+        rectangles.add(rect5);
+        rectangles.add(rect6);
+    }
+
     public void rollTheDiceButtonPushed(ActionEvent event) {
         // Sets ArrayList of dice with random values if they're not held.
              game.setHand();
 
             //Animates the dice
             constructRectangles();
-            System.out.println(rectangles.size());
 
             Timeline diceAnimate = new Timeline(
 
@@ -104,10 +113,8 @@ public class FarkleController {
                             ae -> setRectFill(game.d5)),
 
                     new KeyFrame(Duration.millis(1999),
-                            ae -> setRectFill(game.d6)),
+                            ae -> setRectFill(game.d6))
 
-                    new KeyFrame(Duration.millis(2333),
-                            ae -> game.getHand(rectangles))
 
 
 
@@ -122,14 +129,7 @@ public class FarkleController {
 
 
     }
-    public void constructRectangles() {
-        rectangles.add(rect1);
-        rectangles.add(rect2);
-        rectangles.add(rect3);
-        rectangles.add(rect4);
-        rectangles.add(rect5);
-        rectangles.add(rect6);
-    }
+
 
 
     /**
@@ -138,9 +138,11 @@ public class FarkleController {
      */
     public void setRectFill(Image dnum) {
         for (int i = 0; i < rectangles.size(); i++) {
-                rectangles.get(i).setFill(new ImagePattern(dnum));
 
-    }}
+            if( !game.hand.get(i).isHeld() ){
+             rectangles.get(i).setFill(new ImagePattern(dnum));
+
+    }}}
 
 
     /**
