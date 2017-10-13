@@ -42,12 +42,9 @@ public class FarkleController {
     @FXML
    static protected Rectangle rect6;
 
-    static Image d1 = new Image("d1.png");
-    static Image d2 = new Image("d2.png");
-    static Image d3 = new Image("d1.png");
-    static Image d4 = new Image("d1.png");
-    static Image d5 = new Image("d1.png");
-    static Image d6 = new Image("d1.png");
+    /**
+     * These are all images of dice.
+     */
 
    static ArrayList<Rectangle> rectangles = new ArrayList<>();
     DiceUILogic game = new DiceUILogic();
@@ -82,35 +79,40 @@ public class FarkleController {
      * @param event
      */
     public void rollTheDiceButtonPushed(ActionEvent event) {
+        // Sets ArrayList of dice with random values if they're not held.
+             game.setHand();
 
-        rectangles.add(rect1);
-        rectangles.add(rect2);
-        rectangles.add(rect3);
-        rectangles.add(rect4);
-        rectangles.add(rect5);
-        rectangles.add(rect6);
+            //Animates the dice
+            constructRectangles();
+            System.out.println(rectangles.size());
 
-        Timeline diceAnimate = new Timeline(
+            Timeline diceAnimate = new Timeline(
 
-                new KeyFrame(Duration.ZERO,
-                ae -> setRectFill(d1)),
+                    new KeyFrame(Duration.ZERO,
+                            ae -> setRectFill(game.d1)),
 
-                new KeyFrame(Duration.millis(333),
-                        ae -> setRectFill(d2)),
+                    new KeyFrame(Duration.millis(333),
+                            ae -> setRectFill(game.d2)),
 
-                new KeyFrame(Duration.millis(666),
-                        ae -> setRectFill(d3)),
+                    new KeyFrame(Duration.millis(666),
+                            ae -> setRectFill(game.d3)),
 
-                new KeyFrame(Duration.millis(1333),
-                        ae -> setRectFill(d4)),
+                    new KeyFrame(Duration.millis(1333),
+                            ae -> setRectFill(game.d4)),
 
-                new KeyFrame(Duration.millis(1666),
-                        ae -> setRectFill(d5)),
+                    new KeyFrame(Duration.millis(1666),
+                            ae -> setRectFill(game.d5)),
 
-                new KeyFrame(Duration.millis(1999),
-                        ae -> setRectFill(d6))
+                    new KeyFrame(Duration.millis(1999),
+                            ae -> setRectFill(game.d6)),
 
-        );
+                    new KeyFrame(Duration.millis(2333),
+                            ae -> game.getHand(rectangles))
+
+
+
+            );
+
         diceAnimate.setCycleCount(1);
         diceAnimate.play();
 
@@ -118,6 +120,15 @@ public class FarkleController {
 
 
 
+
+    }
+    public void constructRectangles() {
+        rectangles.add(rect1);
+        rectangles.add(rect2);
+        rectangles.add(rect3);
+        rectangles.add(rect4);
+        rectangles.add(rect5);
+        rectangles.add(rect6);
     }
 
 
@@ -127,26 +138,15 @@ public class FarkleController {
      */
     public void setRectFill(Image dnum) {
         for (int i = 0; i < rectangles.size(); i++) {
+                rectangles.get(i).setFill(new ImagePattern(dnum));
 
-            rectangles.get(i).setFill(new ImagePattern(dnum));
-
-        }
-    }
+    }}
 
 
     /**
      * This method sets a non-held rectangle to a random number on rolling the rectangles.
      */
-    public void setRectFillRandom(){
 
-
-
-        for (int i = 0; i < rectangles.size(); i++) {
-
-
-
-        }
-    }
 
     public void bankPointsButtonPushed(ActionEvent event){
 

@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
+
 /**
  * MainUI is the base class for the Farkle game. This allows for the basic construction of an FXML-assisted GUI
  * development as afforded by JavaFX Scene Builder 9.0. The class extends javafx.application.Application,

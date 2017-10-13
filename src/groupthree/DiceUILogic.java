@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DiceUILogic {
+    Image d1 = new Image("d1.png");
+    Image d2 = new Image("d2.png");
+    Image d3 = new Image("d1.png");
+    Image d4 = new Image("d1.png");
+    Image d5 = new Image("d1.png");
+    Image d6 = new Image("d1.png");
 
     static ArrayList<dice> hand = new ArrayList<>();
     static ArrayList<Image> diceImages = new ArrayList<>();
@@ -16,18 +22,18 @@ public class DiceUILogic {
     static gameLogic game = new gameLogic();
 
     /**
-     * @Override Default constructor override.
+     * @Override Default constructor override that adds all the dice images to an arraylist and maps them to integers from 1-6.
      */
     public DiceUILogic(){
 
-        diceImages.add(FarkleController.d1);
-        diceImages.add(FarkleController.d2);
-        diceImages.add(FarkleController.d3);
-        diceImages.add(FarkleController.d4);
-        diceImages.add(FarkleController.d5);
-        diceImages.add(FarkleController.d6);
+        diceImages.add(d1);
+        diceImages.add(d2);
+        diceImages.add(d3);
+        diceImages.add(d4);
+        diceImages.add(d5);
+        diceImages.add(d6);
 
-        for (int i = 1; i <= 6; i++){
+        for (int i = 0; i < diceImages.size(); i++){
             mapImages.put(i,diceImages.get(i));
         }
     }
@@ -52,7 +58,7 @@ public class DiceUILogic {
      */
     public void getHand(ArrayList<Rectangle> rect){
         for (int i = 0; i < hand.size(); i++){
-            if (hand.get(i).isHeld() == false){
+            if ( !hand.get(i).isHeld() ){
                rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).val)));
 
             }
