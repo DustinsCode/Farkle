@@ -2,17 +2,18 @@ package groupthree;
 
 import java.util.ArrayList;
 
-public class gameLogic {
+public class GameLogic {
 
 
     /**
      * Turn is at the end of the turn, when you've decided to hold or not, and when it rolls the rectangles.
      * The button that ends turn should be calling this.
+     * @param hand An arraylist of dice.
      */
-    public void turn(ArrayList<dice> hand) {
+    public void turn(ArrayList<Dice> hand) {
 
         //loops through hand with temp var j
-        for(dice j: hand){
+        for(Dice j: hand){
             // If the rectangles isn't held, roll it
             if (!(j.isHeld())){
                 j.roll();
@@ -20,12 +21,14 @@ public class gameLogic {
         }
     }
 
-    /**@TODO add a score method to check score and try to prevent doubledipping.
+    //TODO add a score method to check score and try to prevent doubledipping.
+    /**
      * Scoring determines points based off of which rectangles are held.
      * @param hand is the hand of rectangles
      *  diceCount is an array to list amount of rectangles values, e.g. how many fives.
+     * @return Returns the score integer.
      */
-    public int scoring(ArrayList<dice> hand){
+    public int scoring(ArrayList<Dice> hand){
 
         //This is a temp variable while I figure out how to score properly so that rectangles can't doubledip.
         int score = 0;
@@ -36,7 +39,7 @@ public class gameLogic {
 
         int diceCount[] = new int[6];
         //If the rectangles isn't held, then +1 to the array spot corresponding with the rectangles val
-        for(dice j: hand){
+        for(Dice j: hand){
             if (j.isHeld()){
                 diceCount[j.getVal()-1] += 1;
             }

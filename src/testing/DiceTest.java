@@ -1,13 +1,12 @@
 package testing;
 
-import groupthree.dice;
-import org.junit.*;
+import groupthree.Dice;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DiceTest {
 
-    private dice dice1 = new dice();
+    private Dice dice1 = new Dice();
 
     @Test
     public void rollTest(){
@@ -19,7 +18,7 @@ public class DiceTest {
         int val2 = dice1.roll();
         assertTrue(val2 == val);
     }
-/* @TODO This dice test class needs to be repaired with the intended results that includes the new format of the dice class.
+/* @TODO This Dice test class needs to be repaired with the intended results that includes the new format of the Dice class.
 
 
     @Test

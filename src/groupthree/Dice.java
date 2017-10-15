@@ -3,7 +3,7 @@ package groupthree;
 /**
  *
  */
-public class dice {
+public class Dice {
 
     /** value of the rectangles */
     int val;

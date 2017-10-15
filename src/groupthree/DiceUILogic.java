@@ -16,13 +16,13 @@ public class DiceUILogic {
     Image d5 = new Image("d5.png");
     Image d6 = new Image("d6.png");
 
-    static ArrayList<dice> hand = new ArrayList<>();
+    static ArrayList<Dice> hand = new ArrayList<>();
     static ArrayList<Image> diceImages = new ArrayList<>();
     static HashMap<Integer,Image> mapImages = new HashMap<>();
-    static gameLogic game = new gameLogic();
+    static GameLogic game = new GameLogic();
 
     /**
-     * @Override Default constructor override that adds all the dice images to an arraylist and maps them to integers from 1-6.
+     * Default constructor override that adds all the Dice images to an arraylist and maps them to integers from 1-6.
      */
     public DiceUILogic(){
 
@@ -38,13 +38,27 @@ public class DiceUILogic {
         }
     }
 
+    /**
+     * This method simultaneously sets the fill for each die within the ArrayList to a specific image. It
+     * also checks if any of the Dice in the current hand are held, if so, it will skip over animating these rectangles.
+     * @param dnum the Image being passed that the rectangles will be set to.
+     */
+    public void setRectFill(Image dnum) {
+        for (int i = 0; i < hand.size(); i++) {
+
+            // Checks if the dice is held before setting the new fill property.
+            if( !hand.get(i).isHeld() ){
+                FarkleController.rectangles.get(i).setFill(new ImagePattern(dnum));
+
+            }}}
+
 
     /**
-     * This method sets the hand to 6 new dice and rolls the values using gameLogic.turn();
+     * This method sets the hand to 6 new Dice and rolls the values using the game instance of the GameLogic class.
      */
     public void setHand(){
         for(int i = 0; i < 6; i++) {
-            hand.add(new dice());
+            hand.add(new Dice());
         }
         game.turn(hand);
 
@@ -52,7 +66,7 @@ public class DiceUILogic {
     }
 
     /**
-     * This method sets the fill of our rectangles to the correct image based on if it's not held (if dice are rolled
+     * This method sets the fill of our rectangles to the correct image based on if it's not held (if Dice are rolled
      * again, then it will need to update the pictures).
      * @param rect An ArrayList of Rectangles that will have their fill property updated.
      */
@@ -63,6 +77,14 @@ public class DiceUILogic {
 
             }
         }
+    }
+
+    public void setHold(){
+
+    }
+
+    public void getHeld() {
+
     }
 
 
