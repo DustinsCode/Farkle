@@ -16,10 +16,14 @@ public class DiceUILogic {
     Image d5 = new Image("d5.png");
     Image d6 = new Image("d6.png");
 
-    static ArrayList<Dice> hand = new ArrayList<>();
+
     static ArrayList<Image> diceImages = new ArrayList<>();
     static HashMap<Integer,Image> mapImages = new HashMap<>();
     static GameLogic game = new GameLogic();
+
+    static ArrayList<Dice> hand = new ArrayList<>();
+    static HashMap<Rectangle, Dice> rMap;
+
 
     /**
      * Default constructor override that adds all the Dice images to an arraylist and maps them to integers from 1-6.
@@ -60,6 +64,7 @@ public class DiceUILogic {
         for(int i = 0; i < 6; i++) {
             hand.add(new Dice());
         }
+
         game.turn(hand);
 
 
@@ -73,9 +78,14 @@ public class DiceUILogic {
     public void getHand(ArrayList<Rectangle> rect){
         for (int i = 0; i < hand.size(); i++){
             if ( !hand.get(i).isHeld() ){
+                // Need a way to keep a reference of which rectangles are set to which numbers.
                rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).val)));
-
             }
+
+            rMap = new HashMap<>();
+            rMap.put(rect.get(i), hand.get(i));
+            System.out.println(rMap.toString());
+
         }
     }
 

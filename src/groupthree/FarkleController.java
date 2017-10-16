@@ -9,11 +9,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -64,14 +61,24 @@ public class FarkleController {
      * When this method is called, it will change the Scene to GameScreen.
      * @param event The button push event that signals entrance into the main game screen.
      */
-    public void enterGameScreenButtonPushed(ActionEvent event) throws IOException {
+    public void enterGameScreenButtonPushed(ActionEvent event) {
 
-        Parent gameScreenParent = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
-        Scene gameScreen = new Scene(gameScreenParent);
+        try {
 
-        Stage window = (Stage)(((Node)event.getSource()).getScene().getWindow());
-        window.setScene(gameScreen);
-        window.show();
+            Parent gameScreenParent = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
+            Scene gameScreen = new Scene(gameScreenParent);
+            Stage window = (Stage)(((Node)event.getSource()).getScene().getWindow());
+            window.setScene(gameScreen);
+            window.show();
+
+
+        } catch (IOException e) {
+            System.out.println("We could not find the file for the main game screen.");
+
+
+        }
+
+
     }
 
 
@@ -137,6 +144,7 @@ public class FarkleController {
 
     }
 
+
     public void holdRectangles(MouseEvent event){
 
         // To be used for adding an outer glow to rectangle.
@@ -152,12 +160,16 @@ public class FarkleController {
         rectX.setEffect(borderGlow);
 
         // Next: need to add mapping back to dice in hand to hold value.
+        System.out.println(game.rMap.get(rectX));
+           //Dice holdMe = game.rMap.get(rectX);
+           //holdMe.holdDice();
 
 
 
-    }
 
 
 
+
+}
 
 }
