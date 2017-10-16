@@ -7,6 +7,8 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class DiceUILogic {
     Image d1 = new Image("d1.png");
@@ -17,12 +19,12 @@ public class DiceUILogic {
     Image d6 = new Image("d6.png");
 
 
-    static ArrayList<Image> diceImages = new ArrayList<>();
-    static HashMap<Integer,Image> mapImages = new HashMap<>();
-    static GameLogic game = new GameLogic();
+    private static ArrayList<Image> diceImages = new ArrayList<>();
+    private static HashMap<Integer,Image> mapImages = new HashMap<>();
+    private GameLogic game = new GameLogic();
 
-    static ArrayList<Dice> hand = new ArrayList<>();
-    static HashMap<Rectangle, Dice> rMap;
+    private ArrayList<Dice> hand = new ArrayList<>();
+    private LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
 
 
     /**
@@ -47,7 +49,7 @@ public class DiceUILogic {
      * also checks if any of the Dice in the current hand are held, if so, it will skip over animating these rectangles.
      * @param dnum the Image being passed that the rectangles will be set to.
      */
-    public void setRectFill(Image dnum) {
+    void setRectFill(Image dnum) {
         for (int i = 0; i < hand.size(); i++) {
 
             // Checks if the dice is held before setting the new fill property.
@@ -56,12 +58,18 @@ public class DiceUILogic {
 
             }}}
 
+    void mapDice (){
+        for (int i = 0; i < hand.size(); i++){
+            rMap.put(FarkleController.rectangles.get(i), hand.get(i) );
+
+        }
+            }
 
     /**
      * This method sets the hand to 6 new Dice and rolls the values using the game instance of the GameLogic class.
      */
-    public void setHand(){
-        for(int i = 0; i < 6; i++) {
+    void setHand(){
+        for(int i = 0; i < FarkleController.rectangles.size(); i++) {
             hand.add(new Dice());
         }
 
@@ -75,22 +83,31 @@ public class DiceUILogic {
      * again, then it will need to update the pictures).
      * @param rect An ArrayList of Rectangles that will have their fill property updated.
      */
-    public void getHand(ArrayList<Rectangle> rect){
+    void getHand(ArrayList<Rectangle> rect){
         for (int i = 0; i < hand.size(); i++){
             if ( !hand.get(i).isHeld() ){
                 // Need a way to keep a reference of which rectangles are set to which numbers.
                rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).val)));
-            }
 
-            rMap = new HashMap<>();
-            rMap.put(rect.get(i), hand.get(i));
-            System.out.println(rMap.toString());
+            }
 
         }
     }
 
-    public void setHold(){
-
+    void setHoldStatus(Rectangle r){
+        for (Rectangle rect: FarkleController.rectangles) {
+            if (rect.equals(r)){
+                System.out.println(r.getId());
+                if (rMap.get(r).isHeld()){
+                    rMap.get(r).releaseDice();
+                    r.setEffect(null);
+                    System.out.println(rMap.get(r).isHeld());
+                } else {
+                    rMap.get(r).holdDice();
+                    System.out.println(rMap.get(r).isHeld());
+                }
+            }
+        }
     }
 
     public void getHeld() {
