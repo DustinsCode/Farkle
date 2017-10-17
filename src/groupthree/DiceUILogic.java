@@ -21,16 +21,18 @@ public class DiceUILogic {
 
     private static ArrayList<Image> diceImages = new ArrayList<>();
     private static HashMap<Integer,Image> mapImages = new HashMap<>();
-    private GameLogic game = new GameLogic();
+    private ArrayList<Rectangle> rectangles = new ArrayList<>();
+    private GameLogic logic = new GameLogic();
 
     private ArrayList<Dice> hand = new ArrayList<>();
     private LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
 
 
     /**
-     * Default constructor override that adds all the Dice images to an arraylist and maps them to integers from 1-6.
+     * Constructor that adds all the Dice images to an arraylist and maps them to integers from 1-6,
+     * as well as obtains the rectangle of javafx objects.
      */
-    public DiceUILogic(){
+    public DiceUILogic(FarkleController controller){
 
         diceImages.add(d1);
         diceImages.add(d2);
@@ -42,6 +44,10 @@ public class DiceUILogic {
         for (int i = 0; i < diceImages.size(); i++){
             mapImages.put(i,diceImages.get(i));
         }
+
+        rectangles = controller.getRectangles();
+
+
     }
 
     /**
@@ -54,28 +60,33 @@ public class DiceUILogic {
 
             // Checks if the dice is held before setting the new fill property.
             if( !hand.get(i).isHeld() ){
-                FarkleController.rectangles.get(i).setFill(new ImagePattern(dnum));
+                rectangles.get(i).setFill(new ImagePattern(dnum));
 
             }}}
 
     void mapDice (){
         for (int i = 0; i < hand.size(); i++){
-            rMap.put(FarkleController.rectangles.get(i), hand.get(i) );
+            rMap.put(rectangles.get(i), hand.get(i) );
 
         }
             }
 
     /**
-     * This method sets the hand to 6 new Dice and rolls the values using the game instance of the GameLogic class.
+     * This method takes the hand of Dice objects and rolls the values using the game instance of the GameLogic class.
      */
     void setHand(){
-        for(int i = 0; i < FarkleController.rectangles.size(); i++) {
+
+        logic.turn(hand);
+
+    }
+
+    /**
+     * This method simply adds 6 new dice objects into our hand array to be used during the game.
+     */
+    void newHand() {
+        for(int i = 0; i < rectangles.size(); i++) {
             hand.add(new Dice());
         }
-
-        game.turn(hand);
-
-
     }
 
     /**
@@ -86,7 +97,6 @@ public class DiceUILogic {
     void getHand(ArrayList<Rectangle> rect){
         for (int i = 0; i < hand.size(); i++){
             if ( !hand.get(i).isHeld() ){
-                // Need a way to keep a reference of which rectangles are set to which numbers.
                rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).val)));
 
             }
@@ -95,7 +105,7 @@ public class DiceUILogic {
     }
 
     void setHoldStatus(Rectangle r){
-        for (Rectangle rect: FarkleController.rectangles) {
+        for (Rectangle rect: rectangles) {
             if (rect.equals(r)){
                 System.out.println(r.getId());
                 if (rMap.get(r).isHeld()){
@@ -110,7 +120,7 @@ public class DiceUILogic {
         }
     }
 
-    public void getHeld() {
+            public void getHeld() {
 
     }
 

@@ -28,7 +28,7 @@ public class GameLogic {
      *  diceCount is an array to list amount of rectangles values, e.g. how many fives.
      * @return Returns the score integer.
      */
-    public int scoring(ArrayList<Dice> hand){
+    public int scoring(ArrayList<Dice> hand) throws IllegalArgumentException{
 
         //This is a temp variable while I figure out how to score properly so that rectangles can't doubledip.
         int score = 0;
@@ -122,7 +122,7 @@ public class GameLogic {
                     default:
                         throw new IllegalArgumentException("Number of rectangles must be between 0 and 6.");
             }
-                //If theres a three-pair and there isn't a higher possible combination give 500
+                //If there's a three-pair and there isn't a higher possible combination give 500
                 if(pairCount == 3) {
                     if (score < 500) {
                         score = 500;
