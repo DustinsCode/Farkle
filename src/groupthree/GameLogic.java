@@ -74,19 +74,19 @@ public class GameLogic {
             // switch cases for 1spot dice.
             if(i == 0){
                 switch(diceCount[0]){
-                    case 6: score = 2000;
+                    case 6: score += 2000;
                         break;
-                    case 5: score = 1200;
+                    case 5: score += 1200;
                         break;
-                    case 4: score = 1100;
+                    case 4: score += 1100;
                             pairCount += 2;
                         break;
-                    case 3: score = 1000;
+                    case 3: score += 1000;
                         break;
-                    case 2: score = 200;
+                    case 2: score += 200;
                          pairCount+= 2;
                         break;
-                    case 1: score = 100;
+                    case 1: score += 100;
                         straightCount++;
                         break;
                 }
@@ -94,18 +94,18 @@ public class GameLogic {
             // Switch cases for 5spot dice.
             if(i == 4){
                 switch(diceCount[4]){
-                    case 6: score = 1000;
+                    case 6: score += 1000;
                         break;
-                    case 5: score = 600;
+                    case 5: score += 600;
                      break;
-                    case 4: score = 550;
+                    case 4: score += 550;
                       pairCount += 2;
                      break;
-                    case 3: score = 500;
+                    case 3: score += 500;
                       break;
-                    case 2: score = 100;
+                    case 2: score += 100;
                        pairCount++;
-                    case 1: score = 100;
+                    case 1: score += 50;
                       straightCount++;
                     break;
                 }
