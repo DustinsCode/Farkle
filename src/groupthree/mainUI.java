@@ -8,13 +8,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * mainUI is the base class for the Farkle game. This allows for the basic construction of an FXML-assisted GUI
+ * MainUI is the base class for the Farkle game. This allows for the basic construction of an FXML-assisted GUI
  * development as afforded by JavaFX Scene Builder 9.0. The class extends javafx.application.Application,
  * thus the start method is overridden to follow syntax.
  * @author Wes Harrison
  * @version 1.0
  */
-public class mainUI extends Application {
+public class MainUI extends Application {
 
     /**
      *
@@ -25,7 +25,7 @@ public class mainUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("FarkleHomePage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("MainUI.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("Farkle Alpha Release 1.0");
         primaryStage.show();

@@ -1,7 +1,6 @@
 package groupthree;
 
 import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,9 +8,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
-import javafx.scene.paint.ImagePattern;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -27,28 +29,58 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class FarkleController {
-
+    
+    /**
+     * The java-FXML accessor variable for the first rectangle.
+     */
     @FXML
-    protected Rectangle rect0;
+   private Rectangle rect1;
+    /**
+     * The java-FXML accessor variable for the second rectangle.
+     */
     @FXML
-    protected Rectangle rect1;
+   private Rectangle rect2;
+    /**
+     * The java-FXML accessor variable for the third rectangle.
+     */
     @FXML
-    protected Rectangle rect2;
+   private Rectangle rect3;
+    /**
+     * The java-FXML accessor variable for the fourth rectangle.
+     */
     @FXML
-    protected Rectangle rect3;
+   private Rectangle rect4;
+    /**
+     * The java-FXML accessor variable for the fifth rectangle.
+     */
     @FXML
-    protected Rectangle rect4;
+   private Rectangle rect5;
+    /**
+     * The java-FXML accessor variable for the sixth rectangle.
+     */
     @FXML
-    protected Rectangle rect5;
+   private Rectangle rect6;
+    /**
+     * This Alert will show a dialogue window that contains a header with information about the error.
+     * @see javafx.scene.control.Alert
+     */
+    @FXML
+    private Alert alert;
 
     Image d1 = new Image("d1.png");
     Image d2 = new Image("d2.png");
-    Image d3 = new Image("d1.png");
-    Image d4 = new Image("d1.png");
-    Image d5 = new Image("d1.png");
-    Image d6 = new Image("d1.png");
+    Image d3 = new Image("d3.png");
+    Image d4 = new Image("d4.png");
+    Image d5 = new Image("d5.png");
+    Image d6 = new Image("d6.png");
+    
+    /**
+     * ArrayList of rectangles representing the dice on the screen.
+     */
+   private static ArrayList<Rectangle> rectangles = new ArrayList<>();
 
-    ArrayList<Rectangle> dice = new ArrayList<>();
+    private DiceUILogic game = new DiceUILogic(this);
+
 
     /**
      * When this method is called, it will exit the application.
@@ -60,68 +92,124 @@ public class FarkleController {
 
     /**
      * When this method is called, it will change the Scene to GameScreen.
-     * @param event The button push event that signals entrance into the main game screen.
+     * @param event The button push event that signals entrance
+     *              into the main game screen.
      */
-    public void enterGameScreenButtonPushed(ActionEvent event) throws IOException {
+    public void enterGameScreenButtonPushed(final ActionEvent event) {
 
-        Parent gameScreenParent = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
-        Scene gameScreen = new Scene(gameScreenParent);
-
-        Stage window = (Stage)(((Node)event.getSource()).getScene().getWindow());
-        window.setScene(gameScreen);
-        window.show();
-    }
-
-    public void rollTheDiceButtonPushed(ActionEvent event) {
-
-        dice.add(rect0);
-        dice.add(rect1);
-        dice.add(rect2);
-        dice.add(rect3);
-        dice.add(rect4);
-        dice.add(rect5);
-
-        Timeline diceAnimate = new Timeline(
-
-                new KeyFrame(Duration.ZERO,
-                ae -> setRectFill(d1)),
-
-                new KeyFrame(Duration.millis(333),
-                        ae -> setRectFill(d2)),
-
-                new KeyFrame(Duration.millis(666),
-                        ae -> setRectFill(d3)),
-
-                new KeyFrame(Duration.millis(1333),
-                        ae -> setRectFill(d4)),
-
-                new KeyFrame(Duration.millis(1666),
-                        ae -> setRectFill(d5)),
-
-                new KeyFrame(Duration.millis(1999),
-                        ae -> setRectFill(d6))
-
-        );
-        diceAnimate.setCycleCount(1);
-        diceAnimate.play();
+        try {
+            Parent gameScreenParent = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
+            Scene gameScreen = new Scene(gameScreenParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(gameScreen);
+            window.show();
 
 
+        } catch (IOException e) {
+            System.out.println("We could not find the file for the main game screen.");
 
-
-
-    }
-
-    public void setRectFill(Image dnum) {
-        for (int i = 0; i < dice.size(); i++) {
-
-            dice.get(i).setFill(new ImagePattern(dnum));
 
         }
+
+
     }
 
-    public void bankPointsButtonPushed(ActionEvent event){
+    /**
+     * This method simply adds our rectangles into the rectangle ArrayList.
+     */
+    private void setRectangleArray() {
+        rectangles.clear();
+        rectangles.add(rect1);
+        rectangles.add(rect2);
+        rectangles.add(rect3);
+        rectangles.add(rect4);
+        rectangles.add(rect5);
+        rectangles.add(rect6);
+    }
+
+    /**
+     * This method handles the ActionEvent generated by pressing the "Roll Dice" button within the application.
+     * It animates the current rectangles on the screen as well as utilizes the Dice class and initializes a random number
+     * onto each one.
+     * @param event is the ActionEvent generated by pressing the Roll Dice button.
+     */
+    public void rollTheDiceButtonPushed(final ActionEvent event) {
+
+        // Adds rectangles to the rectangle arrayList.
+        setRectangleArray();
+        // Sets ArrayList of Dice with random values if they're not held.
+        game.setHand();
+        game.mapDice();
+
+            //Animates the Dice
 
 
+            Timeline diceAnimate = new Timeline(
+
+                    new KeyFrame(Duration.ZERO,
+                            ae -> game.setRectFill(d1)),
+
+                    new KeyFrame(Duration.millis(111),
+                            ae -> game.setRectFill(d2)),
+
+                    new KeyFrame(Duration.millis(222),
+                            ae -> game.setRectFill(d3)),
+
+                    new KeyFrame(Duration.millis(333),
+                            ae -> game.setRectFill(d4)),
+
+                    new KeyFrame(Duration.millis(444),
+                            ae -> game.setRectFill(d5)),
+
+                    new KeyFrame(Duration.millis(555),
+                            ae -> game.setRectFill(d6)),
+
+                    new KeyFrame(Duration.millis(777),
+                            ae -> game.getHand(rectangles)) // Calls getHand from our game instance and sets the fills.
+
+
+            );
+
+        diceAnimate.setCycleCount(1);
+        diceAnimate.play();
+    }
+
+
+    /**
+     * This method sets a non-held rectangle to a random number on rolling the rectangles.
+     */
+    public void bankPointsButtonPushed( final ActionEvent event){
+
+
+
+    }
+
+    /**
+     * This method will call methods from our game instance of DiceUILogic to
+     * take our rectangles and add a glow, then hold the corresponding dice.
+     * @param event The Mouse2Event generated by clicking a rectangle.
+     */
+    public void holdRectangles(MouseEvent event){
+
+        // To be used for adding an outer glow to rectangle.
+        int depth = 70;
+        DropShadow borderGlow = new DropShadow();
+        borderGlow.setOffsetY(0f);
+        borderGlow.setOffsetX(0f);
+        borderGlow.setColor(Color.YELLOW);
+        borderGlow.setWidth(depth);
+        borderGlow.setHeight(depth);
+
+       Rectangle rectX = (Rectangle) event.getSource();
+        rectX.setEffect(borderGlow);
+
+        game.setHoldStatus(rectX);
+}
+
+
+    public ArrayList<Rectangle> getRectangles () {
+        
+        return rectangles;
 
     }
 
@@ -129,3 +217,5 @@ public class FarkleController {
 
 
 }
+
+
