@@ -9,11 +9,11 @@ public class Dice {
     int val;
 
     /** is the rectangles held? */
-    private boolean hold;
+    private boolean hold = false;
 
 
     /** Was the dice held in the previous turn?*/
-    private boolean inactive;
+    private boolean inactive = true;
 
     /*************************************
      * Obtains current value of rectangles
