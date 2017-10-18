@@ -10,6 +10,11 @@ public class Dice {
 
     /** is the rectangles held? */
     private boolean hold;
+    private boolean hold = false;
+
+
+    /** Was the dice held in the previous turn?*/
+    private boolean inactive = true;
 
     /*************************************
      * Obtains current value of rectangles
@@ -42,6 +47,14 @@ public class Dice {
     public void releaseDice(){
         hold = false;
     }
+
+
+    public void setActive(){inactive= false;}
+
+    public void setInactive(){inactive = true;}
+
+    boolean isInactive(){return inactive;}
+
 
     /**
      * Tells if the rectangles is currently held
