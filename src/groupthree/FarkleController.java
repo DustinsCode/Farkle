@@ -9,15 +9,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -60,12 +56,7 @@ public class FarkleController {
      */
     @FXML
    private Rectangle rect6;
-    /**
-     * This Alert will show a dialogue window that contains a header with information about the error.
-     * @see javafx.scene.control.Alert
-     */
-    @FXML
-    private Alert alert;
+
 
     Image d1 = new Image("d1.png");
     Image d2 = new Image("d2.png");
@@ -73,6 +64,7 @@ public class FarkleController {
     Image d4 = new Image("d4.png");
     Image d5 = new Image("d5.png");
     Image d6 = new Image("d6.png");
+
     
     /**
      * ArrayList of rectangles representing the dice on the screen.
@@ -80,6 +72,10 @@ public class FarkleController {
    private static ArrayList<Rectangle> rectangles = new ArrayList<>();
 
     private DiceUILogic game = new DiceUILogic(this);
+
+    public FarkleController() {
+
+    }
 
 
     /**
@@ -95,9 +91,9 @@ public class FarkleController {
      * @param event The button push event that signals entrance
      *              into the main game screen.
      */
-    public void enterGameScreenButtonPushed(final ActionEvent event) {
+    public void enterGameScreenButtonPushed(final ActionEvent event) throws IOException {
 
-        try {
+
             Parent gameScreenParent = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
             Scene gameScreen = new Scene(gameScreenParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -105,11 +101,7 @@ public class FarkleController {
             window.show();
 
 
-        } catch (IOException e) {
-            System.out.println("We could not find the file for the main game screen.");
 
-
-        }
 
 
     }
@@ -140,6 +132,7 @@ public class FarkleController {
         // Sets ArrayList of Dice with random values if they're not held.
         game.setHand();
         game.mapDice();
+        game.setRolled();
 
             //Animates the Dice
 
@@ -191,19 +184,14 @@ public class FarkleController {
      */
     public void holdRectangles(MouseEvent event){
 
-        // To be used for adding an outer glow to rectangle.
-        int depth = 70;
-        DropShadow borderGlow = new DropShadow();
-        borderGlow.setOffsetY(0f);
-        borderGlow.setOffsetX(0f);
-        borderGlow.setColor(Color.YELLOW);
-        borderGlow.setWidth(depth);
-        borderGlow.setHeight(depth);
 
        Rectangle rectX = (Rectangle) event.getSource();
-        rectX.setEffect(borderGlow);
 
-        game.setHoldStatus(rectX);
+            game.checkRolled();
+            game.setHoldStatus(rectX);
+
+
+
 }
 
 

@@ -1,7 +1,10 @@
 package groupthree;
 
 
+import javafx.scene.control.Alert;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
@@ -21,6 +24,7 @@ public class DiceUILogic {
 
     ArrayList<Dice> hand = new ArrayList<>();
     private LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
+    private boolean rolled = false;
 
 
     /**
@@ -43,7 +47,6 @@ public class DiceUILogic {
         rectangles = controller.getRectangles();
         for(int i = 0; i < 6; i++) {
             hand.add(new Dice());
-            System.out.print(1);
         }
 
 
@@ -81,7 +84,6 @@ public class DiceUILogic {
 
         logic.turn(hand);
 
-
     }
 
 
@@ -97,24 +99,47 @@ public class DiceUILogic {
 
             }
 
+
         }
     }
 
-    void setHoldStatus(Rectangle r){
+    void setHoldStatus(Rectangle r) {
+
+        int depth = 70;
+        DropShadow borderGlow = new DropShadow();
+        borderGlow.setOffsetY(0f);
+        borderGlow.setOffsetX(0f);
+        borderGlow.setColor(Color.YELLOW);
+        borderGlow.setWidth(depth);
+        borderGlow.setHeight(depth);
+
         for (Rectangle rect: rectangles) {
+
+
             if (rect.equals(r)){
 
-                if (rMap.get(r).isHeld()){
+
+                // Sets the glow and attributes of the dice corresponding with it's status when clicked.
+                if ( rMap.get(r).isHeld() && !rMap.get(r).isInactive() ){
                     rMap.get(r).releaseDice();
                     r.setEffect(null);
 
-                } else {
-
+                } else if (!rMap.get(r).isHeld() && !rMap.get(r).isInactive() ) {
+                    r.setEffect(borderGlow);
                     rMap.get(r).holdDice();
 
+
+                } else if (rMap.get(r).isHeld() && rMap.get(r).isInactive()) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.initOwner(MainUI.getPrimaryStage());
+                    alert.setTitle("Action Not Allowed");
+                    alert.setHeaderText("Unable to Release Dice");
+                    alert.setContentText("You are not allowed to release a dice after rolling!");
+                    alert.show();
                 }
             }
-        }
+
+    }
     }
 
             public void getHeld() {
@@ -122,5 +147,19 @@ public class DiceUILogic {
     }
 
 
+    public void checkRolled() {
 
+        if (!rolled) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(MainUI.getPrimaryStage());
+            alert.setTitle("Action Not Allowed");
+            alert.setHeaderText("Must Roll Dice");
+            alert.setContentText("You are not allowed to select a dice before rolling. Please roll first.");
+            alert.show();
+        }
+    }
+
+    public void setRolled() {
+        rolled = true;
+    }
 }
