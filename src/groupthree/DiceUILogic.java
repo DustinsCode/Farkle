@@ -147,7 +147,7 @@ public class DiceUILogic {
     }
 
 
-    public void checkRolled() {
+    void checkRolled() {
 
         if (!rolled) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -159,7 +159,14 @@ public class DiceUILogic {
         }
     }
 
-    public void setRolled() {
+    void setRolled() {
         rolled = true;
+    }
+
+    int getScore() {
+
+        int score = logic.scoreHand(hand);
+        return score;
+
     }
 }

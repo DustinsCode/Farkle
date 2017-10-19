@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
@@ -56,6 +57,16 @@ public class FarkleController {
      */
     @FXML
    private Rectangle rect6;
+    /**
+     * This is the label that keeps track of bank points.
+     */
+    @FXML
+    private Label bankPoints;
+    /**
+     * This is the label that keeps track of the round points.
+     */
+    @FXML
+    private Label roundPoints;
 
 
     Image d1 = new Image("d1.png");
@@ -169,10 +180,12 @@ public class FarkleController {
 
 
     /**
-     * This method sets a non-held rectangle to a random number on rolling the rectangles.
+     * This method runs when the "Bank Points" button has been clicked.
+     * @param event MouseEvent that this method takes as the input.
      */
     public void bankPointsButtonPushed( final ActionEvent event){
-
+        int score = game.getScore();
+        bankPoints.setText(Integer.toString(score));
 
 
     }
