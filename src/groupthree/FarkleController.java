@@ -180,8 +180,8 @@ public class FarkleController {
 
         if (game.rollCount != 0 && game.isFarkle() ) {
 
-            for (int i = 0; i < rectangles.size(); i++) {
-                rectangles.get(i).setEffect(null);
+            for (Rectangle rectangle : rectangles) {
+                rectangle.setEffect(null);
             }
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -208,7 +208,7 @@ public class FarkleController {
      * @param event MouseEvent that this method takes as the input.
      */
     public void bankPointsButtonPushed( final ActionEvent event){
-        int score = game.getScore();
+        int score = game.getBankScore();
         bankPoints.setText(Integer.toString(score));
 
 
@@ -226,7 +226,7 @@ public class FarkleController {
 
             game.checkRolled();
             game.setHoldStatus(rectX);
-            // game.getRoundScore();  This will need to get the round score each time we click a button.
+            roundPoints.setText(Integer.toString(game.getRoundScore()));
 
 
 

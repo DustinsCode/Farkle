@@ -20,12 +20,12 @@ public class GameLogic {
      * The button that ends turn should be calling this.
      * @param hand An arraylist of dice.
      */
-    void turn(ArrayList<Dice> hand) {
-        int points = scoreHand(hand);
+    void farkle(ArrayList<Dice> hand) {
+
         //If there are 0 points, the round is over and you add one to the farkle counter
-        if (points == 0) {
+        if (roundPoints == 0) {
             farkleCounter++;
-            roundPoints = 0;
+
             if (farkleCounter >= 3){
                 bankedPoints -= 1000;
                 farkleCounter = 0;
@@ -33,10 +33,12 @@ public class GameLogic {
             resetRound(hand);
             return;
         }
-        //Add points to the roundpoints
-        roundPoints += points;
-        //loops through hand with temp var j
 
+    }
+
+    void tallyRoundPoints (ArrayList<Dice> hand){
+        int points = scoreHand(hand);
+        roundPoints += points;
     }
 
     void rollHandStatus(ArrayList<Dice> hand) {

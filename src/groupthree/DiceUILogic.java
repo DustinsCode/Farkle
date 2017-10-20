@@ -162,7 +162,7 @@ public class DiceUILogic {
     }
 
     boolean isFarkle() {
-    logic.turn(hand);
+    logic.farkle(hand);
 
     if (logic.farkleCounter > 0) {
         return true;
@@ -176,10 +176,25 @@ public class DiceUILogic {
         rollCount++;
     }
 
-    int getScore() {
+    /**
+     * This method calls a logic method that tallies up and returns the current bank score.
+     * @return the Integer value representing the bank score.
+     */
+    int getBankScore() {
 
-        int score = logic.scoreHand(hand);
-        return score;
 
+        return logic.scoreHand(hand);
+
+    }
+
+    /**
+     * This method tallies up and returns the current round score.
+     * @return the Integer value representing the current score of your hand.
+     */
+    int getRoundScore() {
+
+        logic.tallyRoundPoints(hand);
+
+       return logic.getRoundPoints();
     }
 }
