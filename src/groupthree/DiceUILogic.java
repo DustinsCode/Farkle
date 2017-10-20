@@ -20,11 +20,11 @@ public class DiceUILogic {
     private static ArrayList<Image> diceImages = new ArrayList<>();
     private static HashMap<Integer,Image> mapImages = new HashMap<>();
     private ArrayList<Rectangle> rectangles = new ArrayList<>();
-    private GameLogic logic = new GameLogic();
+    GameLogic logic = new GameLogic();
 
     ArrayList<Dice> hand = new ArrayList<>();
     private LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
-    private boolean rolled = false;
+    int rollCount = 0;
 
 
     /**
@@ -41,7 +41,7 @@ public class DiceUILogic {
         diceImages.add(controller.d6);
 
         for (int i = 0; i < diceImages.size(); i++){
-            mapImages.put(i,diceImages.get(i));
+            mapImages.put(i + 1 ,diceImages.get(i));
         }
 
         rectangles = controller.getRectangles();
@@ -51,6 +51,8 @@ public class DiceUILogic {
 
 
     }
+
+
 
     /**
      * This method simultaneously sets the fill for each die within the ArrayList to a specific image. It
@@ -82,7 +84,7 @@ public class DiceUILogic {
      */
     void setHand(){
 
-        logic.turn(hand);
+        logic.rollHandStatus(hand);
 
     }
 
@@ -95,7 +97,7 @@ public class DiceUILogic {
     void getHand(ArrayList<Rectangle> rect){
         for (int i = 0; i < hand.size(); i++){
             if ( !hand.get(i).isHeld() ){
-               rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).val)));
+               rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).getVal())));
 
             }
 
@@ -149,7 +151,7 @@ public class DiceUILogic {
 
     void checkRolled() {
 
-        if (!rolled) {
+        if (rollCount < 1 ) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(MainUI.getPrimaryStage());
             alert.setTitle("Action Not Allowed");
@@ -159,8 +161,19 @@ public class DiceUILogic {
         }
     }
 
+    boolean isFarkle() {
+    logic.turn(hand);
+
+    if (logic.farkleCounter > 0) {
+        return true;
+    }
+
+    return false;
+
+    }
+
     void setRolled() {
-        rolled = true;
+        rollCount++;
     }
 
     int getScore() {

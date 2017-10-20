@@ -6,7 +6,7 @@ package groupthree;
 public class Dice {
 
     /** value of the rectangles */
-    int val;
+    private int val;
 
     /** is the rectangles held? */
     private boolean hold = false;

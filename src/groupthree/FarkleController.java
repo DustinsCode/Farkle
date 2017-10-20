@@ -115,6 +115,7 @@ public class FarkleController {
 
 
 
+
     }
 
     /**
@@ -143,7 +144,7 @@ public class FarkleController {
         // Sets ArrayList of Dice with random values if they're not held.
         game.setHand();
         game.mapDice();
-        game.setRolled();
+
 
             //Animates the Dice
 
@@ -176,6 +177,29 @@ public class FarkleController {
 
         diceAnimate.setCycleCount(1);
         diceAnimate.play();
+
+        if (game.rollCount != 0 && game.isFarkle() ) {
+
+            for (int i = 0; i < rectangles.size(); i++) {
+                rectangles.get(i).setEffect(null);
+            }
+
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(MainUI.getPrimaryStage());
+            alert.setTitle("Farkle!");
+            alert.setHeaderText("You have Farkled: Round Reset");
+            alert.setContentText("Try again! The current Farkle count is: "+ game.logic.farkleCounter);
+            alert.show();
+
+        }
+        for (int i = 0; i < game.hand.size(); i++) {
+            System.out.println(game.hand.get(i).isHeld() + " "+ game.hand.get(i).getVal());
+
+        }
+        game.setRolled(); // Increments the rolled variable.
+
+
+
     }
 
 
@@ -202,6 +226,7 @@ public class FarkleController {
 
             game.checkRolled();
             game.setHoldStatus(rectX);
+            // game.getRoundScore();  This will need to get the round score each time we click a button.
 
 
 

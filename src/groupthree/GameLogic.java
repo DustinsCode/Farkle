@@ -10,7 +10,7 @@ public class GameLogic {
     /** roundPoints is the amount of points you have in current round*/
     private int roundPoints = 0;
 
-    private int farkleCounter = 0;
+    int farkleCounter = 0;
 
     private boolean wonGame = false;
 
@@ -36,6 +36,10 @@ public class GameLogic {
         //Add points to the roundpoints
         roundPoints += points;
         //loops through hand with temp var j
+
+    }
+
+    void rollHandStatus(ArrayList<Dice> hand) {
         for(Dice j: hand){
             // For active dice, if it's held, set it to inactive, otherwise, roll it
             if (!(j.isInactive())){
@@ -195,7 +199,7 @@ public class GameLogic {
      * Returns all dice to normal state and rolls them.
      * @param hand is the current hand of dice
      */
-    private void resetRound(ArrayList<Dice> hand){
+     void resetRound(ArrayList<Dice> hand){ //@TODO this doesn't really need to be called in the beginning. It should only be used when the turn is over (farkle or bankpoints).
         for(Dice j: hand){
             j.releaseDice();
             j.setActive();
