@@ -49,7 +49,7 @@
                                     </LinearGradient>
                                  </textFill>
                               </Label>
-                              <Button fx:id="bankPointsButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#rollTheDiceButtonPushed" prefHeight="39.0" prefWidth="117.0" text="Bank Points">
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#bankPointsButtonPushed" prefHeight="39.0" prefWidth="117.0" text="Bank Points">
                                  <font>
                                     <Font name="Courier New Bold" size="12.0" />
                                  </font>

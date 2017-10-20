@@ -161,6 +161,10 @@ public class DiceUILogic {
         }
     }
 
+    /**
+     * This method checks our logic to see if we've Farkled.
+     * @return the boolean representing whether or not we Farkle.
+     */
     boolean isFarkle() {
     logic.farkle(hand);
 
@@ -172,6 +176,9 @@ public class DiceUILogic {
 
     }
 
+    /**
+     * This method keeps track of how many times we've rolled the hand in a round.
+     */
     void setRolled() {
         rollCount++;
     }
@@ -180,11 +187,20 @@ public class DiceUILogic {
      * This method calls a logic method that tallies up and returns the current bank score.
      * @return the Integer value representing the bank score.
      */
+    void setBankScore() {
+        logic.bankPoints(hand);
+
+    }
+
     int getBankScore() {
+        return logic.getBankedPoints();
+    }
 
-
-        return logic.scoreHand(hand);
-
+    void resetHand() {
+        logic.resetRound(hand);
+        for (Rectangle rectangle : rectangles) {
+            rectangle.setEffect(null);
+        }
     }
 
     /**
@@ -196,5 +212,9 @@ public class DiceUILogic {
         logic.tallyRoundPoints(hand);
 
        return logic.getRoundPoints();
+    }
+
+    boolean wonGameStatus() {
+        return logic.wonGameStatus();
     }
 }

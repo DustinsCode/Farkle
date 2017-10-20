@@ -192,11 +192,9 @@ public class FarkleController {
             alert.show();
 
         }
-        for (int i = 0; i < game.hand.size(); i++) {
-            System.out.println(game.hand.get(i).isHeld() + " "+ game.hand.get(i).getVal());
 
-        }
         game.setRolled(); // Increments the rolled variable.
+        System.out.println(game.logic.getRoundPoints());
 
 
 
@@ -208,8 +206,23 @@ public class FarkleController {
      * @param event MouseEvent that this method takes as the input.
      */
     public void bankPointsButtonPushed( final ActionEvent event){
-        int score = game.getBankScore();
-        bankPoints.setText(Integer.toString(score));
+        game.setBankScore();
+       bankPoints.setText(Integer.toString(game.getBankScore()));
+       roundPoints.setText(Integer.toString(game.getRoundScore()));
+        game.resetHand();
+
+
+
+        if(game.logic.wonGameStatus()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.initOwner(MainUI.getPrimaryStage());
+            alert.setTitle("You win!");
+            alert.setHeaderText("Bank Reached 10,000!");
+            alert.setContentText("You have won the game, please exit and start a new game!");
+            alert.show();
+        }
+
+
 
 
     }
@@ -227,7 +240,7 @@ public class FarkleController {
             game.checkRolled();
             game.setHoldStatus(rectX);
             roundPoints.setText(Integer.toString(game.getRoundScore()));
-            System.out.println(game.logic.getRoundPoints());
+
 
 
 }

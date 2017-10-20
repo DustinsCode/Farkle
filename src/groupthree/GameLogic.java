@@ -182,8 +182,9 @@ public class GameLogic {
      * bankPoints should end turn
      */
     public void bankPoints(ArrayList<Dice> hand){
-        int points = scoreHand(hand);
-        if (points == 0) {
+
+        // Checks for farkle
+        if (roundPoints == 0) {
             farkleCounter++;
             roundPoints = 0;
             if (farkleCounter >= 3){
@@ -191,13 +192,14 @@ public class GameLogic {
                 farkleCounter = 0;
              }
         }
-        roundPoints += points;
-        bankedPoints += roundPoints;
+
+        bankedPoints += roundPoints; //Adds current round points to our bank.
+        roundPoints = 0; //resets round points when you bank.
+        // Checks to see if we've won
         if (bankedPoints >= 10000){
-            wonGame = true;
+            wonGame = true; //Sets to true if we win.
             // @TODO Need an idea to fire off a static notification or event to get with the UI to transition screens.
         }
-        resetRound(hand);
 
     }
 
@@ -221,7 +223,9 @@ public class GameLogic {
         return roundPoints;
     }
 
-
+public boolean wonGameStatus(){
+         return wonGame;
+}
 
 
 
