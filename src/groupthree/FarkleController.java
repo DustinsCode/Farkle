@@ -178,7 +178,7 @@ public class FarkleController {
         diceAnimate.setCycleCount(1);
         diceAnimate.play();
 
-        if (game.rollCount != 0 && game.isFarkle() ) {
+        if (game.rollCount > 0 && game.isFarkle() ) {
 
             for (Rectangle rectangle : rectangles) {
                 rectangle.setEffect(null);
@@ -227,7 +227,7 @@ public class FarkleController {
             game.checkRolled();
             game.setHoldStatus(rectX);
             roundPoints.setText(Integer.toString(game.getRoundScore()));
-
+            System.out.println(game.logic.getRoundPoints());
 
 
 }

@@ -25,7 +25,7 @@ public class GameLogic {
         //If there are 0 points, the round is over and you add one to the farkle counter
         if (roundPoints == 0) {
             farkleCounter++;
-
+            roundPoints = 0;
             if (farkleCounter >= 3){
                 bankedPoints -= 1000;
                 farkleCounter = 0;
@@ -36,9 +36,13 @@ public class GameLogic {
 
     }
 
+    /**
+     * This tallies the current hand of dice and sets the roundPoints variable accordingly.
+     * @param hand The ArrayList<Dice> representing our current hand.
+     */
     void tallyRoundPoints (ArrayList<Dice> hand){
         int points = scoreHand(hand);
-        roundPoints += points;
+        roundPoints = points;
     }
 
     void rollHandStatus(ArrayList<Dice> hand) {
