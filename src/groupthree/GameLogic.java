@@ -12,13 +12,15 @@ public class GameLogic {
 
     private int farkleCounter = 0;
 
+    private boolean wonGame = false;
+
 
     /**
      * Turn is at the end of the turn, when you've decided to hold or not, and when it rolls the dice.
      * The button that ends turn should be calling this.
      * @param hand An arraylist of dice.
      */
-    public void turn(ArrayList<Dice> hand) {
+    void turn(ArrayList<Dice> hand) {
         int points = scoreHand(hand);
         //If there are 0 points, the round is over and you add one to the farkle counter
         if (points == 0) {
@@ -52,7 +54,7 @@ public class GameLogic {
      *  diceCount is an array to list amount of dice values, e.g. how many fives.
      * @return Returns the score integer.
      */
-    public int scoreHand(ArrayList<Dice> hand){
+    int scoreHand(ArrayList<Dice> hand){
 
         //This is a temp variable while I figure out how to score properly so that dice can't doubledip.
         int score = 0;
@@ -68,6 +70,8 @@ public class GameLogic {
                 diceCount[j.getVal()-1] += 1;
             }
         }
+
+
         for(int i = 0;  i < diceCount.length;i++) {
 
 
@@ -180,7 +184,8 @@ public class GameLogic {
         roundPoints += points;
         bankedPoints += roundPoints;
         if (bankedPoints >= 10000){
-            //you win yay
+            wonGame = true;
+            // @TODO Need an idea to fire off a static notification or event to get with the UI to transition screens.
         }
         resetRound(hand);
 
@@ -197,6 +202,17 @@ public class GameLogic {
             j.roll();
         }
     }
+
+    public int getBankedPoints () {
+        return bankedPoints;
+    }
+
+    public int getRoundPoints () {
+        return roundPoints;
+    }
+
+
+
 
 
 }

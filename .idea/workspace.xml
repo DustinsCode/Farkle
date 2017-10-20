@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dbcb541-b34b-4780-b7ae-72f0657520ea" name="Default" comment="workspace, just updating remote repo">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/farkleUI.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/DiceUILogic.java" afterPath="$PROJECT_DIR$/src/groupthree/DiceUILogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/FarkleController.java" afterPath="$PROJECT_DIR$/src/groupthree/FarkleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/GameScreen.fxml" afterPath="$PROJECT_DIR$/src/groupthree/GameScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/GameLogic.java" afterPath="$PROJECT_DIR$/src/groupthree/GameLogic.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/MainUI.java" afterPath="$PROJECT_DIR$/src/groupthree/MainUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,13 +14,36 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="DiceUILogic.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-1287">
+                    <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+                    <folding>
+                      <element signature="e#4904#4905#0" expanded="true" />
+                      <element signature="e#4933#4934#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FarkleController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FarkleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/groupthree/FarkleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+            <state relative-caret-position="655">
+              <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;field#rectangles#0;class#FarkleController#0" expanded="false" />
@@ -34,37 +54,31 @@
                 <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
                 <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
                 <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-                <element signature="method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-                <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-                <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
+                <marker date="1508465283111" expanded="true" signature="5362:5370" ph="{...}" />
+                <marker date="1508465283111" expanded="false" signature="5376:5613" ph="/**...*/" />
+                <marker date="1508465283111" expanded="true" signature="5662:5798" ph="{...}" />
+                <marker date="1508465283111" expanded="true" signature="5850:5894" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiceUILogic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="167" column="42" lean-forward="true" selection-start-line="167" selection-start-column="42" selection-end-line="167" selection-end-column="42" />
-              <folding>
-                <element signature="docComment;method#setRectFill#0;class#DiceUILogic#0" expanded="false" />
-                <element signature="docComment;method#mapDice#0;class#DiceUILogic#0" expanded="false" />
-                <element signature="method#mapDice#0;class#DiceUILogic#0" expanded="false" />
-                <element signature="method#getHand#0;class#DiceUILogic#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/groupthree/GameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-              <folding>
-                <element signature="method#resetRound#0;class#GameLogic#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="-1333">
+              <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/groupthree/Dice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,10 +166,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,6 +189,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,7 +274,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10545000" />
+    <option name="totallyTimeSpent" value="10625000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -271,28 +285,50 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25326088" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25326088" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33043477" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25326088" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33109996" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08933557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24040511" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24307036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33043477" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25326088" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33109996" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08933557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24040511" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -352,40 +388,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-          <folding>
-            <marker date="1508446999319" expanded="true" signature="4956:8464" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:8472" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:8449" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:8435" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:5003" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:4983" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="1026:1155" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="1054:1128" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5078:7258" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5104:7148" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5289:5438" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5324:5407" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5623:5772" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5658:5741" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5957:6106" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5992:6075" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6291:6440" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6326:6409" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6625:6774" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6660:6743" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6959:7121" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6994:7090" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7178:7238" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7314:8414" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7340:8394" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7435:8367" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7467:8341" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7617:7795" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7651:7761" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7993:8308" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="8027:8137" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="8178:8274" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -398,8 +401,8 @@
         <state relative-caret-position="189">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -433,9 +436,10 @@
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
+            <marker date="1508465283111" expanded="true" signature="5362:5370" ph="{...}" />
+            <marker date="1508465283111" expanded="false" signature="5376:5613" ph="/**...*/" />
+            <marker date="1508465283111" expanded="true" signature="5662:5798" ph="{...}" />
+            <marker date="1508465283111" expanded="true" signature="5850:5894" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -454,9 +458,10 @@
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
+            <marker date="1508465283111" expanded="true" signature="5362:5370" ph="{...}" />
+            <marker date="1508465283111" expanded="false" signature="5376:5613" ph="/**...*/" />
+            <marker date="1508465283111" expanded="true" signature="5662:5798" ph="{...}" />
+            <marker date="1508465283111" expanded="true" signature="5850:5894" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -467,8 +472,8 @@
         <state relative-caret-position="578">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -490,9 +495,10 @@
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
+            <marker date="1508465283111" expanded="true" signature="5362:5370" ph="{...}" />
+            <marker date="1508465283111" expanded="false" signature="5376:5613" ph="/**...*/" />
+            <marker date="1508465283111" expanded="true" signature="5662:5798" ph="{...}" />
+            <marker date="1508465283111" expanded="true" signature="5850:5894" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -503,8 +509,8 @@
         <state relative-caret-position="629">
           <caret line="42" column="53" lean-forward="false" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -517,8 +523,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -530,40 +536,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <marker date="1508446999319" expanded="true" signature="4956:8464" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:8472" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:8449" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:8435" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:5003" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:4983" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="1026:1155" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="1054:1128" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5078:7258" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5104:7148" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5289:5438" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5324:5407" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5623:5772" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5658:5741" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5957:6106" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5992:6075" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6291:6440" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6326:6409" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6625:6774" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6660:6743" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6959:7121" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6994:7090" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7178:7238" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7314:8414" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7340:8394" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7435:8367" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7467:8341" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7617:7795" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7651:7761" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7993:8308" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="8027:8137" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="8178:8274" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -584,9 +557,10 @@
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
+            <marker date="1508465283111" expanded="true" signature="5362:5370" ph="{...}" />
+            <marker date="1508465283111" expanded="false" signature="5376:5613" ph="/**...*/" />
+            <marker date="1508465283111" expanded="true" signature="5662:5798" ph="{...}" />
+            <marker date="1508465283111" expanded="true" signature="5850:5894" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -596,8 +570,8 @@
         <state relative-caret-position="51">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -620,9 +594,10 @@
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
+            <marker date="1508465283111" expanded="true" signature="5362:5370" ph="{...}" />
+            <marker date="1508465283111" expanded="false" signature="5376:5613" ph="/**...*/" />
+            <marker date="1508465283111" expanded="true" signature="5662:5798" ph="{...}" />
+            <marker date="1508465283111" expanded="true" signature="5850:5894" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -632,8 +607,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -646,8 +621,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -660,8 +635,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -675,8 +650,8 @@
         <state relative-caret-position="320">
           <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -746,40 +721,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="5" />
-          <folding>
-            <marker date="1508446999319" expanded="true" signature="4956:8464" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:8472" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:8449" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:8435" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:5003" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="4956:4983" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="1026:1155" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="1054:1128" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5078:7258" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5104:7148" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5289:5438" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5324:5407" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5623:5772" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5658:5741" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5957:6106" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="5992:6075" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6291:6440" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6326:6409" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6625:6774" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6660:6743" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6959:7121" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="6994:7090" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7178:7238" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7314:8414" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7340:8394" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7435:8367" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7467:8341" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7617:7795" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7651:7761" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="7993:8308" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="8027:8137" ph="..." />
-            <marker date="1508446999319" expanded="true" signature="8178:8274" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -790,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="50" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -802,8 +743,8 @@
         <state relative-caret-position="178">
           <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
             <element signature="docComment;method#start#0;class#MainUI#0" expanded="false" />
             <element signature="docComment;method#main#0;class#MainUI#0" expanded="false" />
             <element signature="method#main#0;class#MainUI#0" expanded="false" />
@@ -880,42 +821,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/groupthree/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/groupthree/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-          <folding>
-            <element signature="method#resetRound#0;class#GameLogic#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-1333">
+          <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="167" column="42" lean-forward="true" selection-start-line="167" selection-start-column="42" selection-end-line="167" selection-end-column="42" />
+        <state relative-caret-position="-1287">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="docComment;method#setRectFill#0;class#DiceUILogic#0" expanded="false" />
-            <element signature="docComment;method#mapDice#0;class#DiceUILogic#0" expanded="false" />
-            <element signature="method#mapDice#0;class#DiceUILogic#0" expanded="false" />
-            <element signature="method#getHand#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="e#4904#4905#0" expanded="true" />
+            <element signature="e#4933#4934#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/groupthree/FarkleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+        <state relative-caret-position="655">
+          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#rectangles#0;class#FarkleController#0" expanded="false" />
@@ -926,9 +860,10 @@
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
+            <marker date="1508465283111" expanded="true" signature="5362:5370" ph="{...}" />
+            <marker date="1508465283111" expanded="false" signature="5376:5613" ph="/**...*/" />
+            <marker date="1508465283111" expanded="true" signature="5662:5798" ph="{...}" />
+            <marker date="1508465283111" expanded="true" signature="5850:5894" ph="{...}" />
           </folding>
         </state>
       </provider>
