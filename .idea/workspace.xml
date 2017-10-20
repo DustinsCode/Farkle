@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8dbcb541-b34b-4780-b7ae-72f0657520ea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/DiceUILogic.java" afterPath="$PROJECT_DIR$/src/groupthree/DiceUILogic.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/FarkleController.java" afterPath="$PROJECT_DIR$/src/groupthree/FarkleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/GameLogic.java" afterPath="$PROJECT_DIR$/src/groupthree/GameLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/GameScreen.fxml" afterPath="$PROJECT_DIR$/src/groupthree/GameScreen.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/MainUI.java" afterPath="$PROJECT_DIR$/src/groupthree/MainUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,38 +14,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="DiceUILogic.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="629">
-                    <caret line="199" column="31" lean-forward="false" selection-start-line="199" selection-start-column="31" selection-end-line="199" selection-end-column="31" />
-                    <folding>
-                      <element signature="e#5582#5583#0" expanded="true" />
-                      <element signature="e#5628#5629#0" expanded="true" />
-                      <element signature="e#6091#6092#0" expanded="true" />
-                      <element signature="e#6135#6136#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="FarkleController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/groupthree/FarkleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="210" column="67" lean-forward="false" selection-start-line="210" selection-start-column="67" selection-end-line="210" selection-end-column="67" />
+            <state relative-caret-position="220">
+              <caret line="211" column="68" lean-forward="false" selection-start-line="211" selection-start-column="68" selection-end-line="211" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;field#rectangles#0;class#FarkleController#0" expanded="false" />
@@ -60,8 +32,18 @@
                 <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
                 <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
                 <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-                <marker date="1508522452155" expanded="true" signature="6482:6490" ph="{...}" />
+                <marker date="1508522624244" expanded="true" signature="6483:6491" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiceUILogic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="199" column="31" lean-forward="false" selection-start-line="199" selection-start-column="31" selection-end-line="199" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,7 +51,7 @@
       <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/groupthree/GameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="559">
               <caret line="196" column="61" lean-forward="false" selection-start-line="196" selection-start-column="61" selection-end-line="196" selection-end-column="61" />
               <folding>
                 <element signature="e#7227#7228#0" expanded="true" />
@@ -269,7 +251,7 @@
       <workItem from="1508428509674" duration="6939000" />
       <workItem from="1508435668814" duration="332000" />
       <workItem from="1508444541351" duration="2428000" />
-      <workItem from="1508513269643" duration="9218000" />
+      <workItem from="1508513269643" duration="9367000" />
     </task>
     <task id="LOCAL-00001" summary="Added warning boxes for the following user cases:&#10;&#10;*When you roll the dice, you're no longer allowed to de-select it.&#10;*When you click on a dice before rolling, you're no longer allowed to actually select it.">
       <created>1508435187864</created>
@@ -306,11 +288,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508519633825</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="It's working well, but needs bankpoints debug as well as roundpoints.">
+      <created>1508522525383</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1508522525383</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19908000" />
+    <option name="totallyTimeSpent" value="20057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -329,7 +318,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08933557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24307036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24307036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -387,7 +376,8 @@
     <MESSAGE value="Got it working again, working on getting the RoundPoints label to work when we click on a dice." />
     <MESSAGE value="roundPoints label now functions. Not sure why it's just ADDING to the round points and not subtracting if we remove a hold :/" />
     <MESSAGE value="roundPoints now tallies appropriately and will farkle if you haven't obtained any roundPoints when you roll." />
-    <option name="LAST_COMMIT_MESSAGE" value="roundPoints now tallies appropriately and will farkle if you haven't obtained any roundPoints when you roll." />
+    <MESSAGE value="It's working well, but needs bankpoints debug as well as roundpoints." />
+    <option name="LAST_COMMIT_MESSAGE" value="It's working well, but needs bankpoints debug as well as roundpoints." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -455,7 +445,7 @@
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508522452155" expanded="true" signature="6482:6490" ph="{...}" />
+            <marker date="1508522624244" expanded="true" signature="6483:6491" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -475,7 +465,7 @@
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508522452155" expanded="true" signature="6482:6490" ph="{...}" />
+            <marker date="1508522624244" expanded="true" signature="6483:6491" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -510,7 +500,7 @@
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508522452155" expanded="true" signature="6482:6490" ph="{...}" />
+            <marker date="1508522624244" expanded="true" signature="6483:6491" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -570,7 +560,7 @@
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508522452155" expanded="true" signature="6482:6490" ph="{...}" />
+            <marker date="1508522624244" expanded="true" signature="6483:6491" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -605,7 +595,7 @@
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508522452155" expanded="true" signature="6482:6490" ph="{...}" />
+            <marker date="1508522624244" expanded="true" signature="6483:6491" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -821,14 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/groupthree/Dice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/java.base/java/lang/reflect/Method.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -837,22 +819,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
+    <entry file="file://$PROJECT_DIR$/src/groupthree/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="199" column="31" lean-forward="false" selection-start-line="199" selection-start-column="31" selection-end-line="199" selection-end-column="31" />
-          <folding>
-            <element signature="e#5582#5583#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#6091#6092#0" expanded="true" />
-            <element signature="e#6135#6136#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-58">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/groupthree/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="559">
           <caret line="196" column="61" lean-forward="false" selection-start-line="196" selection-start-column="61" selection-end-line="196" selection-end-column="61" />
           <folding>
             <element signature="e#7227#7228#0" expanded="true" />
@@ -861,10 +838,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="199" column="31" lean-forward="false" selection-start-line="199" selection-start-column="31" selection-end-line="199" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/groupthree/FarkleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="210" column="67" lean-forward="false" selection-start-line="210" selection-start-column="67" selection-end-line="210" selection-end-column="67" />
+        <state relative-caret-position="220">
+          <caret line="211" column="68" lean-forward="false" selection-start-line="211" selection-start-column="68" selection-end-line="211" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#rectangles#0;class#FarkleController#0" expanded="false" />
@@ -876,7 +861,7 @@
             <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508522452155" expanded="true" signature="6482:6490" ph="{...}" />
+            <marker date="1508522624244" expanded="true" signature="6483:6491" ph="{...}" />
           </folding>
         </state>
       </provider>

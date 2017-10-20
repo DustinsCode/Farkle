@@ -208,8 +208,8 @@ public class FarkleController {
     public void bankPointsButtonPushed( final ActionEvent event){
         game.setBankScore();
        bankPoints.setText(Integer.toString(game.getBankScore()));
-       roundPoints.setText(Integer.toString(game.getRoundScore()));
         game.resetHand();
+        roundPoints.setText(Integer.toString(game.getRoundScore()));
 
 
 
