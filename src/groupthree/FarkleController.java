@@ -10,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -69,22 +68,18 @@ public class FarkleController {
     private Label roundPoints;
 
 
-    Image d1 = new Image("d1.png");
-    Image d2 = new Image("d2.png");
-    Image d3 = new Image("d3.png");
-    Image d4 = new Image("d4.png");
-    Image d5 = new Image("d5.png");
-    Image d6 = new Image("d6.png");
 
-    
+
+
     /**
      * ArrayList of rectangles representing the dice on the screen.
      */
    private static ArrayList<Rectangle> rectangles = new ArrayList<>();
 
-    private DiceUILogic game = new DiceUILogic(this);
+    private final DiceUILogic game = new DiceUILogic(this);
 
     public FarkleController() {
+
 
     }
 
@@ -102,16 +97,18 @@ public class FarkleController {
      * @param event The button push event that signals entrance
      *              into the main game screen.
      */
-    public void enterGameScreenButtonPushed(final ActionEvent event) throws IOException {
+    public void enterGameScreenButtonPushed(final ActionEvent event)  {
 
-
+        try {
             Parent gameScreenParent = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
             Scene gameScreen = new Scene(gameScreenParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(gameScreen);
             window.show();
 
-
+        } catch (IOException e) {
+            System.out.println("The GameScreen FXML file was not found.");
+        }
 
 
 
@@ -121,7 +118,7 @@ public class FarkleController {
     /**
      * This method simply adds our rectangles into the rectangle ArrayList.
      */
-    private void setRectangleArray() {
+    public void setRectangleArray() {
         rectangles.clear();
         rectangles.add(rect1);
         rectangles.add(rect2);
@@ -141,44 +138,35 @@ public class FarkleController {
 
         // Adds rectangles to the rectangle arrayList.
         setRectangleArray();
+
         // Sets ArrayList of Dice with random values if they're not held.
         game.setHand();
         game.mapDice();
 
-
             //Animates the Dice
-
-
             Timeline diceAnimate = new Timeline(
 
                     new KeyFrame(Duration.ZERO,
-                            ae -> game.setRectFill(d1)),
-
+                            ae -> game.setRectFill(game.d1)),
                     new KeyFrame(Duration.millis(111),
-                            ae -> game.setRectFill(d2)),
-
+                            ae -> game.setRectFill(game.d2)),
                     new KeyFrame(Duration.millis(222),
-                            ae -> game.setRectFill(d3)),
-
+                            ae -> game.setRectFill(game.d3)),
                     new KeyFrame(Duration.millis(333),
-                            ae -> game.setRectFill(d4)),
-
+                            ae -> game.setRectFill(game.d4)),
                     new KeyFrame(Duration.millis(444),
-                            ae -> game.setRectFill(d5)),
-
+                            ae -> game.setRectFill(game.d5)),
                     new KeyFrame(Duration.millis(555),
-                            ae -> game.setRectFill(d6)),
-
+                            ae -> game.setRectFill(game.d6)),
                     new KeyFrame(Duration.millis(777),
                             ae -> game.getHand(rectangles)) // Calls getHand from our game instance and sets the fills.
-
 
             );
 
         diceAnimate.setCycleCount(1);
         diceAnimate.play();
 
-        if (game.rollCount > 0 && game.isFarkle() ) {
+        if (game.getRollCount() > 0 && game.isFarkle() ) {
 
             for (Rectangle rectangle : rectangles) {
                 rectangle.setEffect(null);
@@ -188,14 +176,12 @@ public class FarkleController {
             alert.initOwner(MainUI.getPrimaryStage());
             alert.setTitle("Farkle!");
             alert.setHeaderText("You have Farkled: Round Reset");
-            alert.setContentText("Try again! The current Farkle count is: "+ game.logic.farkleCounter);
+            alert.setContentText("Try again! The current Farkle count is: "+ game.getFarkleCount());
             alert.show();
 
         }
 
         game.setRolled(); // Increments the rolled variable.
-        System.out.println(game.logic.getRoundPoints());
-
 
 
     }
@@ -209,17 +195,20 @@ public class FarkleController {
         game.setBankScore();
        bankPoints.setText(Integer.toString(game.getBankScore()));
         game.resetHand();
+        game.setRollCount(0);
         roundPoints.setText(Integer.toString(game.getRoundScore()));
 
 
 
-        if(game.logic.wonGameStatus()){
+        if(game.wonGameStatus()){
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(MainUI.getPrimaryStage());
             alert.setTitle("You win!");
             alert.setHeaderText("Bank Reached 10,000!");
             alert.setContentText("You have won the game, please exit and start a new game!");
             alert.show();
+
         }
 
 
@@ -245,7 +234,10 @@ public class FarkleController {
 
 }
 
-
+    /**
+     * This method is to return our ArrayList of rectangles for use by other classes.
+     * @return Current ArrayList<Rectangle> instantiated in FarkleController.
+     */
     public ArrayList<Rectangle> getRectangles () {
         
         return rectangles;

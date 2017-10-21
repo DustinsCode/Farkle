@@ -11,40 +11,48 @@ import javafx.scene.shape.Rectangle;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class DiceUILogic {
 
 
 
-    private static ArrayList<Image> diceImages = new ArrayList<>();
-    private static HashMap<Integer,Image> mapImages = new HashMap<>();
+    private static final ArrayList<Image> diceImages = new ArrayList<>();
+    private static final HashMap<Integer,Image> mapImages = new HashMap<>();
     private ArrayList<Rectangle> rectangles = new ArrayList<>();
-    GameLogic logic = new GameLogic();
+    private final GameLogic logic = new GameLogic();
 
-    ArrayList<Dice> hand = new ArrayList<>();
-    private LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
-    int rollCount = 0;
+    private final ArrayList<Dice> hand = new ArrayList<>();
+    private final LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
+    private int rollCount = 0;
+    private boolean isFarkles = false;
+
+    final Image d1 = new Image("d1.png");
+    final Image d2 = new Image("d2.png");
+    final Image d3 = new Image("d3.png");
+    final Image d4 = new Image("d4.png");
+    final Image d5 = new Image("d5.png");
+    final Image d6 = new Image("d6.png");
 
 
     /**
      * Constructor that adds all the Dice images to an arraylist and maps them to integers from 1-6,
      * as well as obtains the rectangle of javafx objects.
      */
-    public DiceUILogic(FarkleController controller){
+     DiceUILogic(FarkleController controller){
 
-        diceImages.add(controller.d1);
-        diceImages.add(controller.d2);
-        diceImages.add(controller.d3);
-        diceImages.add(controller.d4);
-        diceImages.add(controller.d5);
-        diceImages.add(controller.d6);
+        diceImages.add(d1);
+        diceImages.add(d2);
+        diceImages.add(d3);
+        diceImages.add(d4);
+        diceImages.add(d5);
+        diceImages.add(d6);
 
         for (int i = 0; i < diceImages.size(); i++){
             mapImages.put(i + 1 ,diceImages.get(i));
         }
 
         rectangles = controller.getRectangles();
+
         for(int i = 0; i < 6; i++) {
             hand.add(new Dice());
         }
@@ -71,10 +79,10 @@ public class DiceUILogic {
     /**
      * This maps the current hand of rectangles to dice objects with values.
      */
-    void mapDice (){
+    public void mapDice (){
 
         for (int i = 0; i < hand.size(); i++){
-            rMap.put(rectangles.get(i), hand.get(i) );
+             rMap.put(rectangles.get(i), hand.get(i) );
 
         }
             }
@@ -82,7 +90,7 @@ public class DiceUILogic {
     /**
      * This method takes the hand of Dice objects and rolls the values using the game instance of the GameLogic class.
      */
-    void setHand(){
+    public void setHand(){
 
         logic.rollHandStatus(hand);
 
@@ -144,10 +152,6 @@ public class DiceUILogic {
     }
     }
 
-            public void getHeld() {
-
-    }
-
 
     void checkRolled() {
 
@@ -166,33 +170,27 @@ public class DiceUILogic {
      * @return the boolean representing whether or not we Farkle.
      */
     boolean isFarkle() {
-    logic.farkle(hand);
-
-    if (logic.farkleCounter > 0) {
-        return true;
-    }
-
-    return false;
-
+        return logic.isFarkle();
     }
 
     /**
      * This method keeps track of how many times we've rolled the hand in a round.
      */
-    void setRolled() {
+    public void setRolled() {
         rollCount++;
+    }
+
+
+    public void setBankScore() {
+        logic.bankPoints(hand);
+
     }
 
     /**
      * This method calls a logic method that tallies up and returns the current bank score.
      * @return the Integer value representing the bank score.
      */
-    void setBankScore() {
-        logic.bankPoints(hand);
-
-    }
-
-    int getBankScore() {
+   public int getBankScore() {
         return logic.getBankedPoints();
     }
 
@@ -207,7 +205,7 @@ public class DiceUILogic {
      * This method tallies up and returns the current round score.
      * @return the Integer value representing the current score of your hand.
      */
-    int getRoundScore() {
+    public int getRoundScore() {
 
         logic.tallyRoundPoints(hand);
 
@@ -217,4 +215,17 @@ public class DiceUILogic {
     boolean wonGameStatus() {
         return logic.wonGameStatus();
     }
+
+    int getFarkleCount() {
+        return logic.farkleCounter;
+    }
+
+    public void setRollCount(int count) {
+        rollCount = count;
+    }
+    int getRollCount() {
+        return rollCount;
+    }
 }
+
+

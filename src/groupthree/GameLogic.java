@@ -2,7 +2,7 @@ package groupthree;
 
 import java.util.ArrayList;
 
-public class GameLogic {
+class GameLogic {
 
     /** bankedPoints is the amount of points you have in the bank.*/
     private int bankedPoints = 0;
@@ -11,6 +11,7 @@ public class GameLogic {
     private int roundPoints = 0;
 
     int farkleCounter = 0;
+    private boolean farkle = false;
 
     private boolean wonGame = false;
 
@@ -20,18 +21,19 @@ public class GameLogic {
      * The button that ends turn should be calling this.
      * @param hand An arraylist of dice.
      */
-    void farkle(ArrayList<Dice> hand) {
+    private void farkle(ArrayList<Dice> hand) {
 
         //If there are 0 points, the round is over and you add one to the farkle counter
         if (roundPoints == 0) {
             farkleCounter++;
             roundPoints = 0;
+            farkle = true;
+
             if (farkleCounter >= 3){
                 bankedPoints -= 1000;
                 farkleCounter = 0;
             }
-            resetRound(hand);
-            return;
+
         }
 
     }
@@ -41,8 +43,7 @@ public class GameLogic {
      * @param hand The ArrayList<Dice> representing our current hand.
      */
     void tallyRoundPoints (ArrayList<Dice> hand){
-        int points = scoreHand(hand);
-        roundPoints = points;
+        roundPoints = scoreHand(hand);
     }
 
     void rollHandStatus(ArrayList<Dice> hand) {
@@ -64,7 +65,7 @@ public class GameLogic {
      *  diceCount is an array to list amount of dice values, e.g. how many fives.
      * @return Returns the score integer.
      */
-    int scoreHand(ArrayList<Dice> hand){
+    private int scoreHand(ArrayList<Dice> hand){
 
         //This is a temp variable while I figure out how to score properly so that dice can't doubledip.
         int score = 0;
@@ -181,17 +182,10 @@ public class GameLogic {
     /**
      * bankPoints should end turn
      */
-    public void bankPoints(ArrayList<Dice> hand){
+    void bankPoints(ArrayList<Dice> hand){
 
         // Checks for farkle
-        if (roundPoints == 0) {
-            farkleCounter++;
-            roundPoints = 0;
-            if (farkleCounter >= 3){
-                bankedPoints -= 1000;
-                farkleCounter = 0;
-             }
-        }
+        farkle(hand);
 
         bankedPoints += roundPoints; //Adds current round points to our bank.
         roundPoints = 0; //resets round points when you bank.
@@ -215,17 +209,20 @@ public class GameLogic {
         }
     }
 
-    public int getBankedPoints () {
+    int getBankedPoints () {
         return bankedPoints;
     }
 
-    public int getRoundPoints () {
+    int getRoundPoints () {
         return roundPoints;
     }
 
-public boolean wonGameStatus(){
+    boolean wonGameStatus(){
          return wonGame;
 }
+    boolean isFarkle() {
+        return farkle;
+    }
 
 
 
