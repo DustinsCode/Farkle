@@ -30,6 +30,7 @@ public class Dice {
      *
      * @param diceVal is the value that the rectangles is to be set as
      **************************************/
+    @SuppressWarnings("unused")
     public void setDice(int diceVal){
         val = diceVal;
     }
@@ -49,9 +50,9 @@ public class Dice {
     }
 
 
-    public void setActive(){inactive= false;}
+    void setActive(){inactive= false;}
 
-    public void setInactive(){inactive = true;}
+    void setInactive(){inactive = true;}
 
     boolean isInactive(){return inactive;}
 

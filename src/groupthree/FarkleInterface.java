@@ -4,10 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-public interface FarkleInterface {
+@SuppressWarnings("unused")
+interface FarkleInterface {
 
     void exitHandler();
 
@@ -15,7 +15,7 @@ public interface FarkleInterface {
 
     void setRectangleArray();
 
-    void rollTheDiceButtonPushed( final ActionEvent event );
+    void rollTheDiceButtonPushed(final ActionEvent event );
 
     void bankPointsButtonPushed( final ActionEvent event );
 

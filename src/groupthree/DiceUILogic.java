@@ -24,7 +24,7 @@ public class DiceUILogic {
     private final ArrayList<Dice> hand = new ArrayList<>();
     private final LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
     private int rollCount = 0;
-    private boolean isFarkles = false;
+    // --Commented out by Inspection (10/21/2017 6:08 PM):private boolean isFarkles = false;
 
     final Image d1 = new Image("d1.png");
     final Image d2 = new Image("d2.png");
@@ -35,7 +35,7 @@ public class DiceUILogic {
 
 
     /**
-     * Constructor that adds all the Dice images to an arraylist and maps them to integers from 1-6,
+     * Constructor that adds all the Dice images to an arrayList and maps them to integers from 1-6,
      * as well as obtains the rectangle of javafx objects.
      */
      DiceUILogic(FarkleInterface controller){
@@ -102,6 +102,7 @@ public class DiceUILogic {
      * again, then it will need to update the pictures).
      * @param rect An ArrayList of Rectangles that will have their fill property updated.
      */
+    @SuppressWarnings("SameParameterValue")
     void getHand(ArrayList<Rectangle> rect){
         for (int i = 0; i < hand.size(); i++){
             if ( !hand.get(i).isHeld() ){

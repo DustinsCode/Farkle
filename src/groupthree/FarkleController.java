@@ -74,7 +74,7 @@ public class FarkleController implements FarkleInterface {
     /**
      * ArrayList of rectangles representing the dice on the screen.
      */
-   private static ArrayList<Rectangle> rectangles = new ArrayList<>();
+   private static final ArrayList<Rectangle> rectangles = new ArrayList<>();
 
     private final DiceUILogic game = new DiceUILogic(this);
 
