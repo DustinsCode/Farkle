@@ -170,7 +170,8 @@ public class DiceUILogic {
      * @return the boolean representing whether or not we Farkle.
      */
     boolean isFarkle() {
-        return logic.isFarkle();
+
+        return logic.isFarkle(hand);
     }
 
     /**
@@ -223,9 +224,11 @@ public class DiceUILogic {
     public void setRollCount(int count) {
         rollCount = count;
     }
+
     int getRollCount() {
         return rollCount;
     }
+
 }
 
 

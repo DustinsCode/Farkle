@@ -141,6 +141,8 @@ public class FarkleController implements FarkleInterface {
 
         // Sets ArrayList of Dice with random values if they're not held.
         game.setHand();
+
+        // Maps dice images to values.
         game.mapDice();
 
             //Animates the Dice
@@ -166,6 +168,9 @@ public class FarkleController implements FarkleInterface {
         diceAnimate.setCycleCount(1);
         diceAnimate.play();
 
+
+
+
         if (game.getRollCount() > 0 && game.isFarkle() ) {
 
             for (Rectangle rectangle : rectangles) {
@@ -176,12 +181,15 @@ public class FarkleController implements FarkleInterface {
             alert.initOwner(MainUI.getPrimaryStage());
             alert.setTitle("Farkle!");
             alert.setHeaderText("You have Farkled: Round Reset");
-            alert.setContentText("Try again! The current Farkle count is: "+ game.getFarkleCount());
+            alert.setContentText("Try again! If you farkle 3 times, you lose 1,000 from bank!");
             alert.show();
+            roundPoints.setText(Integer.toString(game.getRoundScore()));
+            bankPoints.setText(Integer.toString(game.getBankScore()));
 
         }
 
         game.setRolled(); // Increments the rolled variable.
+
 
 
     }

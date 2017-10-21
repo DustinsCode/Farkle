@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/DiceUILogic.java" afterPath="$PROJECT_DIR$/src/groupthree/DiceUILogic.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/FarkleController.java" afterPath="$PROJECT_DIR$/src/groupthree/FarkleController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/GameLogic.java" afterPath="$PROJECT_DIR$/src/groupthree/GameLogic.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/groupthree/MainUI.java" afterPath="$PROJECT_DIR$/src/groupthree/MainUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,8 +21,8 @@
       <file leaf-file-name="FarkleController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/groupthree/FarkleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="317">
+              <caret line="185" column="72" lean-forward="false" selection-start-line="185" selection-start-column="72" selection-end-line="185" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#FarkleController#0" expanded="false" />
@@ -39,14 +40,13 @@
                 <element signature="docComment;method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
                 <element signature="method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
                 <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
+                <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
                 <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
                 <element signature="docComment;method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
-                <element signature="method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
                 <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-                <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
                 <element signature="docComment;method#getRectangles#0;class#FarkleController#0" expanded="false" />
                 <element signature="method#getRectangles#0;class#FarkleController#0" expanded="false" />
-                <marker date="1508620911845" expanded="true" signature="6368:6376" ph="{...}" />
+                <marker date="1508625257179" expanded="true" signature="6552:6560" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -55,10 +55,49 @@
       <file leaf-file-name="DiceUILogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="53" column="37" lean-forward="true" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+            <state relative-caret-position="426">
+              <caret line="197" column="21" lean-forward="false" selection-start-line="197" selection-start-column="21" selection-end-line="197" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#DiceUILogic#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="docComment;method#setRectFill#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="method#setRectFill#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="docComment;method#mapDice#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="method#mapDice#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="docComment;method#setHand#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="method#setHand#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="docComment;method#getHand#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="method#getHand#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="method#setHoldStatus#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="method#checkRolled#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="docComment;method#isFarkle#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="docComment;method#setRolled#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="method#setBankScore#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="docComment;method#getBankScore#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="method#resetHand#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="docComment;method#getRoundScore#0;class#DiceUILogic#0" expanded="false" />
+                <element signature="method#getRoundScore#0;class#DiceUILogic#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/groupthree/GameLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+              <folding>
+                <element signature="docComment;method#isFarkle#0;class#GameLogic#0" expanded="false" />
+                <element signature="docComment;method#tallyRoundPoints#0;class#GameLogic#0" expanded="false" />
+                <element signature="e#1350#1351#0" expanded="true" />
+                <element signature="e#1395#1396#0" expanded="true" />
+                <element signature="method#rollHandStatus#0;class#GameLogic#0" expanded="false" />
+                <element signature="method#scoreHand#0;class#GameLogic#0" expanded="false" />
+                <element signature="method#scoreHandAll#0;class#GameLogic#0" expanded="false" />
+                <element signature="docComment;method#bankPoints#0;class#GameLogic#0" expanded="false" />
+                <element signature="method#bankPoints#0;class#GameLogic#0" expanded="false" />
+                <element signature="docComment;method#resetRound#0;class#GameLogic#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -101,16 +140,6 @@
                 <element signature="docComment;method#bankPointsTest#0;class#ControllerTest#0" expanded="false" />
                 <element signature="method#bankPointsTest#0;class#ControllerTest#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/groupthree/GameLogic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -183,8 +212,8 @@
         <option value="$PROJECT_DIR$/src/groupthree/FarkleInterface.java" />
         <option value="$PROJECT_DIR$/src/testing/ControllerTest.java" />
         <option value="$PROJECT_DIR$/src/testing/DiceTest.java" />
-        <option value="$PROJECT_DIR$/src/groupthree/GameLogic.java" />
         <option value="$PROJECT_DIR$/src/groupthree/DiceUILogic.java" />
+        <option value="$PROJECT_DIR$/src/groupthree/GameLogic.java" />
         <option value="$PROJECT_DIR$/src/groupthree/FarkleController.java" />
       </list>
     </option>
@@ -402,7 +431,7 @@
       <workItem from="1508605159849" duration="2423000" />
       <workItem from="1508607682056" duration="8021000" />
       <workItem from="1508616130809" duration="1204000" />
-      <workItem from="1508620416179" duration="679000" />
+      <workItem from="1508620416179" duration="4891000" />
     </task>
     <task id="LOCAL-00001" summary="Added warning boxes for the following user cases:&#10;&#10;*When you roll the dice, you're no longer allowed to de-select it.&#10;*When you click on a dice before rolling, you're no longer allowed to actually select it.">
       <created>1508435187864</created>
@@ -467,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508616731916</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixes random errors.">
+      <created>1508621160590</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1508621160590</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -503,7 +539,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42067000" />
+    <option name="totallyTimeSpent" value="46279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -585,11 +621,12 @@
     <MESSAGE value="Scoring system works now. Everything is completed with the program. I'll make this the new master that we can branch from and test." />
     <MESSAGE value="Tested the methods that were able to be tested using mocks." />
     <MESSAGE value="Cleaned up code style in intellij according to their API." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up code style in intellij according to their API." />
+    <MESSAGE value="Fixes random errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes random errors." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -650,14 +687,13 @@
             <element signature="docComment;method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
+            <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#getRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="method#getRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508620911845" expanded="true" signature="6368:6376" ph="{...}" />
+            <marker date="1508625257179" expanded="true" signature="6552:6560" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -683,14 +719,13 @@
             <element signature="docComment;method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
+            <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#getRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="method#getRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508620911845" expanded="true" signature="6368:6376" ph="{...}" />
+            <marker date="1508625257179" expanded="true" signature="6552:6560" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -728,14 +763,13 @@
             <element signature="docComment;method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
+            <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#getRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="method#getRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508620911845" expanded="true" signature="6368:6376" ph="{...}" />
+            <marker date="1508625257179" expanded="true" signature="6552:6560" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -795,14 +829,13 @@
             <element signature="docComment;method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
+            <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#getRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="method#getRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508620911845" expanded="true" signature="6368:6376" ph="{...}" />
+            <marker date="1508625257179" expanded="true" signature="6552:6560" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -840,14 +873,13 @@
             <element signature="docComment;method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
+            <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#getRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="method#getRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508620911845" expanded="true" signature="6368:6376" ph="{...}" />
+            <marker date="1508625257179" expanded="true" signature="6552:6560" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1091,28 +1123,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/groupthree/GameLogic.java">
+    <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="426">
+          <caret line="197" column="21" lean-forward="false" selection-start-line="197" selection-start-column="21" selection-end-line="197" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#DiceUILogic#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="docComment;method#setRectFill#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="method#setRectFill#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="docComment;method#mapDice#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="method#mapDice#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="docComment;method#setHand#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="method#setHand#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="docComment;method#getHand#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="method#getHand#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="method#setHoldStatus#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="method#checkRolled#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="docComment;method#isFarkle#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="docComment;method#setRolled#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="method#setBankScore#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="docComment;method#getBankScore#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="method#resetHand#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="docComment;method#getRoundScore#0;class#DiceUILogic#0" expanded="false" />
+            <element signature="method#getRoundScore#0;class#DiceUILogic#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/groupthree/DiceUILogic.java">
+    <entry file="file://$PROJECT_DIR$/src/groupthree/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="53" column="37" lean-forward="true" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+        <state relative-caret-position="330">
+          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#isFarkle#0;class#GameLogic#0" expanded="false" />
+            <element signature="docComment;method#tallyRoundPoints#0;class#GameLogic#0" expanded="false" />
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="method#rollHandStatus#0;class#GameLogic#0" expanded="false" />
+            <element signature="method#scoreHand#0;class#GameLogic#0" expanded="false" />
+            <element signature="method#scoreHandAll#0;class#GameLogic#0" expanded="false" />
+            <element signature="docComment;method#bankPoints#0;class#GameLogic#0" expanded="false" />
+            <element signature="method#bankPoints#0;class#GameLogic#0" expanded="false" />
+            <element signature="docComment;method#resetRound#0;class#GameLogic#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/groupthree/FarkleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="317">
+          <caret line="185" column="72" lean-forward="false" selection-start-line="185" selection-start-column="72" selection-end-line="185" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#FarkleController#0" expanded="false" />
@@ -1130,14 +1191,13 @@
             <element signature="docComment;method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="method#enterGameScreenButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
+            <element signature="method#setRectangleArray#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#rollTheDiceButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#bankPointsButtonPushed#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#holdRectangles#0;class#FarkleController#0" expanded="false" />
-            <element signature="method#holdRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="docComment;method#getRectangles#0;class#FarkleController#0" expanded="false" />
             <element signature="method#getRectangles#0;class#FarkleController#0" expanded="false" />
-            <marker date="1508620911845" expanded="true" signature="6368:6376" ph="{...}" />
+            <marker date="1508625257179" expanded="true" signature="6552:6560" ph="{...}" />
           </folding>
         </state>
       </provider>
