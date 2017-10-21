@@ -52,6 +52,7 @@ public class DiceUILogic {
         }
 
         rectangles = controller.getRectangles();
+
         for(int i = 0; i < 6; i++) {
             hand.add(new Dice());
         }
@@ -81,7 +82,7 @@ public class DiceUILogic {
     public void mapDice (){
 
         for (int i = 0; i < hand.size(); i++){
-            rMap.put(rectangles.get(i), hand.get(i) );
+             rMap.put(rectangles.get(i), hand.get(i) );
 
         }
             }

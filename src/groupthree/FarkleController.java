@@ -74,7 +74,7 @@ public class FarkleController {
     /**
      * ArrayList of rectangles representing the dice on the screen.
      */
-   private static ArrayList<Rectangle> rectangles;
+   private static ArrayList<Rectangle> rectangles = new ArrayList<>();
 
     private final DiceUILogic game = new DiceUILogic(this);
 
@@ -119,7 +119,7 @@ public class FarkleController {
      * This method simply adds our rectangles into the rectangle ArrayList.
      */
     public void setRectangleArray() {
-        rectangles = new ArrayList<>();
+        rectangles.clear();
         rectangles.add(rect1);
         rectangles.add(rect2);
         rectangles.add(rect3);
