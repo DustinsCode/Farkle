@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * @author Wes Harrison
  * @version 1.0
  */
-public class FarkleController {
+public class FarkleController implements FarkleInterface {
     
     /**
      * The java-FXML accessor variable for the first rectangle.

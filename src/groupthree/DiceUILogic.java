@@ -38,7 +38,7 @@ public class DiceUILogic {
      * Constructor that adds all the Dice images to an arraylist and maps them to integers from 1-6,
      * as well as obtains the rectangle of javafx objects.
      */
-     DiceUILogic(FarkleController controller){
+     DiceUILogic(FarkleInterface controller){
 
         diceImages.add(d1);
         diceImages.add(d2);
