@@ -4,12 +4,12 @@ import groupthree.Dice;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class DiceTest {
+class DiceTest {
 
-    private Dice dice1 = new Dice();
+    private final Dice dice1 = new Dice();
 
     @Test
-    public void rollTest(){
+    void rollTest(){
         dice1.releaseDice();
         int val = dice1.roll();
         assertTrue(val >=1 && val <=6);
