@@ -30,7 +30,6 @@ public class MainUI extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("Farkle Alpha Release 1.0");
         primaryStage.show();
-
     }
 
     static Stage getPrimaryStage() {
