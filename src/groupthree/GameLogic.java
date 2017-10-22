@@ -107,7 +107,7 @@ class GameLogic {
                     case 3: score += 1000;
                         break;
                     case 2: score += 200;
-                         pairCount+= 2;
+                         pairCount++;
                         break;
                     case 1: score += 100;
                         straightCount++;
