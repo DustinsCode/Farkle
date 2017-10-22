@@ -29,7 +29,6 @@ public class GameLogic {
      * @return Returns the score integer.
      */
     public int scoring(ArrayList<Dice> hand) throws IllegalArgumentException{
-
         //This is a temp variable while I figure out how to score properly so that rectangles can't doubledip.
         int score = 0;
         //This counts the number of pairs, once it hits three you can use three pairs.
@@ -45,7 +44,6 @@ public class GameLogic {
             }
         }
         for(int i = 0;  i < diceCount.length;i++) {
-
 
             // switch cases for 1spot rectangles.
             if(i == 0){
@@ -65,8 +63,8 @@ public class GameLogic {
                     case 1: score = 100;
                         straightCount++;
                         break;
-                    default:
-                        throw new IllegalArgumentException("Number of rectangles must be between 0 and 6.");
+                    //default:
+                    //    throw new IllegalArgumentException("Number of rectangles must be between 0 and 6.");
 
                 }
             }
@@ -139,15 +137,10 @@ public class GameLogic {
         return score;
     }
 
-
-
-
     /**
      * bankPoints should end turn
      */
     public void bankPoints(){
 
     }
-
-
 }

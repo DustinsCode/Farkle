@@ -18,20 +18,21 @@ public class DiceTest {
         int val2 = dice1.roll();
         assertTrue(val2 == val);
     }
-/* @TODO This Dice test class needs to be repaired with the intended results that includes the new format of the Dice class.
-
 
     @Test
-    public void validMoveTest(){
-        dice1.setDice(1);
-        boolean valid = dice1.validMove();
-        assertTrue(valid);
-        dice1.setDice(5);
-        valid = dice1.validMove();
-        assertTrue(valid);
-        dice1.setDice(3);
-        assertTrue(valid);
-
+    public void holdTests(){
+        dice1.holdDice();
+        assertTrue(dice1.isHeld() == true);
+        dice1.releaseDice();
+        assertTrue(dice1.isHeld() == false);
     }
-    */
+
+    @Test
+    public void setTest(){
+        dice1.setDice(4);
+        assertTrue(dice1.getVal() == 4);
+        dice1.setDice(10);
+        assertTrue(dice1.getVal() == 4);
+    }
+
 }

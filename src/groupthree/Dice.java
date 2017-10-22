@@ -11,12 +11,20 @@ public class Dice {
     /** is the rectangles held? */
     private boolean hold;
 
+    /**************************************
+     * Default Constructor
+     **************************************/
+    public Dice(){
+        val = 1;
+        hold = false;
+    }
+
     /*************************************
      * Obtains current value of rectangles
      *
      * @return rectangles value
      *************************************/
-    int getVal(){
+    public int getVal(){
         return val;
     }
 
@@ -26,7 +34,9 @@ public class Dice {
      * @param diceVal is the value that the rectangles is to be set as
      **************************************/
     public void setDice(int diceVal){
-        val = diceVal;
+        if(diceVal >= 1 && diceVal <=6) {
+            val = diceVal;
+        }
     }
 
     /**************************************
@@ -48,7 +58,7 @@ public class Dice {
      *
      * @return hold value
      */
-    boolean isHeld(){
+    public boolean isHeld(){
         return hold;
     }
 
@@ -63,5 +73,4 @@ public class Dice {
         }
         return val;
     }
-
 }
