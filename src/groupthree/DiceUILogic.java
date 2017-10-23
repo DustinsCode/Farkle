@@ -24,7 +24,7 @@ public class DiceUILogic {
     private final GameLogic logic = new GameLogic();
 
     private final ArrayList<Dice> hand = new ArrayList<>();
-    private final LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
+    public final LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
 
     private int rollCount = 0;
 
@@ -108,7 +108,7 @@ public class DiceUILogic {
      * again, then it will need to update the pictures).
      * @param rect An ArrayList of Rectangles that will have their fill property updated.
      */
-    void getHandFill(ArrayList<Rectangle> rect){
+    public void getHandFill(ArrayList<Rectangle> rect){
         for (int i = 0; i < hand.size(); i++){
             if ( !hand.get(i).isHeld() ){
                rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).getVal())));

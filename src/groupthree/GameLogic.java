@@ -54,7 +54,7 @@ public class GameLogic {
         roundPoints = scoreHand(hand);
     }
 
-    void rollHandStatus(ArrayList<Dice> hand) {
+    public void rollHandStatus(ArrayList<Dice> hand) {
         for(Dice j: hand){
             // For active dice, if it's held, set it to inactive, otherwise, roll it
             if (!(j.isInactive())){
