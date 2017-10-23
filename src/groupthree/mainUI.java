@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 public class MainUI extends Application {
 
    private static Stage primary;
+
     /**
      *
      * @param primaryStage Default override parameter.
@@ -33,6 +34,10 @@ public class MainUI extends Application {
 
     }
 
+    /**
+     * This method gives up the Primary Stage of the application.
+     * @return primary Stage
+     */
     static Stage getPrimaryStage() {
         return primary;
     }

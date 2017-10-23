@@ -161,7 +161,7 @@ public class FarkleController implements FarkleInterface {
                     new KeyFrame(Duration.millis(555),
                             ae -> game.setRectFill(game.d6)),
                     new KeyFrame(Duration.millis(777),
-                            ae -> game.getHand(rectangles)) // Calls getHand from our game instance and sets the fills.
+                            ae -> game.getHandFill(rectangles)) // Calls getHand from our game instance and sets the fills.
 
             );
 

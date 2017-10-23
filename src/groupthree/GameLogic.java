@@ -2,7 +2,7 @@ package groupthree;
 
 import java.util.ArrayList;
 
-class GameLogic {
+public class GameLogic {
 
     /** bankedPoints is the amount of points you have in the bank.*/
     private int bankedPoints = 0;
