@@ -197,6 +197,7 @@ public class DiceUILogic {
      * This method calls bankPoints in our logic instance of the GameLogic class.
      */
     public void setBankScore() {
+
         logic.bankPoints();
 
     }
