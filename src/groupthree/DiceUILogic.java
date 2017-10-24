@@ -66,7 +66,6 @@ public class DiceUILogic {
     }
 
 
-
     /**
      * This method simultaneously sets the fill for each die within the ArrayList to a specific image. It
      * also checks if any of the Dice in the current hand are held, if so, it will skip over animating these rectangles.
@@ -123,7 +122,7 @@ public class DiceUILogic {
      * This method determines what state the rectangle that was clicked was in.
      * @param r the Rectangle being passed to check.
      */
-    void setHoldStatus(Rectangle r) {
+    public void setHoldStatus(Rectangle r) {
 
         int depth = 70;
         DropShadow borderGlow = new DropShadow();
@@ -166,9 +165,9 @@ public class DiceUILogic {
      * This method checks to see if we have rolled or not yet for the first time since the game start.
      * If it has, then you are not allowed to un-hold a dice, and it prompts with an alert.
      */
-    void checkRolled() {
+   public void checkRolled() {
 
-        if (rollCount < 1 ) {
+        if (getRollCount() < 1 ) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(MainUI.getPrimaryStage());
             alert.setTitle("Action Not Allowed");
@@ -198,7 +197,7 @@ public class DiceUILogic {
      * This method calls bankPoints in our logic instance of the GameLogic class.
      */
     public void setBankScore() {
-        logic.bankPoints(hand);
+        logic.bankPoints();
 
     }
 
@@ -259,7 +258,7 @@ public class DiceUILogic {
      * Returns the rollCount variable;
      * @return
      */
-    int getRollCount() {
+    public int getRollCount() {
         return rollCount;
     }
 

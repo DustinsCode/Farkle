@@ -1,10 +1,10 @@
 package groupthree;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
 import javafx.stage.Stage;
 
 /**
@@ -16,6 +16,8 @@ import javafx.stage.Stage;
  */
 public class MainUI extends Application {
 
+   private static Stage primary;
+
     /**
      *
      * @param primaryStage Default override parameter.
@@ -24,12 +26,20 @@ public class MainUI extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        primary = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("MainUI.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("Farkle Alpha Release 1.0");
         primaryStage.show();
 
+    }
+
+    /**
+     * This method gives up the Primary Stage of the application.
+     * @return primary Stage
+     */
+    static Stage getPrimaryStage() {
+        return primary;
     }
 
     /**

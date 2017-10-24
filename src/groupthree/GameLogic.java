@@ -298,7 +298,7 @@ public class GameLogic {
     /**
      * bankPoints should end turn
      */
-    void bankPoints(ArrayList<Dice> hand){
+   public void bankPoints(){
 
         bankedPoints += roundPoints; //Adds current round points to our bank.
         roundPoints = 0; //resets round points when you bank.

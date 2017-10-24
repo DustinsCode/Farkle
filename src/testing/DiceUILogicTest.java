@@ -1,14 +1,10 @@
 package testing;
 
 
-import com.sun.javafx.application.PlatformImpl;
 import groupthree.Dice;
 import groupthree.DiceUILogic;
 import groupthree.GameLogic;
-import groupthree.MainUI;
 import javafx.application.Application;
-import javafx.scene.image.Image;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import org.junit.BeforeClass;
@@ -18,18 +14,19 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.LinkedHashMap;
-import java.util.concurrent.CountDownLatch;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
+import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 import static org.mockito.internal.verification.VerificationModeFactory.atMost;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DiceUILogicTest extends Application {
 
-
+    /**
+     * Extends javafx.application.Application and implements start so we can use a new thread javafx application.
+     * @param primaryStage
+     */
     @Override
     public void start(Stage primaryStage) {
         //nope
@@ -58,15 +55,19 @@ public class DiceUILogicTest extends Application {
 
     }
 
-    // All of our mocked dependencies.
+    /**
+     * This creates an actual rMap so we can view what's stored in it.
+     */
 
     @Spy
-    final LinkedHashMap<Rectangle, Dice> rMap = new LinkedHashMap<>();
+    public final LinkedHashMap<Rectangle, Dice> rMap = new LinkedHashMap<>();
 
+    /**
+     * Mocks our GameLogic class so we can verify the proper methods are being called from our test class.
+     */
     @Mock
     private final GameLogic logic = new GameLogic();
 
-    Dice test1 = new Dice();
     /**
      * This is the injection target for our mocked dependencies.
      */
@@ -106,7 +107,16 @@ public class DiceUILogicTest extends Application {
 
     }
 
+    /**
+     * This class tests our BankScore method and verifies that we're calling this method from our logic instance.
+     */
+    @Test
+    public void setBankScoreTest() {
 
+        assertFalse(game.getHand().isEmpty());
+        game.setBankScore();
+        verify(logic, atMost(1)).bankPoints();
+    }
 
 
 }
