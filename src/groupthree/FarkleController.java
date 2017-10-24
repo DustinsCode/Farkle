@@ -244,7 +244,7 @@ public class FarkleController implements FarkleInterface {
 
     /**
      * This method is to return our ArrayList of rectangles for use by other classes.
-     * @return Current ArrayList<Rectangle> instantiated in FarkleController.
+     * @return Current ArrayList of Rectangles instantiated in FarkleController.
      */
     public ArrayList<Rectangle> getRectangles () {
         

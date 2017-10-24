@@ -1,7 +1,8 @@
 package groupthree;
 
 /**
- *
+ * The dice class represents what we use to keep track of "Dice". It has certain attributes that allow us to replicate a
+ * dice numerically.
  */
 public class Dice {
 

@@ -2,9 +2,9 @@ package testing;
 
 
 
-import com.sun.javafx.application.PlatformImpl;
 import groupthree.DiceUILogic;
 import groupthree.FarkleController;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -12,7 +12,6 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import java.util.concurrent.CountDownLatch;
 import static junit.framework.TestCase.assertTrue;
 import static org.mockito.Mockito.*;
 
@@ -34,18 +33,16 @@ public class ControllerTest {
 static public void setUp() throws InterruptedException {
 
 
+    // Initialise Java FX
 
-        final CountDownLatch latch = new CountDownLatch( 1 );
-
-        // initializes JavaFX environment
-        PlatformImpl.startup( () ->
-        {
-      /* No need to do anything here */
-        } );
-
-        latch.countDown();
-
-        latch.await();
+    Thread t = new Thread("JavaFX Init Thread") {
+        public void run() {
+            Application.launch(DiceUILogicTest.class, new String[0]);
+        }
+    };
+    t.setDaemon(true);
+    t.start();
+    Thread.sleep(500);
     }
 
 

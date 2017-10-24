@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+/**
+ * The DiceUILogic class interfaces with FarkleController and GameLogic to map the numerical logic done on our dice to
+ * a visual representation useable by our JavaFX controller.
+ */
 public class DiceUILogic {
 
 
@@ -249,7 +253,7 @@ public class DiceUILogic {
 
     /**
      * Method for setting the variable that keeps track of how many rolls we've performed.
-     * @param count
+     * @param count the variable that will pass on how many rolls we have.
      */
     public void setRollCount(int count) {
         rollCount = count;
@@ -257,7 +261,7 @@ public class DiceUILogic {
 
     /**
      * Returns the rollCount variable;
-     * @return
+     * @return the int count of our rolls.
      */
     public int getRollCount() {
         return rollCount;

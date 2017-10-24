@@ -2,6 +2,10 @@ package groupthree;
 
 import java.util.ArrayList;
 
+/**
+ * The GameLogic class performs our actual game logic on Dice class objects. The requirements for this was obtained from
+ * an external source on Farkle game rules.
+ */
 public class GameLogic {
 
     /** bankedPoints is the amount of points you have in the bank.*/
