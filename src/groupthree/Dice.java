@@ -61,7 +61,7 @@ public class Dice {
      *
      * @return hold value
      */
-    boolean isHeld(){
+   public boolean isHeld(){
         return hold;
     }
 

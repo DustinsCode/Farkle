@@ -2,7 +2,7 @@ package groupthree;
 
 import java.util.ArrayList;
 
-class GameLogic {
+public class GameLogic {
 
     /** bankedPoints is the amount of points you have in the bank.*/
     private int bankedPoints = 0;
@@ -54,7 +54,7 @@ class GameLogic {
         roundPoints = scoreHand(hand);
     }
 
-    void rollHandStatus(ArrayList<Dice> hand) {
+    public void rollHandStatus(ArrayList<Dice> hand) {
         for(Dice j: hand){
             // For active dice, if it's held, set it to inactive, otherwise, roll it
             if (!(j.isInactive())){
@@ -298,7 +298,7 @@ class GameLogic {
     /**
      * bankPoints should end turn
      */
-    void bankPoints(ArrayList<Dice> hand){
+   public void bankPoints(){
 
         bankedPoints += roundPoints; //Adds current round points to our bank.
         roundPoints = 0; //resets round points when you bank.

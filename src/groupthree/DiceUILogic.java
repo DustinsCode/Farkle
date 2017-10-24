@@ -18,13 +18,17 @@ public class DiceUILogic {
 
     private static final ArrayList<Image> diceImages = new ArrayList<>();
     private static final HashMap<Integer,Image> mapImages = new HashMap<>();
-    private ArrayList<Rectangle> rectangles = new ArrayList<>();
+
+    public ArrayList<Rectangle> rectangles = new ArrayList<>();
+
     private final GameLogic logic = new GameLogic();
 
     private final ArrayList<Dice> hand = new ArrayList<>();
-    private final LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
+    public final LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
+
     private int rollCount = 0;
-    private boolean isFarkles = false;
+
+
 
     final Image d1 = new Image("d1.png");
     final Image d2 = new Image("d2.png");
@@ -38,7 +42,8 @@ public class DiceUILogic {
      * Constructor that adds all the Dice images to an arraylist and maps them to integers from 1-6,
      * as well as obtains the rectangle of javafx objects.
      */
-     DiceUILogic(FarkleInterface controller){
+     public DiceUILogic(FarkleInterface controller){
+
 
         diceImages.add(d1);
         diceImages.add(d2);
@@ -61,17 +66,17 @@ public class DiceUILogic {
     }
 
 
-
     /**
      * This method simultaneously sets the fill for each die within the ArrayList to a specific image. It
      * also checks if any of the Dice in the current hand are held, if so, it will skip over animating these rectangles.
      * @param dnum the Image being passed that the rectangles will be set to.
      */
-    void setRectFill(Image dnum) {
+    public void setRectFill(Image dnum) {
         for (int i = 0; i < hand.size(); i++) {
 
             // Checks if the dice is held before setting the new fill property.
             if( !hand.get(i).isHeld() ){
+
                 rectangles.get(i).setFill(new ImagePattern(dnum));
 
             }}}
@@ -102,7 +107,7 @@ public class DiceUILogic {
      * again, then it will need to update the pictures).
      * @param rect An ArrayList of Rectangles that will have their fill property updated.
      */
-    void getHand(ArrayList<Rectangle> rect){
+    public void getHandFill(ArrayList<Rectangle> rect){
         for (int i = 0; i < hand.size(); i++){
             if ( !hand.get(i).isHeld() ){
                rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).getVal())));
@@ -113,7 +118,11 @@ public class DiceUILogic {
         }
     }
 
-    void setHoldStatus(Rectangle r) {
+    /**
+     * This method determines what state the rectangle that was clicked was in.
+     * @param r the Rectangle being passed to check.
+     */
+    public void setHoldStatus(Rectangle r) {
 
         int depth = 70;
         DropShadow borderGlow = new DropShadow();
@@ -152,10 +161,13 @@ public class DiceUILogic {
     }
     }
 
+    /**
+     * This method checks to see if we have rolled or not yet for the first time since the game start.
+     * If it has, then you are not allowed to un-hold a dice, and it prompts with an alert.
+     */
+   public void checkRolled() {
 
-    void checkRolled() {
-
-        if (rollCount < 1 ) {
+        if (getRollCount() < 1 ) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(MainUI.getPrimaryStage());
             alert.setTitle("Action Not Allowed");
@@ -181,9 +193,12 @@ public class DiceUILogic {
         rollCount++;
     }
 
-
+    /**
+     * This method calls bankPoints in our logic instance of the GameLogic class.
+     */
     public void setBankScore() {
-        logic.bankPoints(hand);
+
+        logic.bankPoints();
 
     }
 
@@ -195,6 +210,9 @@ public class DiceUILogic {
         return logic.getBankedPoints();
     }
 
+    /**
+     * This method calls logic.resetRound and sets all of the rectangles' effects to null (not held or clicked anymore)
+     */
     void resetHand() {
         logic.resetRound(hand);
         for (Rectangle rectangle : rectangles) {
@@ -213,22 +231,45 @@ public class DiceUILogic {
        return logic.getRoundPoints();
     }
 
+    /**
+     * This is a passthrough for logic.wonGameStatus that determines if we've won the game.
+     * @return yes or no if we've won the game.
+     */
     boolean wonGameStatus() {
         return logic.wonGameStatus();
     }
 
+    /**
+     * This accesses the number of farkles in our current round.
+     * @return The number of farkles in the current round.
+     */
     int getFarkleCount() {
         return logic.farkleCounter;
     }
 
+    /**
+     * Method for setting the variable that keeps track of how many rolls we've performed.
+     * @param count
+     */
     public void setRollCount(int count) {
         rollCount = count;
     }
 
-    int getRollCount() {
+    /**
+     * Returns the rollCount variable;
+     * @return
+     */
+    public int getRollCount() {
         return rollCount;
     }
 
+    public ArrayList<Dice> getHand () {
+        return hand;
+    }
+
+    public void setRectangles(ArrayList<Rectangle> rectangles) {
+        this.rectangles = rectangles;
+    }
 }
 
 
