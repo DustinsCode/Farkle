@@ -8,21 +8,22 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("Duplicates")
 public class FakeController implements FarkleInterface {
 
-    private Rectangle rect1 = new Rectangle();
+    private final Rectangle rect1 = new Rectangle();
 
-    private Rectangle rect2 = new Rectangle();
+    private final Rectangle rect2 = new Rectangle();
 
-    private Rectangle rect3 = new Rectangle();
+    private final Rectangle rect3 = new Rectangle();
 
-    private Rectangle rect4 = new Rectangle();
+    private final Rectangle rect4 = new Rectangle();
 
-    private Rectangle rect5 = new Rectangle();
+    private final Rectangle rect5 = new Rectangle();
 
-    private Rectangle rect6 = new Rectangle();
+    private final Rectangle rect6 = new Rectangle();
 
-    ArrayList<Rectangle> rectangles = new ArrayList<>();
+    private final ArrayList<Rectangle> rectangles = new ArrayList<>();
 
     @Override
     public void exitHandler() {

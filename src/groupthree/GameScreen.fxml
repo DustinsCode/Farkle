@@ -12,144 +12,142 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="game" stylesheets="@GameScreen.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupthree.FarkleController">
-   <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@GameScreen.css" />
-      <VBox prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <Pane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <VBox prefHeight="165.0" prefWidth="600.0">
-                     <children>
-                        <HBox prefHeight="100.0" prefWidth="600.0">
-                           <children>
-                              <Label prefHeight="53.0" prefWidth="131.0" text="Bank:">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                                 <textFill>
-                                    <LinearGradient endX="0.4857142857142857" endY="1.0" startX="0.4857142857142857" startY="0.3238095238095239">
-                                       <stops>
-                                          <Stop color="#ffbb00" />
-                                          <Stop color="WHITE" offset="1.0" />
-                                       </stops>
-                                    </LinearGradient>
-                                 </textFill>
-                              </Label>
-                              <Label fx:id="bankPoints" prefHeight="53.0" prefWidth="80.0" text="0000">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                                 <textFill>
-                                    <LinearGradient endX="0.4857142857142857" endY="0.8285714285714286" startX="0.5" startY="0.5190476190476191">
-                                       <stops>
-                                          <Stop color="#ffbb00" />
-                                          <Stop color="WHITE" offset="1.0" />
-                                       </stops>
-                                    </LinearGradient>
-                                 </textFill>
-                              </Label>
-                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#bankPointsButtonPushed" prefHeight="39.0" prefWidth="117.0" text="Bank Points">
-                                 <font>
-                                    <Font name="Courier New Bold" size="12.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="150.0" top="5.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="165.0" prefWidth="600.0" spacing="30.0">
-                           <children>
-                              <Label prefHeight="39.0" prefWidth="217.0" text="Round Score:">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                                 <textFill>
-                                    <LinearGradient endX="0.4857142857142857" endY="1.0" startX="0.4857142857142857" startY="0.3238095238095239">
-                                       <stops>
-                                          <Stop color="#ffbb00" />
-                                          <Stop color="WHITE" offset="1.0" />
-                                       </stops>
-                                    </LinearGradient>
-                                 </textFill>
-                              </Label>
-                              <Label fx:id="roundPoints" prefHeight="53.0" prefWidth="157.0" text="0000">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                                 <textFill>
-                                    <LinearGradient endX="0.4857142857142857" endY="0.8285714285714286" startX="0.5" startY="0.5190476190476191">
-                                       <stops>
-                                          <Stop color="#ffbb00" />
-                                          <Stop color="WHITE" offset="1.0" />
-                                       </stops>
-                                    </LinearGradient>
-                                 </textFill>
-                              </Label>
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                     </children>
-                     <padding>
-                        <Insets bottom="50.0" />
-                     </padding>
-                  </VBox>
-               </children>
-            </Pane>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0">
-               <children>
-                  <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0" onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
-                     <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0" onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
-                     <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0" onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
-                     <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="rect4" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0" onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
-                     <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="rect5" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0" onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
-                     <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="rect6" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0" onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
-                     <HBox.margin>
-                        <Insets left="25.0" right="25.0" />
-                     </HBox.margin>
-                  </Rectangle>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
+<!--suppress JavaFxEventHandler, JavaFxEventHandler, JavaFxEventHandler -->
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" styleClass="game" stylesheets="@GameScreen.css" xmlns="http://javafx.com/javafx/9"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupthree.FarkleController">
+   <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@GameScreen.css"/>
+   <VBox prefHeight="400.0" prefWidth="600.0">
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <VBox prefHeight="165.0" prefWidth="600.0">
+            <padding>
+               <Insets bottom="50.0"/>
+            </padding>
+            <HBox prefHeight="100.0" prefWidth="600.0">
+               <Label prefHeight="53.0" prefWidth="131.0" text="Bank:">
+                  <font>
+                     <Font size="36.0"/>
+                  </font>
+                  <textFill>
+                     <LinearGradient endX="0.4857142857142857" startX="0.4857142857142857"
+                                     startY="0.3238095238095239">
+                        <stops>
+                           <Stop color="#ffbb00"/>
+                           <Stop color="WHITE" offset="1.0"/>
+                        </stops>
+                     </LinearGradient>
+                  </textFill>
+               </Label>
+               <Label fx:id="bankPoints" prefHeight="53.0" prefWidth="80.0" text="0000">
+                  <font>
+                     <Font size="36.0"/>
+                  </font>
+                  <textFill>
+                     <LinearGradient endX="0.4857142857142857" endY="0.8285714285714286" startX="0.5"
+                                     startY="0.5190476190476191">
+                        <stops>
+                           <Stop color="#ffbb00"/>
+                           <Stop color="WHITE" offset="1.0"/>
+                        </stops>
+                     </LinearGradient>
+                  </textFill>
+               </Label>
+               <Button alignment="CENTER" mnemonicParsing="false" onAction="#bankPointsButtonPushed"
+                       prefHeight="39.0" prefWidth="117.0" text="Bank Points">
+                  <font>
+                     <Font name="Courier New Bold" size="12.0"/>
+                  </font>
+                  <HBox.margin>
+                     <Insets left="150.0" top="5.0"/>
+                  </HBox.margin>
+               </Button>
             </HBox>
-            <Pane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <HBox alignment="CENTER" layoutY="8.0" prefHeight="165.0" prefWidth="600.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#rollTheDiceButtonPushed" prefHeight="39.0" prefWidth="117.0" text="Roll The Dice">
-                           <font>
-                              <Font name="Courier New Bold" size="12.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
-            </Pane>
-         </children>
-      </VBox>
-   </children>
+            <HBox prefHeight="165.0" prefWidth="600.0" spacing="30.0">
+               <opaqueInsets>
+                  <Insets/>
+               </opaqueInsets>
+               <Label prefHeight="39.0" prefWidth="217.0" text="Round Score:">
+                  <font>
+                     <Font size="36.0"/>
+                  </font>
+                  <textFill>
+                     <LinearGradient endX="0.4857142857142857" startX="0.4857142857142857"
+                                     startY="0.3238095238095239">
+                        <stops>
+                           <Stop color="#ffbb00"/>
+                           <Stop color="WHITE" offset="1.0"/>
+                        </stops>
+                     </LinearGradient>
+                  </textFill>
+               </Label>
+               <Label fx:id="roundPoints" prefHeight="53.0" prefWidth="157.0" text="0000">
+                  <font>
+                     <Font size="36.0"/>
+                  </font>
+                  <textFill>
+                     <LinearGradient endX="0.4857142857142857" endY="0.8285714285714286" startX="0.5"
+                                     startY="0.5190476190476191">
+                        <stops>
+                           <Stop color="#ffbb00"/>
+                           <Stop color="WHITE" offset="1.0"/>
+                        </stops>
+                     </LinearGradient>
+                  </textFill>
+               </Label>
+            </HBox>
+         </VBox>
+      </Pane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0">
+         <opaqueInsets>
+            <Insets/>
+         </opaqueInsets>
+         <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0"
+                    onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
+            <HBox.margin>
+               <Insets left="25.0"/>
+            </HBox.margin>
+         </Rectangle>
+         <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0"
+                    onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
+            <HBox.margin>
+               <Insets left="25.0"/>
+            </HBox.margin>
+         </Rectangle>
+         <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0"
+                    onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
+            <HBox.margin>
+               <Insets left="25.0"/>
+            </HBox.margin>
+         </Rectangle>
+         <Rectangle fx:id="rect4" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0"
+                    onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
+            <HBox.margin>
+               <Insets left="25.0"/>
+            </HBox.margin>
+         </Rectangle>
+         <Rectangle fx:id="rect5" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0"
+                    onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
+            <HBox.margin>
+               <Insets left="25.0"/>
+            </HBox.margin>
+         </Rectangle>
+         <Rectangle fx:id="rect6" arcHeight="5.0" arcWidth="5.0" fill="#cc0404" height="70.0"
+                    onMouseClicked="#holdRectangles" stroke="BLACK" strokeType="INSIDE" width="70.0">
+            <HBox.margin>
+               <Insets left="25.0" right="25.0"/>
+            </HBox.margin>
+         </Rectangle>
+      </HBox>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <HBox alignment="CENTER" layoutY="8.0" prefHeight="165.0" prefWidth="600.0">
+            <Button mnemonicParsing="false" onAction="#rollTheDiceButtonPushed" prefHeight="39.0"
+                    prefWidth="117.0" text="Roll The Dice">
+               <font>
+                  <Font name="Courier New Bold" size="12.0"/>
+               </font>
+            </Button>
+         </HBox>
+      </Pane>
+   </VBox>
 </Pane>

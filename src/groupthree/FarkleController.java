@@ -24,6 +24,7 @@ import java.util.ArrayList;
  * @author Wes Harrison
  * @version 1.0
  */
+@SuppressWarnings("Duplicates")
 public class FarkleController implements FarkleInterface {
     
     /**
@@ -74,7 +75,7 @@ public class FarkleController implements FarkleInterface {
     /**
      * ArrayList of rectangles representing the dice on the screen.
      */
-   private static ArrayList<Rectangle> rectangles = new ArrayList<>();
+   private static final ArrayList<Rectangle> rectangles = new ArrayList<>();
 
     private final DiceUILogic game = new DiceUILogic(this);
 

@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * The GameLogic class performs our actual game logic on Dice class objects. The requirements for this was obtained from
  * an external source on Farkle game rules.
  */
+@SuppressWarnings("Duplicates")
 public class GameLogic {
 
     /** bankedPoints is the amount of points you have in the bank.*/
@@ -13,9 +14,7 @@ public class GameLogic {
 
     /** roundPoints is the amount of points you have in current round*/
     private int roundPoints = 0;
-    /**
-     * This keeps track of the number of farkles
-     */
+    /** This keeps track of the number of farkles*/
     int farkleCounter = 0;
     /**
      * This keeps track of if it's currently farkled.
@@ -27,7 +26,7 @@ public class GameLogic {
     /**
      * Turn is at the end of the turn, when you've decided to hold or not, and when it rolls the dice.
      * The button that ends turn should be calling this.
-     * @param hand An arraylist of dice.
+     * @param hand An arrayList of dice.
      */
     boolean isFarkle(ArrayList<Dice> hand) {
         int points = scoreHandAll(hand);
@@ -47,7 +46,6 @@ public class GameLogic {
         } else {
             return false;
         }
-
     }
 
     /**
@@ -77,9 +75,9 @@ public class GameLogic {
      *  diceCount is an array to list amount of dice values, e.g. how many fives.
      * @return Returns the score integer.
      */
-    private int scoreHand(ArrayList<Dice> hand){
+    public int scoreHand(ArrayList<Dice> hand){
 
-        //This is a temp variable while I figure out how to score properly so that dice can't doubledip.
+        //This is a temp variable while I figure out how to score properly so that dice can't doubleDip.
         int score = 0;
         //This counts the number of pairs, once it hits three you can use three pairs.
         int pairCount = 0;
@@ -96,7 +94,6 @@ public class GameLogic {
 
 
         for(int i = 0;  i < diceCount.length;i++) {
-
 
             // switch cases for 1spot dice.
             if(i == 0){
@@ -156,11 +153,11 @@ public class GameLogic {
                     case 3:
                         score += ((i+1)*100);
                         break;
-                    // adds 1 to paircount
+                    // adds 1 to pairCount
                     case 2:
                         pairCount++;
                         break;
-                    // Adds to straightcount
+                    // Adds to straightCount
                     case 1:
                         straightCount++;
                         break;
@@ -171,7 +168,7 @@ public class GameLogic {
                     default:
                         throw new IllegalArgumentException("Number of dice must be between 0 and 6.");
             }
-                //If theres a three-pair and there isn't a higher possible combination give 500
+                //If there's a three-pair and there isn't a higher possible combination give 500
                 if(pairCount == 3) {
                     if (score < 500) {
                         score = 500;
@@ -191,7 +188,7 @@ public class GameLogic {
 
     private int scoreHandAll(ArrayList<Dice> hand){
 
-        //This is a temp variable while I figure out how to score properly so that dice can't doubledip.
+        //This is a temp variable while I figure out how to score properly so that dice can't double-dip.
         int score = 0;
         //This counts the number of pairs, once it hits three you can use three pairs.
         int pairCount = 0;
@@ -202,12 +199,9 @@ public class GameLogic {
         //If the dice isn't held, then +1 to the array spot corresponding with the dice val
         for(Dice j: hand){
                 diceCount[j.getVal()-1] += 1;
-
         }
 
-
         for(int i = 0;  i < diceCount.length;i++) {
-
 
             // switch cases for 1spot dice.
             if(i == 0){
@@ -267,11 +261,11 @@ public class GameLogic {
                     case 3:
                         score += ((i+1)*100);
                         break;
-                    // adds 1 to paircount
+                    // adds 1 to pairCount
                     case 2:
                         pairCount++;
                         break;
-                    // Adds to straightcount
+                    // Adds to straightCount
                     case 1:
                         straightCount++;
                         break;
@@ -282,7 +276,7 @@ public class GameLogic {
                     default:
                         throw new IllegalArgumentException("Number of dice must be between 0 and 6.");
                 }
-                //If theres a three-pair and there isn't a higher possible combination give 500
+                //If there's a three-pair and there isn't a higher possible combination give 500
                 if(pairCount == 3) {
                     if (score < 500) {
                         score = 500;
@@ -311,14 +305,13 @@ public class GameLogic {
             wonGame = true; //Sets to true if we win.
             // @TODO Need an idea to fire off a static notification or event to get with the UI to transition screens.
         }
-
     }
 
     /**
      * Returns all dice to normal state and rolls them.
      * @param hand is the current hand of dice
      */
-     void resetRound(ArrayList<Dice> hand){ //@TODO this doesn't really need to be called in the beginning. It should only be used when the turn is over (farkle or bankpoints).
+     void resetRound(ArrayList<Dice> hand){ //@TODO this doesn't really need to be called in the beginning. It should only be used when the turn is over (farkle or bankPoints).
         for(Dice j: hand){
             j.releaseDice();
             j.setActive();
@@ -337,8 +330,5 @@ public class GameLogic {
     boolean wonGameStatus(){
          return wonGame;
 }
-
-
-
 
 }
