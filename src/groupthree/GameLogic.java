@@ -3,8 +3,8 @@ package groupthree;
 import java.util.ArrayList;
 
 /**
- * The GameLogic class performs our actual game logic on Dice class objects. The requirements for this was obtained from
- * an external source on Farkle game rules.
+ * The GameLogic class performs our actual game logic on Dice class objects.
+ * The requirements for this was obtained from an external source on Farkle game rules.
  */
 @SuppressWarnings("Duplicates")
 public class GameLogic {
@@ -16,26 +16,26 @@ public class GameLogic {
     private int roundPoints = 0;
     /** This keeps track of the number of farkles*/
     int farkleCounter = 0;
-    /**
-     * This keeps track of if it's currently farkled.
-     */
-
+    /**This keeps track of if it's currently farkled.*/
     private boolean wonGame = false;
 
 
     /**
-     * Turn is at the end of the turn, when you've decided to hold or not, and when it rolls the dice.
-     * The button that ends turn should be calling this.
-     * @param hand An arrayList of dice.
+     * isFarkle is called in order to detect if a Farkle has been rolled.
+     * It will call upon scoreHandAll, and compare it to roundPoints, if they are
+     * equal that means that zero points have been scored this turn, and that it
+     * is a Farkle. If it is a Farkle, you add 1 to the Farkle counters, at three
+     * Farkles you remove 1000 points from bankedPoints and reset the Farkle Counter.
+     * After a Farkle has been detected, it resets the round, and returns true.
+     * If there was no Farkle, it just returns false.
+     *
+     * @param hand is the arraylist of dice being passed to isFarkle
      */
     boolean isFarkle(ArrayList<Dice> hand) {
         int points = scoreHandAll(hand);
-
         if ( points == roundPoints ) {
             farkleCounter++;
             roundPoints = 0;
-
-
             if (farkleCounter >= 3){
                 bankedPoints -= 1000;
                 farkleCounter = 0;
@@ -56,9 +56,13 @@ public class GameLogic {
         roundPoints = scoreHand(hand);
     }
 
+    /**
+     * rollHandStatus will go through the hand of dice passed to it and change
+     * held dice to inactive dice, and then roll active dice.
+     * @param hand
+     */
     public void rollHandStatus(ArrayList<Dice> hand) {
         for(Dice j: hand){
-            // For active dice, if it's held, set it to inactive, otherwise, roll it
             if (!(j.isInactive())){
                 if(j.isHeld())
                     j.setInactive();
@@ -68,34 +72,32 @@ public class GameLogic {
         }
     }
 
-
     /**
      * ScoreHand determines points based off of which dice are held.
-     * @param hand is the hand of dice
+     * hande is first sent through an forloop, creating an array that has the
+     * non-held number of each dice.
+     * dice[0] = 4 would mean there are 4 "1" dice.
+     * "1" dice and "5" dice are sent through their own switch-case, because
+     * they are graded differently. While in the switch case they are counted for pairs
+     * and straights. For details on specific score values read the official Farkle rules.
+     * After going through the forloop they are compared for which value is greater (but
+     * only for dice that can count for multiple values), and the greater value is scored
+     *
+     * @param hand is the hand of dice passed to it.
      *  diceCount is an array to list amount of dice values, e.g. how many fives.
      * @return Returns the score integer.
      */
     public int scoreHand(ArrayList<Dice> hand){
-
-        //This is a temp variable while I figure out how to score properly so that dice can't doubleDip.
         int score = 0;
-        //This counts the number of pairs, once it hits three you can use three pairs.
         int pairCount = 0;
-        //Counts number of 1's, if there are 6 it's a straight
         int straightCount = 0;
-
         int diceCount[] = new int[6];
-        //If the dice isn't held, then +1 to the array spot corresponding with the dice val
         for(Dice j: hand){
             if (j.isHeld()){
                 diceCount[j.getVal()-1] += 1;
             }
         }
-
-
         for(int i = 0;  i < diceCount.length;i++) {
-
-            // switch cases for 1spot dice.
             if(i == 0){
                 switch(diceCount[0]){
                     case 6: score += 2000;
@@ -115,7 +117,6 @@ public class GameLogic {
                         break;
                 }
             }
-            // Switch cases for 5spot dice.
             if(i == 4){
                 switch(diceCount[4]){
                     case 6: score += 1000;
@@ -134,47 +135,35 @@ public class GameLogic {
                     break;
                 }
             }
-
-
-            // This deals with every die by the 1spot and 5spot
-            // Plus we don't have to worry as much about straights.
             if(i != 0 && i != 4){
                 switch(diceCount[i]) {
-                    // This will count as two three-pairs
                     case 6: score += ((i+1) * 100) * 2;
                         break;
                     case 5: score += ((i+1)*100);
                         break;
-                    // c
                     case 4: score += ((i + 1) * 100);
                         pairCount += 2;
                         break;
-                    // Counts as a three-pair.
                     case 3:
                         score += ((i+1)*100);
                         break;
-                    // adds 1 to pairCount
                     case 2:
                         pairCount++;
                         break;
-                    // Adds to straightCount
                     case 1:
                         straightCount++;
                         break;
-                    //If it's a 0 nothing happens, straightCount resets to 0 just in case I have a bug somewhere. #efficiency.
                     case 0:
                         straightCount = 0;
                         break;
                     default:
                         throw new IllegalArgumentException("Number of dice must be between 0 and 6.");
             }
-                //If there's a three-pair and there isn't a higher possible combination give 500
                 if(pairCount == 3) {
                     if (score < 500) {
                         score = 500;
                     }
                 }
-                //If there's a straight and if there isn't a higher possible combination give 1000
                 if(straightCount == 6){
                     if(score < 1000){
                         score = 1000;
@@ -185,25 +174,24 @@ public class GameLogic {
         return score;
     }
 
-
+    /**
+     * scoreHandAll does a similar job to scoreHand, except it counts all dice, held or not.
+     * @see #scoreHand(ArrayList)
+     * @param hand is the hand of dice that is passed to scoreHandAll
+     * @return returns the total score value of all dice currently in hand.
+     */
     private int scoreHandAll(ArrayList<Dice> hand){
 
-        //This is a temp variable while I figure out how to score properly so that dice can't double-dip.
         int score = 0;
-        //This counts the number of pairs, once it hits three you can use three pairs.
         int pairCount = 0;
-        //Counts number of 1's, if there are 6 it's a straight
         int straightCount = 0;
 
         int diceCount[] = new int[6];
-        //If the dice isn't held, then +1 to the array spot corresponding with the dice val
         for(Dice j: hand){
                 diceCount[j.getVal()-1] += 1;
         }
 
         for(int i = 0;  i < diceCount.length;i++) {
-
-            // switch cases for 1spot dice.
             if(i == 0){
                 switch(diceCount[0]){
                     case 6: score += 2000;
@@ -223,7 +211,6 @@ public class GameLogic {
                         break;
                 }
             }
-            // Switch cases for 5spot dice.
             if(i == 4){
                 switch(diceCount[4]){
                     case 6: score += 1000;
@@ -242,47 +229,35 @@ public class GameLogic {
                         break;
                 }
             }
-
-
-            // This deals with every die by the 1spot and 5spot
-            // Plus we don't have to worry as much about straights.
             if(i != 0 && i != 4){
                 switch(diceCount[i]) {
-                    // This will count as two three-pairs
                     case 6: score += ((i+1) * 100) * 2;
                         break;
                     case 5: score += ((i+1)*100);
                         break;
-                    // c
                     case 4: score += ((i + 1) * 100);
                         pairCount += 2;
                         break;
-                    // Counts as a three-pair.
                     case 3:
                         score += ((i+1)*100);
                         break;
-                    // adds 1 to pairCount
                     case 2:
                         pairCount++;
                         break;
-                    // Adds to straightCount
                     case 1:
                         straightCount++;
                         break;
-                    //If it's a 0 nothing happens, straightCount resets to 0 just in case I have a bug somewhere. #efficiency.
                     case 0:
                         straightCount = 0;
                         break;
                     default:
                         throw new IllegalArgumentException("Number of dice must be between 0 and 6.");
                 }
-                //If there's a three-pair and there isn't a higher possible combination give 500
                 if(pairCount == 3) {
                     if (score < 500) {
                         score = 500;
                     }
                 }
-                //If there's a straight and if there isn't a higher possible combination give 1000
                 if(straightCount == 6){
                     if(score < 1000){
                         score = 1000;
@@ -293,8 +268,8 @@ public class GameLogic {
         return score;
     }
 
-    /**
-     * bankPoints should end turn
+    /** bankPoints is used to take the current round points and point them into the total bankpoints.
+     *  It will also reset your round points and check to see if points are over 10,000 which would be a victory
      */
    public void bankPoints(){
 
@@ -308,7 +283,7 @@ public class GameLogic {
     }
 
     /**
-     * Returns all dice to normal state and rolls them.
+     * Returns all dice to default state, not held and active, and then rerolls them
      * @param hand is the current hand of dice
      */
      void resetRound(ArrayList<Dice> hand){ //@TODO this doesn't really need to be called in the beginning. It should only be used when the turn is over (farkle or bankPoints).
@@ -319,14 +294,26 @@ public class GameLogic {
         }
     }
 
+    /**
+     * getBankedPoints returns banked points
+     * @return banked points
+     */
     int getBankedPoints () {
         return bankedPoints;
     }
 
+    /**
+     * getRoundPoints returns round points
+     * @return roundPoints
+     */
     int getRoundPoints () {
         return roundPoints;
     }
 
+    /**
+     * wonGameStatus is called to check to see if the game has been won yet.
+     * @return wonGame
+     */
     boolean wonGameStatus(){
          return wonGame;
 }
