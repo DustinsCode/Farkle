@@ -20,12 +20,13 @@ import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 import static org.mockito.internal.verification.VerificationModeFactory.atMost;
 
+@SuppressWarnings("unused")
 @RunWith(MockitoJUnitRunner.class)
 public class DiceUILogicTest extends Application {
 
     /**
      * Extends javafx.application.Application and implements start so we can use a new thread javafx application.
-     * @param primaryStage
+     * @param primaryStage the main stage of the UI
      */
     @Override
     public void start(Stage primaryStage) {
@@ -44,7 +45,7 @@ public class DiceUILogicTest extends Application {
         System.out.printf("About to launch FX App\n");
         Thread t = new Thread("JavaFX Init Thread") {
             public void run() {
-                Application.launch(DiceUILogicTest.class, new String[0]);
+                Application.launch(DiceUILogicTest.class);
             }
         };
         t.setDaemon(true);
@@ -72,7 +73,7 @@ public class DiceUILogicTest extends Application {
      * This is the injection target for our mocked dependencies.
      */
     @InjectMocks
-    DiceUILogic game = new DiceUILogic(new FakeController());
+    private DiceUILogic game = new DiceUILogic(new FakeController());
 
     /**
      * This method verifies that the constructor is working for DiceUILogic testing.

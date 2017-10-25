@@ -1,7 +1,6 @@
 package groupthree;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,7 +21,7 @@ public class MainUI extends Application {
     /**
      *
      * @param primaryStage Default override parameter.
-     *                     @see javafx.stage.Stage
+     * @see javafx.stage.Stage
      * @throws Exception If and only if the FXML file is not found. In this case, we know the files are implemented in src.
      */
     @Override
@@ -48,8 +47,6 @@ public class MainUI extends Application {
      * @param args normal command line argument input
      */
     public static void main(String[] args) {
-
         launch(args);
-
     }
 }

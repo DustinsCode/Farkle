@@ -1,6 +1,5 @@
 package groupthree;
 
-
 import javafx.scene.control.Alert;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -14,11 +13,10 @@ import java.util.LinkedHashMap;
 
 /**
  * The DiceUILogic class interfaces with FarkleController and GameLogic to map the numerical logic done on our dice to
- * a visual representation useable by our JavaFX controller.
+ * a visual representation usable by our JavaFX controller.
  */
+@SuppressWarnings("unused")
 public class DiceUILogic {
-
-
 
     private static final ArrayList<Image> diceImages = new ArrayList<>();
     private static final HashMap<Integer,Image> mapImages = new HashMap<>();
@@ -32,8 +30,6 @@ public class DiceUILogic {
 
     private int rollCount = 0;
 
-
-
     final Image d1 = new Image("d1.png");
     final Image d2 = new Image("d2.png");
     final Image d3 = new Image("d3.png");
@@ -43,11 +39,10 @@ public class DiceUILogic {
 
 
     /**
-     * Constructor that adds all the Dice images to an arraylist and maps them to integers from 1-6,
+     * Constructor that adds all the Dice images to an arrayList and maps them to integers from 1-6,
      * as well as obtains the rectangle of javafx objects.
      */
      public DiceUILogic(FarkleInterface controller){
-
 
         diceImages.add(d1);
         diceImages.add(d2);
@@ -65,9 +60,7 @@ public class DiceUILogic {
         for(int i = 0; i < 6; i++) {
             hand.add(new Dice());
         }
-
-
-    }
+     }
 
 
     /**
@@ -80,10 +73,11 @@ public class DiceUILogic {
 
             // Checks if the dice is held before setting the new fill property.
             if( !hand.get(i).isHeld() ){
-
                 rectangles.get(i).setFill(new ImagePattern(dnum));
+            }
+        }
+    }
 
-            }}}
 
     /**
      * This maps the current hand of rectangles to dice objects with values.
@@ -92,17 +86,14 @@ public class DiceUILogic {
 
         for (int i = 0; i < hand.size(); i++){
              rMap.put(rectangles.get(i), hand.get(i) );
-
         }
-            }
+    }
 
     /**
      * This method takes the hand of Dice objects and rolls the values using the game instance of the GameLogic class.
      */
     public void setHand(){
-
         logic.rollHandStatus(hand);
-
     }
 
 
@@ -115,10 +106,7 @@ public class DiceUILogic {
         for (int i = 0; i < hand.size(); i++){
             if ( !hand.get(i).isHeld() ){
                rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).getVal())));
-
             }
-
-
         }
     }
 
@@ -138,9 +126,7 @@ public class DiceUILogic {
 
         for (Rectangle rect: rectangles) {
 
-
             if (rect.equals(r)){
-
 
                 // Sets the glow and attributes of the dice corresponding with it's status when clicked.
                 if ( rMap.get(r).isHeld() && !rMap.get(r).isInactive() ){
@@ -162,7 +148,7 @@ public class DiceUILogic {
                 }
             }
 
-    }
+        }
     }
 
     /**
@@ -186,7 +172,6 @@ public class DiceUILogic {
      * @return the boolean representing whether or not we Farkle.
      */
     boolean isFarkle() {
-
         return logic.isFarkle(hand);
     }
 
@@ -201,9 +186,7 @@ public class DiceUILogic {
      * This method calls bankPoints in our logic instance of the GameLogic class.
      */
     public void setBankScore() {
-
         logic.bankPoints();
-
     }
 
     /**
@@ -229,14 +212,12 @@ public class DiceUILogic {
      * @return the Integer value representing the current score of your hand.
      */
     public int getRoundScore() {
-
         logic.tallyRoundPoints(hand);
-
-       return logic.getRoundPoints();
+        return logic.getRoundPoints();
     }
 
     /**
-     * This is a passthrough for logic.wonGameStatus that determines if we've won the game.
+     * This is a pass-through for logic.wonGameStatus that determines if we've won the game.
      * @return yes or no if we've won the game.
      */
     boolean wonGameStatus() {
@@ -247,6 +228,7 @@ public class DiceUILogic {
      * This accesses the number of farkles in our current round.
      * @return The number of farkles in the current round.
      */
+    @SuppressWarnings("unused")
     int getFarkleCount() {
         return logic.farkleCounter;
     }
@@ -263,11 +245,15 @@ public class DiceUILogic {
      * Returns the rollCount variable;
      * @return the int count of our rolls.
      */
-    public int getRollCount() {
+    int getRollCount() {
         return rollCount;
     }
 
-    public ArrayList<Dice> getHand () {
+    /**
+     * Returns the current hand
+     * @return an arrayList of dice currently in play
+     */
+    public ArrayList<Dice> getHand() {
         return hand;
     }
 

@@ -11,18 +11,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LogicTest {
 
-    Dice d1 = new Dice();
-    Dice d2 = new Dice();
-    Dice d3 = new Dice();
-    Dice d4 = new Dice();
-    Dice d5 = new Dice();
-    Dice d6 = new Dice();
-    ArrayList<Dice> hold = new ArrayList<>();
+    private final Dice d1 = new Dice();
+    private final Dice d2 = new Dice();
+    private final Dice d3 = new Dice();
+    private final Dice d4 = new Dice();
+    private final Dice d5 = new Dice();
+    private final Dice d6 = new Dice();
+    private final ArrayList<Dice> hold = new ArrayList<>();
 
-    GameLogic gl = new GameLogic();
+    private final GameLogic gl = new GameLogic();
 
     @Test
-    public void scoringTest(){
+    void scoringTest(){
 
         //Testing for straight
         d1.setDice(1);
@@ -44,7 +44,7 @@ class LogicTest {
         hold.add(d5);
         hold.add(d6);
 
-        int score = gl.scoring(hold);
+        int score = gl.scoreHand(hold);
         assertEquals(1000, score);
 
         //Three Pair Test
@@ -55,20 +55,20 @@ class LogicTest {
         hold.get(4).setDice(4);
         hold.get(5).setDice(4);
 
-        score = gl.scoring(hold);
+        score = gl.scoreHand(hold);
 
         assertEquals(500,score);
 
         //Just 1
         hold.get(0).setDice(1);
 
-        score = gl.scoring(hold);
+        score = gl.scoreHand(hold);
         assertEquals(100, score);
 
         //Just 5
         hold.get(0).setDice(5);
 
-        score = gl.scoring(hold);
+        score = gl.scoreHand(hold);
         assertEquals(50, score);
     }
 }

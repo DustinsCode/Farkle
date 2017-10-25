@@ -4,12 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
  * This interface allowed us to test certain classes by replicating a controller.
  */
+@SuppressWarnings("unused")
 public interface FarkleInterface {
 
     void exitHandler();

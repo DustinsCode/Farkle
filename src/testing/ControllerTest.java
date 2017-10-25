@@ -37,7 +37,7 @@ static public void setUp() throws InterruptedException {
 
     Thread t = new Thread("JavaFX Init Thread") {
         public void run() {
-            Application.launch(DiceUILogicTest.class, new String[0]);
+            Application.launch(DiceUILogicTest.class);
         }
     };
     t.setDaemon(true);
