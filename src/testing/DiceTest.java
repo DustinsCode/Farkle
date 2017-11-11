@@ -4,10 +4,18 @@ import groupthree.Dice;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
+/**
+ * Test class for Dice Object
+ */
 class DiceTest {
 
     private final Dice dice1 = new Dice();
 
+    /**
+     * Tests that the dice is always between 1 and 6.
+     * Tests that holding the dice doesn't change value.
+     */
     @Test
     void rollTest(){
         dice1.releaseDice();

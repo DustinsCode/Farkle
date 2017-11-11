@@ -50,10 +50,21 @@ public class Dice {
     }
 
 
+    /**
+     * SetActive changes dice state to active (currently in the game)
+     */
     public void setActive(){inactive= false;}
 
+    /**
+     * SetActive changes dice state to inactive (currently out of the game)
+     */
     public void setInactive(){inactive = true;}
 
+
+    /**
+     * Tells you if the dice is currently active (in the game)
+     * @return returns inactive
+     */
     boolean isInactive(){return inactive;}
 
 

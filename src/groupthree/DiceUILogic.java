@@ -257,6 +257,10 @@ public class DiceUILogic {
         return hand;
     }
 
+    /**
+     * setRectangles sets current array of rectangles to array passed to it.
+     * @param rectangles
+     */
     public void setRectangles(ArrayList<Rectangle> rectangles) {
         this.rectangles = rectangles;
     }

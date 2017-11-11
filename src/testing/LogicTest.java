@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
+/**
+ * Test case for the logic in the game.
+ */
 class LogicTest {
 
     private final Dice d1 = new Dice();
@@ -24,7 +27,9 @@ class LogicTest {
     @Test
     void scoringTest(){
 
-        //Testing for straight
+        /**
+         * Tests to make sure a straight is scored correctly.
+         */
         d1.setDice(1);
         d2.setDice(2);
         d3.setDice(3);
@@ -47,7 +52,9 @@ class LogicTest {
         int score = gl.scoreHand(hold);
         assertEquals(1000, score);
 
-        //Three Pair Test
+        /**
+         * Tests for correct three pair score
+         */
         hold.get(0).setDice(2);
         hold.get(1).setDice(2);
         hold.get(2).setDice(3);
@@ -59,13 +66,17 @@ class LogicTest {
 
         assertEquals(500,score);
 
-        //Just 1
+        /**
+         * Tests for correct one one-dice score.
+         */
         hold.get(0).setDice(1);
 
         score = gl.scoreHand(hold);
         assertEquals(100, score);
 
-        //Just 5
+        /**
+         * Tests for correct one five-dice score.
+         */
         hold.get(0).setDice(5);
 
         score = gl.scoreHand(hold);
