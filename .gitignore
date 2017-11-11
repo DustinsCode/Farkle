@@ -11,3 +11,5 @@ workspace.xml
 .idea/workspace.xml
 Farkle.iml
 .idea/workspace.xml
+
+*.class
