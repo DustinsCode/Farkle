@@ -3,7 +3,7 @@ package testing;
 import groupthree.Dice;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+// @TODO Dustin or Bryce, run CheckStyle config file on this and fix problems.
 class DiceTest {
 
     private final Dice dice1 = new Dice();

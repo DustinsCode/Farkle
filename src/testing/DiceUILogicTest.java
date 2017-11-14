@@ -1,39 +1,41 @@
 package testing;
 
 
-import groupthree.Dice;
+
 import groupthree.DiceUILogic;
 import groupthree.GameLogic;
 import javafx.application.Application;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
-import java.util.LinkedHashMap;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
 import static org.mockito.internal.verification.VerificationModeFactory.atMost;
 
+/**
+ * This Runner enables us to inject mock dependencies into our objects.
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class DiceUILogicTest extends Application {
 
     /**
-     * Extends javafx.application.Application and implements start so we can use a new thread javafx application.
-     * @param primaryStage
+     * Extends javafx.application.Application and implements
+     * start so we can use a new thread javafx application.
+     * @param primaryStage The primary application JavaFX stage.
      */
     @Override
-    public void start(Stage primaryStage) {
+    public void start(final Stage primaryStage) {
         //nope
     }
 
     /**
-     * This initializes a javaFX application in the background so we can test the usage of images.
+     * This initializes a javaFX application in the
+     * background so we can test the usage of images.
      *
      * @throws InterruptedException If the thread is interrupted.
      */
@@ -55,15 +57,10 @@ public class DiceUILogicTest extends Application {
 
     }
 
-    /**
-     * This creates an actual rMap so we can view what's stored in it.
-     */
-
-    @Spy
-    public final LinkedHashMap<Rectangle, Dice> rMap = new LinkedHashMap<>();
 
     /**
-     * Mocks our GameLogic class so we can verify the proper methods are being called from our test class.
+     * Mocks our GameLogic class so we can verify
+     * the proper methods are being called from our test class.
      */
     @Mock
     private final GameLogic logic = new GameLogic();
@@ -72,10 +69,11 @@ public class DiceUILogicTest extends Application {
      * This is the injection target for our mocked dependencies.
      */
     @InjectMocks
-    DiceUILogic game = new DiceUILogic(new FakeController());
+    private DiceUILogic game = new DiceUILogic(new FakeController());
 
     /**
-     * This method verifies that the constructor is working for DiceUILogic testing.
+     * This method verifies that the constructor
+     * is working for DiceUILogic testing.
      */
     @Test
     public void constructorTest() {
@@ -85,7 +83,8 @@ public class DiceUILogicTest extends Application {
     }
 
     /**
-     * This test ensures that our mapDice method creates rMap and make sure it's the correct size.
+     * This test ensures that our mapDice method creates
+     * rMap and make sure it's the correct size.
      */
     @Test
     public void mapDiceTest() {
@@ -98,7 +97,8 @@ public class DiceUILogicTest extends Application {
     }
 
     /**
-     * This method tests our setHand method in DiceUILogic and verifies that it's calling rollHandStatus in GameLogic.
+     * This method tests our setHand method in DiceUILogic
+     * and verifies that it's calling rollHandStatus in GameLogic.
      */
     @Test
     public void setHandTest() {
@@ -108,7 +108,8 @@ public class DiceUILogicTest extends Application {
     }
 
     /**
-     * This class tests our BankScore method and verifies that we're calling this method from our logic instance.
+     * This class tests our BankScore method and verifies
+     * that we're calling this method from our logic instance.
      */
     @Test
     public void setBankScoreTest() {

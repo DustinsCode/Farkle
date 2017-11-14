@@ -302,12 +302,12 @@ public class GameLogic {
     /**
      * bankPoints should end turn
      */
-   public void bankPoints(){
+   public void bankPoints() {
 
         bankedPoints += roundPoints; //Adds current round points to our bank.
         roundPoints = 0; //resets round points when you bank.
         // Checks to see if we've won
-        if (bankedPoints >= 10000){
+        if (bankedPoints >= 10000) {
             wonGame = true; //Sets to true if we win.
             // @TODO Need an idea to fire off a static notification or event to get with the UI to transition screens.
         }
@@ -318,19 +318,23 @@ public class GameLogic {
      * Returns all dice to normal state and rolls them.
      * @param hand is the current hand of dice
      */
-     void resetRound(ArrayList<Dice> hand){ //@TODO this doesn't really need to be called in the beginning. It should only be used when the turn is over (farkle or bankpoints).
-        for(Dice j: hand){
+     void resetRound(final ArrayList<Dice> hand) {
+        for (Dice j: hand) {
             j.releaseDice();
             j.setActive();
             j.roll();
         }
     }
 
-    int getBankedPoints () {
+    /**
+     * Returns the current amount of banked points.
+     * @return the current amount of banked points.
+     */
+    int getBankedPoints() {
         return bankedPoints;
     }
 
-    int getRoundPoints () {
+    int getRoundPoints() {
         return roundPoints;
     }
 

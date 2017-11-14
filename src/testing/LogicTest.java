@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+/* @TODO Bryce or Dustin need to clean up Checkstyle coverage and fix bugs.
+ */
 class LogicTest {
 
     Dice d1 = new Dice();
