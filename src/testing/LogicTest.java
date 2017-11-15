@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/* @TODO Bryce or Dustin need to clean up Checkstyle coverage and fix bugs.
- */
+
 class LogicTest {
 
     Dice d1 = new Dice();
@@ -22,6 +21,7 @@ class LogicTest {
 
     GameLogic gl = new GameLogic();
 
+    /*
     @Test
     public void scoringTest(){
 
@@ -72,4 +72,9 @@ class LogicTest {
         score = gl.scoring(hold);
         assertEquals(50, score);
     }
+
+    @TODO This test is invalid, needs to be redesigned with the current layout of GameLogic class.
+    @TODO Run Checkstyle rules on this to clean it up as well.
+
+    */
 }
