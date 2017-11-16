@@ -1,0 +1,86 @@
+<<<<<<< HEAD:src/groupthree/MainUI.fxml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="groupthree.FarkleController">
+   <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #070d63;">
+      <!--suppress JavaFxEventHandler -->
+      <Button layoutX="250.0" layoutY="261.0" mnemonicParsing="false" onAction="#enterGameScreenButtonPushed"
+              prefHeight="40.0" prefWidth="100.0" text="Play">
+         <font>
+            <Font name="Showcard Gothic" size="19.0"/>
+         </font>
+      </Button>
+      <!--suppress JavaFxEventHandler -->
+      <Button layoutX="250.0" layoutY="330.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0"
+              prefWidth="100.0" text="Exit">
+         <font>
+            <Font name="Showcard Gothic" size="18.0"/>
+         </font>
+      </Button>
+      <Text layoutX="93.0" layoutY="180.0" strokeType="INSIDE" strokeWidth="30.0" text="Farkle!"
+            wrappingWidth="413.41796875">
+         <font>
+            <Font name="Showcard Gothic" size="96.0"/>
+         </font>
+         <stroke>
+            <LinearGradient startX="1.0" startY="0.07142857142857142">
+               <stops>
+                  <Stop color="#c64747"/>
+                  <Stop color="GOLD" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Text>
+   </AnchorPane>
+</Pane>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="farkleapp.Controller">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #070d63;">
+         <children>
+            <Button layoutX="250.0" layoutY="261.0" mnemonicParsing="false" onAction="#enterGameScreenButtonPushed" prefHeight="40.0" prefWidth="100.0" text="Play">
+               <font>
+                  <Font name="Showcard Gothic" size="19.0" />
+               </font></Button>
+            <Button layoutX="250.0" layoutY="330.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="100.0" text="Exit">
+               <font>
+                  <Font name="Showcard Gothic" size="18.0" />
+               </font></Button>
+            <Text layoutX="93.0" layoutY="180.0" strokeType="INSIDE" strokeWidth="30.0" text="Farkle!" wrappingWidth="413.41796875">
+               <font>
+                  <Font name="Showcard Gothic" size="96.0" />
+               </font>
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.07142857142857142">
+                     <stops>
+                        <Stop color="#c64747" />
+                        <Stop color="GOLD" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
+>>>>>>> CheckstyleCode:src/farkleapp/Home_View.fxml

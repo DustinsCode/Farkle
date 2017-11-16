@@ -124,7 +124,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>groupthree.DiceUILogic</li>
+<li>farkleapp.Model</li>
 </ul>
 </li>
 </ul>
@@ -158,7 +158,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../groupthree/DiceUILogic.html#rectangles">rectangles</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../groupthree/DiceUILogic.html#rList">rList</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -227,7 +227,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../groupthree/DiceUILogic.html#getHandFill-java.util.ArrayList-">getHandFill</a></span>&#8203;(java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;&nbsp;rect)</code></th>
 <td class="colLast">
-<div class="block">This method sets the fill of our rectangles to the correct image based on if it's not held (if Dice are rolled
+<div class="block">This method sets the fill of our rList to the correct image based on if it's not held (if Dice are rolled
  again, then it will need to update the pictures).</div>
 </td>
 </tr>
@@ -249,7 +249,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../groupthree/DiceUILogic.html#mapDice--">mapDice</a></span>&#8203;()</code></th>
 <td class="colLast">
-<div class="block">This maps the current hand of rectangles to dice objects with values.</div>
+<div class="block">This maps the current hand of rList to dice objects with values.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -275,7 +275,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../groupthree/DiceUILogic.html#setRectangles-java.util.ArrayList-">setRectangles</a></span>&#8203;(java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;&nbsp;rectangles)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../groupthree/DiceUILogic.html#setRectangles-java.util.ArrayList-">setRectangles</a></span>&#8203;(java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;&nbsp;rList)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -321,13 +321,13 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="rectangles">
+<a name="rList">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>rectangles</h4>
-<pre>public&nbsp;java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt; rectangles</pre>
+<h4>rList</h4>
+<pre>public&nbsp;java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt; rList</pre>
 </li>
 </ul>
 <a name="rMap">
@@ -374,10 +374,10 @@ extends java.lang.Object</pre>
 <h4>setRectFill</h4>
 <pre>public&nbsp;void&nbsp;setRectFill&#8203;(javafx.scene.image.Image&nbsp;dnum)</pre>
 <div class="block">This method simultaneously sets the fill for each die within the ArrayList to a specific image. It
- also checks if any of the Dice in the current hand are held, if so, it will skip over animating these rectangles.</div>
+ also checks if any of the Dice in the current hand are held, if so, it will skip over animating these rList.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>dnum</code> - the Image being passed that the rectangles will be set to.</dd>
+<dd><code>dnum</code> - the Image being passed that the rList will be set to.</dd>
 </dl>
 </li>
 </ul>
@@ -388,7 +388,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>mapDice</h4>
 <pre>public&nbsp;void&nbsp;mapDice&#8203;()</pre>
-<div class="block">This maps the current hand of rectangles to dice objects with values.</div>
+<div class="block">This maps the current hand of rList to dice objects with values.</div>
 </li>
 </ul>
 <a name="setHand--">
@@ -408,7 +408,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getHandFill</h4>
 <pre>public&nbsp;void&nbsp;getHandFill&#8203;(java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;&nbsp;rect)</pre>
-<div class="block">This method sets the fill of our rectangles to the correct image based on if it's not held (if Dice are rolled
+<div class="block">This method sets the fill of our rList to the correct image based on if it's not held (if Dice are rolled
  again, then it will need to update the pictures).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -532,7 +532,7 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setRectangles</h4>
-<pre>public&nbsp;void&nbsp;setRectangles&#8203;(java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;&nbsp;rectangles)</pre>
+<pre>public&nbsp;void&nbsp;setRectangles&#8203;(java.util.ArrayList&lt;javafx.scene.shape.Rectangle&gt;&nbsp;rList)</pre>
 </li>
 </ul>
 </li>

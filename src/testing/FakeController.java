@@ -1,15 +1,19 @@
 package testing;
 
-
-import groupthree.FarkleInterface;
+//@TODO Make sure Wes implements a new testing plan or javadoc comments for this.
+import farkleapp.FarkleControllerInterface;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 @SuppressWarnings("Duplicates")
 public class FakeController implements FarkleInterface {
+=======
+public class FakeController implements FarkleControllerInterface {
+>>>>>>> CheckstyleCode
 
     private final Rectangle rect1 = new Rectangle();
 
@@ -23,7 +27,11 @@ public class FakeController implements FarkleInterface {
 
     private final Rectangle rect6 = new Rectangle();
 
+<<<<<<< HEAD
     private final ArrayList<Rectangle> rectangles = new ArrayList<>();
+=======
+    private ArrayList<Rectangle> rectangles = new ArrayList<>();
+>>>>>>> CheckstyleCode
 
     @Override
     public void exitHandler() {
@@ -31,7 +39,7 @@ public class FakeController implements FarkleInterface {
     }
 
     @Override
-    public void enterGameScreenButtonPushed(ActionEvent event) {
+    public void enterGameScreenButtonPushed(final ActionEvent event) {
 
     }
 
@@ -47,17 +55,17 @@ public class FakeController implements FarkleInterface {
     }
 
     @Override
-    public void rollTheDiceButtonPushed(ActionEvent event) {
+    public void rollTheDiceButtonPushed(final ActionEvent event) {
 
     }
 
     @Override
-    public void bankPointsButtonPushed(ActionEvent event) {
+    public void bankPointsButtonPushed(final ActionEvent event) {
 
     }
 
     @Override
-    public void holdRectangles(MouseEvent event) {
+    public void holdRectangles(final MouseEvent event) {
 
     }
 

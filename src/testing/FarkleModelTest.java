@@ -1,0 +1,140 @@
+package testing;
+
+
+
+import farkleapp.Model;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.mockito.Mockito.verify;
+import static org.mockito.internal.verification.VerificationModeFactory.atMost;
+
+<<<<<<< HEAD:src/testing/DiceUILogicTest.java
+@SuppressWarnings("unused")
+=======
+/**
+ * This Runner enables us to inject mock dependencies into our objects.
+ */
+>>>>>>> CheckstyleCode:src/testing/FarkleModelTest.java
+@RunWith(MockitoJUnitRunner.class)
+public class FarkleModelTest extends Application {
+
+    /**
+<<<<<<< HEAD:src/testing/DiceUILogicTest.java
+     * Extends javafx.application.Application and implements start so we can use a new thread javafx application.
+     * @param primaryStage the main stage of the UI
+=======
+     * Extends javafx.application.Application and implements
+     * start so we can use a new thread javafx application.
+     * @param primaryStage The primary application JavaFX stage.
+>>>>>>> CheckstyleCode:src/testing/FarkleModelTest.java
+     */
+    @Override
+    public void start(final Stage primaryStage) {
+        //nope
+    }
+
+    /**
+     * This initializes a javaFX application in the
+     * background so we can test the usage of images.
+     *
+     * @throws InterruptedException If the thread is interrupted.
+     */
+    @BeforeClass
+    public static void setUpClass() throws InterruptedException {
+        // Initialise Java FX
+
+        System.out.printf("About to launch FX App\n");
+        Thread t = new Thread("JavaFX Init Thread") {
+            public void run() {
+<<<<<<< HEAD:src/testing/DiceUILogicTest.java
+                Application.launch(DiceUILogicTest.class);
+=======
+                Application.launch(FarkleModelTest.class, new String[0]);
+>>>>>>> CheckstyleCode:src/testing/FarkleModelTest.java
+            }
+        };
+        t.setDaemon(true);
+        t.start();
+        System.out.printf("FX App thread started\n");
+        Thread.sleep(500);
+
+
+    }
+
+
+    /**
+     * Mocks our FarkleDiceLogic class so we can verify
+     * the proper methods are being called from our test class.
+     */
+    @Mock
+    private final farklegame.FarkleDiceLogic logic = new farklegame.FarkleDiceLogic();
+
+    /**
+     * This is the injection target for our mocked dependencies.
+     */
+    @InjectMocks
+<<<<<<< HEAD:src/testing/DiceUILogicTest.java
+    private DiceUILogic game = new DiceUILogic(new FakeController());
+=======
+    private Model game = new Model(new FakeController());
+>>>>>>> CheckstyleCode:src/testing/FarkleModelTest.java
+
+    /**
+     * This method verifies that the constructor
+     * is working for Model testing.
+     */
+    @Test
+    public void constructorTest() {
+
+        assertEquals("hand size", 6, game.getHand().size());
+        assertEquals("Rectangles", 6, game.getrList().size());
+    }
+
+    /**
+     * This test ensures that our mapDice method creates
+     * rMap and make sure it's the correct size.
+     */
+    @Test
+    public void mapDiceTest() {
+        game.mapDice();
+        assertEquals("The dice array is not equal to what it should be.", 6, game.getHand().size());
+        assertEquals("The rectangle array is not what it should be.", 6, game.getrList().size());
+        assertEquals("Dice -> Rectangle map is not set properly", 6, game.rMap.size());
+
+
+    }
+
+    /**
+     * This method tests our setHand method in Model
+     * and verifies that it's calling rollHandStatus in FarkleDiceLogic.
+     */
+    @Test
+    public void setHandTest() {
+        game.setHand();
+        verify(logic, atMost(1)).rollHandStatus(game.getHand());
+
+    }
+
+    /**
+     * This class tests our BankScore method and verifies
+     * that we're calling this method from our logic instance.
+     */
+    @Test
+    public void setBankScoreTest() {
+
+        assertFalse(game.getHand().isEmpty());
+        game.setBankScore();
+        verify(logic, atMost(1)).bankPoints();
+    }
+
+
+}
+
