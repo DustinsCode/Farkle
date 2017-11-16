@@ -1,6 +1,7 @@
 package testing;
 
-import farkledatalogic.Dice;
+import farklegame.Dice;
+import farklegame.FarkleDiceLogic;
 
 import java.util.ArrayList;
 
@@ -17,7 +18,7 @@ class LogicTest {
     Dice d6 = new Dice();
     ArrayList<Dice> hold = new ArrayList<>();
 
-    farkledatalogic.FarkleDiceLogic gl = new farkledatalogic.FarkleDiceLogic();
+    FarkleDiceLogic gl = new FarkleDiceLogic();
 
     /*
     @Test

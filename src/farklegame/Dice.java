@@ -22,7 +22,7 @@ public class Dice {
      *
      * @return rectangles value
      *************************************/
-    int getVal(){
+    public int getVal(){
         return val;
     }
 
@@ -50,11 +50,11 @@ public class Dice {
     }
 
 
-    public void setActive(){inactive= false;}
+    void setActive() { inactive = false; }
 
-    public void setInactive(){inactive = true;}
+    public void setInactive() {inactive = true;}
 
-    boolean isInactive(){return inactive;}
+    public boolean isInactive() { return inactive; }
 
 
     /**

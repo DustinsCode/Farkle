@@ -20,7 +20,7 @@ import static org.mockito.internal.verification.VerificationModeFactory.atMost;
  * This Runner enables us to inject mock dependencies into our objects.
  */
 @RunWith(MockitoJUnitRunner.class)
-public class FarkleFarkleModelTest extends Application {
+public class FarkleModelTest extends Application {
 
     /**
      * Extends javafx.application.Application and implements
@@ -45,7 +45,7 @@ public class FarkleFarkleModelTest extends Application {
         System.out.printf("About to launch FX App\n");
         Thread t = new Thread("JavaFX Init Thread") {
             public void run() {
-                Application.launch(FarkleFarkleModelTest.class, new String[0]);
+                Application.launch(FarkleModelTest.class, new String[0]);
             }
         };
         t.setDaemon(true);
@@ -62,7 +62,7 @@ public class FarkleFarkleModelTest extends Application {
      * the proper methods are being called from our test class.
      */
     @Mock
-    private final farkledatalogic.FarkleDiceLogic logic = new farkledatalogic.FarkleDiceLogic();
+    private final farklegame.FarkleDiceLogic logic = new farklegame.FarkleDiceLogic();
 
     /**
      * This is the injection target for our mocked dependencies.
@@ -78,7 +78,7 @@ public class FarkleFarkleModelTest extends Application {
     public void constructorTest() {
 
         assertEquals("hand size", 6, game.getHand().size());
-        assertEquals("Rectangles", 6, game.rectangles.size());
+        assertEquals("Rectangles", 6, game.getrList().size());
     }
 
     /**
@@ -89,7 +89,7 @@ public class FarkleFarkleModelTest extends Application {
     public void mapDiceTest() {
         game.mapDice();
         assertEquals("The dice array is not equal to what it should be.", 6, game.getHand().size());
-        assertEquals("The rectangle array is not what it should be.", 6, game.rectangles.size());
+        assertEquals("The rectangle array is not what it should be.", 6, game.getrList().size());
         assertEquals("Dice -> Rectangle map is not set properly", 6, game.rMap.size());
 
 

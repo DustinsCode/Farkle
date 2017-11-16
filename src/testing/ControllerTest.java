@@ -50,7 +50,7 @@ static void setUp() throws InterruptedException {
 
     Thread t = new Thread("JavaFX Init Thread") {
         public void run() {
-            Application.launch(FarkleFarkleModelTest.class);
+            Application.launch(FarkleModelTest.class);
         }
     };
     t.setDaemon(true);

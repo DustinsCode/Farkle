@@ -138,9 +138,9 @@ public class Model {
      * again, then it will need to update the pictures).
      * @param rect An ArrayList of Rectangles that will have their fill property updated.
      */
-    public void getHandFill(ArrayList<Rectangle> rect) {
-        for (int i = 0; i < hand.size(); i++){
-            if ( !hand.get(i).isHeld() ){
+    public void getHandFill(final ArrayList<Rectangle> rect) {
+        for (int i = 0; i < hand.size(); i++) {
+            if (!hand.get(i).isHeld()) {
                rect.get(i).setFill(new ImagePattern(IMAGE_HASH_MAP.get(hand.get(i).getVal())));
 
             }
@@ -171,7 +171,7 @@ public class Model {
 
 
                 // Sets the glow and attributes of the dice corresponding with it's status when clicked.
-                if ( rMap.get(r).isHeld() && !rMap.get(r).isInactive() ){
+                if ( rMap.get(r).isHeld() && !rMap.get(r).isInactive() ) {
                     rMap.get(r).releaseDice();
                     r.setEffect(null);
 
@@ -199,7 +199,7 @@ public class Model {
      */
    public void checkRolled() {
 
-        if (getRollCount() < 1 ) {
+        if (getRollCount() < 1) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(FarkleApp.getPrimaryStage());
             alert.setTitle("Action Not Allowed");
@@ -276,14 +276,14 @@ public class Model {
      * @return The number of farkles in the current round.
      */
     int getFarkleCount() {
-        return logic.farkleCounter;
+        return logic.getFarkle();
     }
 
     /**
      * Method for setting the variable that keeps track of how many rolls we've performed.
      * @param count the variable that will pass on how many rolls we have.
      */
-    public void setRollCount(int count) {
+    public void setRollCount(final int count) {
         rollCount = count;
     }
 
@@ -295,11 +295,21 @@ public class Model {
         return rollCount;
     }
 
-    public ArrayList<Dice> getHand () {
+    /**
+     * Gets hand.
+     * @return current array list representing the hand of dice
+     */
+    public ArrayList<Dice> getHand() {
         return hand;
     }
 
-    public void setrList(ArrayList<Rectangle> rList) {
+    /**
+     * This sets all of the rectangles in A source
+     * View to the rectangles in RList.
+     * @param rList the array list of javafx
+     *             rectangles for the model to manipulate.
+     */
+    public void setrList(final ArrayList<Rectangle> rList) {
         this.rList = rList;
     }
 }

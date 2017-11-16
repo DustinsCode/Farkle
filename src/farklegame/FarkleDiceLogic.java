@@ -14,14 +14,15 @@ public class FarkleDiceLogic {
 
     /** roundPoints is the amount of points you have in current round*/
     private int roundPoints = 0;
+
     /**
      * This keeps track of the number of farkles
      */
-    int farkleCounter = 0;
+    private int farkleCounter = 0;
+
     /**
      * This keeps track of if it's currently farkled.
      */
-
     private boolean wonGame = false;
 
 
@@ -30,7 +31,7 @@ public class FarkleDiceLogic {
      * The button that ends turn should be calling this.
      * @param hand An arraylist of dice.
      */
-    boolean isFarkle(ArrayList<Dice> hand) {
+    public boolean isFarkle(ArrayList<Dice> hand) {
         int points = scoreHandAll(hand);
 
         if ( points == roundPoints ) {
@@ -55,7 +56,7 @@ public class FarkleDiceLogic {
      * This tallies the current hand of dice and sets the roundPoints variable accordingly.
      * @param hand The ArrayList<Dice> representing our current hand.
      */
-    void tallyRoundPoints (ArrayList<Dice> hand){
+    public void tallyRoundPoints(ArrayList<Dice> hand){
         roundPoints = scoreHand(hand);
     }
 
@@ -319,7 +320,7 @@ public class FarkleDiceLogic {
      * Returns all dice to normal state and rolls them.
      * @param hand is the current hand of dice
      */
-     void resetRound(final ArrayList<Dice> hand) {
+    public void resetRound(final ArrayList<Dice> hand) {
         for (Dice j: hand) {
             j.releaseDice();
             j.setActive();
@@ -331,19 +332,23 @@ public class FarkleDiceLogic {
      * Returns the current amount of banked points.
      * @return the current amount of banked points.
      */
-    int getBankedPoints() {
+    public int getBankedPoints() {
         return bankedPoints;
     }
 
-    int getRoundPoints() {
+    public int getRoundPoints() {
         return roundPoints;
     }
 
-    boolean wonGameStatus(){
+    public boolean wonGameStatus(){
          return wonGame;
 }
 
-
-
-
+    /**
+     * Returns number of farkles.
+     * @return
+     */
+    public int getFarkle() {
+        return farkleCounter;
+    }
 }
