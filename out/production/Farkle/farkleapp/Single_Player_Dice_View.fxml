@@ -12,9 +12,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="game" stylesheets="@GameScreen.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupthree.FarkleController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="game" stylesheets="@Single_Player_Dice_View.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="farkleapp.Controller">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@GameScreen.css" />
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@Single_Player_Dice_View.css" />
       <VBox prefHeight="400.0" prefWidth="600.0">
          <children>
             <Pane prefHeight="200.0" prefWidth="200.0">

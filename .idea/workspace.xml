@@ -8,14 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dbcb541-b34b-4780-b7ae-72f0657520ea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/farklegame/package-info.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/testing/FarkleFarkleModelTest.java" afterPath="$PROJECT_DIR$/src/testing/FarkleModelTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/Dice.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/DiceUILogic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/FarkleController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/FarkleInterface.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/GameLogic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/GameScreen.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/GameScreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/MainUI.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/groupthree/MainUI.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/testing/ControllerTest$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/testing/ControllerTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/testing/DiceTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/testing/DiceUILogicTest$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/testing/DiceUILogicTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Farkle/testing/FakeController.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaDoc/testing/DiceUILogicTest.html" afterPath="$PROJECT_DIR$/JavaDoc/testing/DiceUILogicTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/farkleapp/Model.java" afterPath="$PROJECT_DIR$/src/farkleapp/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/farklegame/Dice.java" afterPath="$PROJECT_DIR$/src/farklegame/Dice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/farklegame/FarkleDiceLogic.java" afterPath="$PROJECT_DIR$/src/farklegame/FarkleDiceLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testing/LogicTest.java" afterPath="$PROJECT_DIR$/src/testing/LogicTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -409,7 +417,7 @@
       <workItem from="1510851374672" duration="4147000" />
       <workItem from="1510857095012" duration="1000" />
       <workItem from="1510857231546" duration="2202000" />
-      <workItem from="1510862972367" duration="1217000" />
+      <workItem from="1510862972367" duration="1406000" />
     </task>
     <task id="LOCAL-00001" summary="Added warning boxes for the following user cases:&#10;&#10;*When you roll the dice, you're no longer allowed to de-select it.&#10;*When you click on a dice before rolling, you're no longer allowed to actually select it.">
       <created>1508435187864</created>
@@ -537,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510860452051</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Removed compiler errors.">
+      <created>1510864209934</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1510864209934</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -573,7 +588,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63901000" />
+    <option name="totallyTimeSpent" value="64090000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -678,7 +693,8 @@
     <MESSAGE value="Edited checkstyle scan to show the version." />
     <MESSAGE value="Added a few checkstyle fixes." />
     <MESSAGE value="Renamed a ton of files and moved files around into different packages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed a ton of files and moved files around into different packages." />
+    <MESSAGE value="Removed compiler errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed compiler errors." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -687,13 +703,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/farkleapp/FarkleApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/farkleapp/Single_Player_Dice_View.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1026,6 +1035,11 @@
           <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Package groupthree farkle.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/farkleapp/Model.java">
