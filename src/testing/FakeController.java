@@ -1,14 +1,14 @@
 package testing;
 
 //@TODO Make sure Wes implements a new testing plan or javadoc comments for this.
-import groupthree.FarkleInterface;
+import farkleapp.FarkleControllerInterface;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
-public class FakeController implements FarkleInterface {
+public class FakeController implements FarkleControllerInterface {
 
     private Rectangle rect1 = new Rectangle();
 

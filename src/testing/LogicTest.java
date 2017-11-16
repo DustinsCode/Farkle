@@ -1,8 +1,6 @@
 package testing;
 
-import groupthree.GameLogic;
-import groupthree.Dice;
-import org.junit.jupiter.api.Test;
+import farkledatalogic.Dice;
 
 import java.util.ArrayList;
 
@@ -19,7 +17,7 @@ class LogicTest {
     Dice d6 = new Dice();
     ArrayList<Dice> hold = new ArrayList<>();
 
-    GameLogic gl = new GameLogic();
+    farkledatalogic.FarkleDiceLogic gl = new farkledatalogic.FarkleDiceLogic();
 
     /*
     @Test
@@ -73,7 +71,7 @@ class LogicTest {
         assertEquals(50, score);
     }
 
-    @TODO This test is invalid, needs to be redesigned with the current layout of GameLogic class.
+    @TODO This test is invalid, needs to be redesigned with the current layout of FarkleDiceLogic class.
     @TODO Run Checkstyle rules on this to clean it up as well.
 
     */
