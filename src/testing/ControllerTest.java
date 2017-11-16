@@ -2,8 +2,8 @@ package testing;
 
 
 
-import groupthree.DiceUILogic;
-import groupthree.FarkleController;
+import farkleapp.Controller;
+import farkleapp.Model;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import org.junit.BeforeClass;
@@ -17,24 +17,24 @@ import static org.mockito.Mockito.verify;
 
 
 /**
- * This is the test class for FarkleController.
+ * This is the test class for Controller.
  * It implements both JUnit 4 and Mockito 2.11.
  * It "mocks" the dependency object in the controller so I can verify
- * it's calling the proper methods inside of the DiceUILogic class.
+ * it's calling the proper methods inside of the Model class.
  *
  */
 @RunWith(MockitoJUnitRunner.class)
 public class ControllerTest {
 
     /**
-     * Mocked DiceUILogic instance.
+     * Mocked Model instance.
      */
-    @Mock private DiceUILogic game;
+    @Mock private Model game;
 
     /**
-     * Injected into our FarkleController object.
+     * Injected into our Controller object.
      */
-    @InjectMocks private FarkleController controller = new FarkleController();
+    @InjectMocks private Controller controller = new Controller();
 
 
     /**
@@ -50,7 +50,7 @@ static void setUp() throws InterruptedException {
 
     Thread t = new Thread("JavaFX Init Thread") {
         public void run() {
-            Application.launch(DiceUILogicTest.class);
+            Application.launch(FarkleModelTest.class);
         }
     };
     t.setDaemon(true);
@@ -77,7 +77,7 @@ static void setUp() throws InterruptedException {
      * This test determines whether or not the rollDice
      * method used to capture ActionEvents is actually able to roll the dice.
      *It verifies that the rollCount variable in
-     * DiceUILogic is incremented
+     * Model is incremented
      * (thus, it's calling all of the methods in the class).
      */
     @Test

@@ -1,6 +1,6 @@
 package testing;
 
-import groupthree.Dice;
+import farklegame.Dice;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 // @TODO Dustin or Bryce, run CheckStyle config file on this and fix problems.
