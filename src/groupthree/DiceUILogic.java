@@ -13,17 +13,26 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 /**
- * The DiceUILogic class interfaces with FarkleController and GameLogic to map the numerical logic done on our dice to
+ * The DiceUILogic class interfaces with FarkleController and
+ * GameLogic to map the numerical logic done on our dice to
  * a visual representation useable by our JavaFX controller.
  */
 public class DiceUILogic {
 
 
-
+    /**
+     * The array list of images representing dice faces from 1-6.
+     */
     private static final ArrayList<Image> diceImages = new ArrayList<>();
+    /**
+     * The hash map that contains our Images and integers from 1-6.
+     */
     private static final HashMap<Integer,Image> mapImages = new HashMap<>();
 
-    public ArrayList<Rectangle> rectangles = new ArrayList<>();
+    /**
+     * ArrayList of JavaFX rectangles.
+     */
+    private ArrayList<Rectangle> rectangles = new ArrayList<>();
 
     private final GameLogic logic = new GameLogic();
 
