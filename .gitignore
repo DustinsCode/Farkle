@@ -8,3 +8,4 @@ workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
 
+.idea/workspace.xml
