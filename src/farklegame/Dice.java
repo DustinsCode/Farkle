@@ -1,81 +1,104 @@
-package farklegame;
+package groupthree;
 
 /**
- * The dice class represents what we use to keep track of "Dice". It has certain attributes that allow us to replicate a
- * dice numerically.
+ * The dice class represents what we use to keep track of "Dice". It has
+ * certain attributes that allow us to replicate a dice numerically.
  */
 public class Dice {
 
-    /** value of the rectangles */
+    /** value of the rectangles. */
     private int val;
 
     /** is the rectangles held? */
-    private boolean hold = false;
+    private boolean hold;
 
 
     /** Was the dice held in the previous turn?*/
-    private boolean inactive = false;
+    private boolean inactive;
 
-
+    /**
+     * Default Constructor.
+     */
+    public Dice() {
+        val = 1;
+        hold = false;
+        inactive = false;
+    }
     /*************************************
-     * Obtains current value of rectangles
+     * Obtains current value of rectangles.
      *
-     * @return rectangles value
+     * @return dice value
      *************************************/
-    public int getVal(){
+    public int getVal() {
         return val;
     }
 
     /**************************************
-     * setDice changes the value of the rectangles to a new value
+     * setDice changes the value of the rectangles to a new value.
      *
-     * @param diceVal is the value that the rectangles is to be set as
+     * @param diceVal is the value that the dice is to be set as
      **************************************/
-    public void setDice(int diceVal){
-        val = diceVal;
+    public void setDice(final int diceVal) {
+        if (diceVal >= 1 && diceVal <= 6) {
+            val = diceVal;
+        } else {
+            val = roll();
+        }
     }
 
     /**************************************
-     * Hold rectangles sets rectangles being held to TRUE
+     * Hold rectangles sets rectangles being held to TRUE.
      **************************************/
-    public void holdDice(){
+    public void holdDice() {
         hold = true;
     }
 
     /**************************************
-     *Release rectangles sets rectangles being held to FALSE
+     *Release rectangles sets rectangles being held to FALSE.
      **************************************/
-    public void releaseDice(){
+    public void releaseDice() {
         hold = false;
     }
 
-
-    void setActive() { inactive = false; }
-
-    public void setInactive() {inactive = true;}
-
-    public boolean isInactive() { return inactive; }
-
+    /**
+     * Sets the dice to be active.
+     */
+    public void setActive() {
+        inactive = false;
+    }
 
     /**
-     * Tells if the rectangles is currently held
+     * Sets the dice to be inactive.
+     */
+    public void setInactive() {
+        inactive = true;
+    }
+
+    /**
+     * Is the dice inactive?
+     * @return boolean value of inactive
+     */
+    public boolean isInactive() {
+        return inactive;
+    }
+
+    /**
+     * Tells if the rectangles is currently held.
      *
      * @return hold value
      */
-   public boolean isHeld(){
+    public boolean isHeld() {
         return hold;
     }
 
     /**********************************
-     * Rolls the rectangles
+     * Rolls the rectangles.
      * @return new value of the rectangles
      **********************************/
-    public int roll(){
-
-        if(!isHeld()) {
+    public int roll() {
+        if (!isHeld()) {
             val = (int) (Math.random() * 6 + 1);
         }
         return val;
     }
-
 }
