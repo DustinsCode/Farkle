@@ -2,10 +2,12 @@ package testing;
 
 import farklegame.Dice;
 import farklegame.FarkleDiceLogic;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 
 /**
@@ -21,15 +23,11 @@ class LogicTest {
     private final Dice d6 = new Dice();
     private final ArrayList<Dice> hold = new ArrayList<>();
 
-<<<<<<< HEAD
-    private final GameLogic gl = new GameLogic();
-=======
     FarkleDiceLogic gl = new FarkleDiceLogic();
->>>>>>> CheckstyleCode
 
-    /*
-    @Test
-    void scoringTest(){
+
+     @Test
+     void scoringTest(){
 
         /**
          * Tests to make sure a straight is scored correctly.
@@ -87,8 +85,5 @@ class LogicTest {
         assertEquals(50, score);
     }
 
-    @TODO This test is invalid, needs to be redesigned with the current layout of FarkleDiceLogic class.
-    @TODO Run Checkstyle rules on this to clean it up as well.
 
-    */
 }

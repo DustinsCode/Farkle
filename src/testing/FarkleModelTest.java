@@ -16,25 +16,16 @@ import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.verify;
 import static org.mockito.internal.verification.VerificationModeFactory.atMost;
 
-<<<<<<< HEAD:src/testing/DiceUILogicTest.java
-@SuppressWarnings("unused")
-=======
 /**
  * This Runner enables us to inject mock dependencies into our objects.
  */
->>>>>>> CheckstyleCode:src/testing/FarkleModelTest.java
 @RunWith(MockitoJUnitRunner.class)
 public class FarkleModelTest extends Application {
 
     /**
-<<<<<<< HEAD:src/testing/DiceUILogicTest.java
-     * Extends javafx.application.Application and implements start so we can use a new thread javafx application.
-     * @param primaryStage the main stage of the UI
-=======
      * Extends javafx.application.Application and implements
      * start so we can use a new thread javafx application.
      * @param primaryStage The primary application JavaFX stage.
->>>>>>> CheckstyleCode:src/testing/FarkleModelTest.java
      */
     @Override
     public void start(final Stage primaryStage) {
@@ -54,11 +45,8 @@ public class FarkleModelTest extends Application {
         System.out.printf("About to launch FX App\n");
         Thread t = new Thread("JavaFX Init Thread") {
             public void run() {
-<<<<<<< HEAD:src/testing/DiceUILogicTest.java
-                Application.launch(DiceUILogicTest.class);
-=======
                 Application.launch(FarkleModelTest.class, new String[0]);
->>>>>>> CheckstyleCode:src/testing/FarkleModelTest.java
+
             }
         };
         t.setDaemon(true);
@@ -81,11 +69,7 @@ public class FarkleModelTest extends Application {
      * This is the injection target for our mocked dependencies.
      */
     @InjectMocks
-<<<<<<< HEAD:src/testing/DiceUILogicTest.java
-    private DiceUILogic game = new DiceUILogic(new FakeController());
-=======
     private Model game = new Model(new FakeController());
->>>>>>> CheckstyleCode:src/testing/FarkleModelTest.java
 
     /**
      * This method verifies that the constructor

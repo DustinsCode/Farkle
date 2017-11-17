@@ -50,11 +50,7 @@ static void setUp() throws InterruptedException {
 
     Thread t = new Thread("JavaFX Init Thread") {
         public void run() {
-<<<<<<< HEAD
-            Application.launch(DiceUILogicTest.class);
-=======
             Application.launch(FarkleModelTest.class);
->>>>>>> CheckstyleCode
         }
     };
     t.setDaemon(true);

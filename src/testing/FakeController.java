@@ -8,12 +8,8 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD
-@SuppressWarnings("Duplicates")
-public class FakeController implements FarkleInterface {
-=======
+
 public class FakeController implements FarkleControllerInterface {
->>>>>>> CheckstyleCode
 
     private final Rectangle rect1 = new Rectangle();
 
@@ -27,11 +23,8 @@ public class FakeController implements FarkleControllerInterface {
 
     private final Rectangle rect6 = new Rectangle();
 
-<<<<<<< HEAD
-    private final ArrayList<Rectangle> rectangles = new ArrayList<>();
-=======
     private ArrayList<Rectangle> rectangles = new ArrayList<>();
->>>>>>> CheckstyleCode
+
 
     @Override
     public void exitHandler() {
