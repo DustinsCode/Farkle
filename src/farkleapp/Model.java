@@ -1,11 +1,7 @@
 package farkleapp;
 
-<<<<<<< HEAD:src/groupthree/DiceUILogic.java
-=======
-
 import farklegame.Dice;
 import farklegame.FarkleDiceLogic;
->>>>>>> CheckstyleCode:src/farkleapp/Model.java
 import javafx.scene.control.Alert;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -16,35 +12,19 @@ import javafx.scene.shape.Rectangle;
 import java.util.*;
 
 /**
-<<<<<<< HEAD:src/groupthree/DiceUILogic.java
- * The DiceUILogic class interfaces with FarkleController and GameLogic to map the numerical logic done on our dice to
- * a visual representation usable by our JavaFX controller.
- */
-@SuppressWarnings("unused")
-public class DiceUILogic {
-
-    private static final ArrayList<Image> diceImages = new ArrayList<>();
-    private static final HashMap<Integer,Image> mapImages = new HashMap<>();
-=======
  * The Model class interfaces with Controller and
  * FarkleDiceLogic to map the numerical logic done on our dice to
  * a visual representation useable by our JavaFX controller.
  */
-
 public class Model {
-
     /**
      * The array list of images representing dice faces from 1-6.
      */
     private static final List<Image> DICE_IMAGES = new ArrayList<>(6);
-
     /**
      * The hash map that contains our Images and integers from 1-6.
      */
     private static final Map<Integer, Image> IMAGE_HASH_MAP = new HashMap<>(6);
->>>>>>> CheckstyleCode:src/farkleapp/Model.java
-
-
     /**
      * ArrayList of JavaFX rList.
      */
@@ -87,22 +67,12 @@ public class Model {
      */
      public Model(FarkleControllerInterface controller){
 
-<<<<<<< HEAD:src/groupthree/DiceUILogic.java
-        diceImages.add(d1);
-        diceImages.add(d2);
-        diceImages.add(d3);
-        diceImages.add(d4);
-        diceImages.add(d5);
-        diceImages.add(d6);
-=======
-
         DICE_IMAGES.add(d1);
         DICE_IMAGES.add(d2);
         DICE_IMAGES.add(d3);
         DICE_IMAGES.add(d4);
         DICE_IMAGES.add(d5);
         DICE_IMAGES.add(d6);
->>>>>>> CheckstyleCode:src/farkleapp/Model.java
 
         for (int i = 0; i < DICE_IMAGES.size(); i++){
             IMAGE_HASH_MAP.put(i + 1 , DICE_IMAGES.get(i));
@@ -125,30 +95,19 @@ public class Model {
         for (int i = 0; i < hand.size(); i++) {
 
             // Checks if the dice is held before setting the new fill property.
-            if( !hand.get(i).isHeld() ){
-<<<<<<< HEAD:src/groupthree/DiceUILogic.java
-                rectangles.get(i).setFill(new ImagePattern(dnum));
+            if (!hand.get(i).isHeld()) {
+                rList.get(i).setFill(new ImagePattern(dnum));
             }
         }
     }
-=======
-
-                rList.get(i).setFill(new ImagePattern(dnum));
->>>>>>> CheckstyleCode:src/farkleapp/Model.java
-
 
     /**
      * This maps the current hand of rList to dice objects with values.
      */
-    public void mapDice (){
+    public void mapDice() {
 
-        for (int i = 0; i < hand.size(); i++){
-<<<<<<< HEAD:src/groupthree/DiceUILogic.java
-             rMap.put(rectangles.get(i), hand.get(i) );
-=======
-             rMap.put(rList.get(i), hand.get(i) );
-
->>>>>>> CheckstyleCode:src/farkleapp/Model.java
+        for (int i = 0; i < hand.size(); i++) {
+             rMap.put(rList.get(i), hand.get(i));
         }
     }
 
@@ -165,18 +124,12 @@ public class Model {
      * again, then it will need to update the pictures).
      * @param rect An ArrayList of Rectangles that will have their fill property updated.
      */
-<<<<<<< HEAD:src/groupthree/DiceUILogic.java
-    public void getHandFill(ArrayList<Rectangle> rect){
-        for (int i = 0; i < hand.size(); i++){
-            if ( !hand.get(i).isHeld() ){
-               rect.get(i).setFill(new ImagePattern(mapImages.get(hand.get(i).getVal())));
-=======
+
     public void getHandFill(final ArrayList<Rectangle> rect) {
         for (int i = 0; i < hand.size(); i++) {
             if (!hand.get(i).isHeld()) {
                rect.get(i).setFill(new ImagePattern(IMAGE_HASH_MAP.get(hand.get(i).getVal())));
 
->>>>>>> CheckstyleCode:src/farkleapp/Model.java
             }
         }
     }
@@ -198,12 +151,10 @@ public class Model {
 
         for (Rectangle rect: rList) {
 
-<<<<<<< HEAD:src/groupthree/DiceUILogic.java
-            if (rect.equals(r)){
-=======
+
 
             if (rect.equals(r)) {
->>>>>>> CheckstyleCode:src/farkleapp/Model.java
+
 
                 // Sets the glow and attributes of the dice corresponding with it's status when clicked.
                 if ( rMap.get(r).isHeld() && !rMap.get(r).isInactive() ) {
@@ -327,26 +278,14 @@ public class Model {
     }
 
     /**
-<<<<<<< HEAD:src/groupthree/DiceUILogic.java
-     * Returns the current hand
-     * @return an arrayList of dice currently in play
-=======
      * Gets hand.
      * @return current array list representing the hand of dice
->>>>>>> CheckstyleCode:src/farkleapp/Model.java
      */
     public ArrayList<Dice> getHand() {
         return hand;
     }
 
     /**
-<<<<<<< HEAD:src/groupthree/DiceUILogic.java
-     * setRectangles sets current array of rectangles to array passed to it.
-     * @param rectangles
-     */
-    public void setRectangles(ArrayList<Rectangle> rectangles) {
-        this.rectangles = rectangles;
-=======
      * This sets all of the rectangles in A source
      * View to the rectangles in RList.
      * @param rList the array list of javafx
@@ -354,7 +293,6 @@ public class Model {
      */
     public void setrList(final ArrayList<Rectangle> rList) {
         this.rList = rList;
->>>>>>> CheckstyleCode:src/farkleapp/Model.java
     }
 }
 

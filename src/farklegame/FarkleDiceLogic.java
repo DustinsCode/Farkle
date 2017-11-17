@@ -3,40 +3,23 @@ package farklegame;
 import java.util.ArrayList;
 
 /**
-<<<<<<< HEAD:src/groupthree/GameLogic.java
- * The GameLogic class performs our actual game logic on Dice class objects.
- * The requirements for this was obtained from an external source on Farkle game rules.
- */
-@SuppressWarnings("Duplicates")
-public class GameLogic {
-=======
  * The FarkleDiceLogic class performs our actual game
  * logic on Dice class objects. The requirements
  * for this was obtained from an external source on Farkle game rules.
  */
 public class FarkleDiceLogic {
->>>>>>> CheckstyleCode:src/farklegame/FarkleDiceLogic.java
 
     /** bankedPoints is the amount of points you have in the bank.*/
     private int bankedPoints = 0;
-
     /** roundPoints is the amount of points you have in current round*/
     private int roundPoints = 0;
-<<<<<<< HEAD:src/groupthree/GameLogic.java
-    /** This keeps track of the number of farkles*/
-    int farkleCounter = 0;
-    /**This keeps track of if it's currently farkled.*/
-=======
-
     /**
      * This keeps track of the number of farkles
      */
     private int farkleCounter = 0;
-
     /**
      * This keeps track of if it's currently farkled.
      */
->>>>>>> CheckstyleCode:src/farklegame/FarkleDiceLogic.java
     private boolean wonGame = false;
 
 
@@ -306,13 +289,9 @@ public class FarkleDiceLogic {
      * Returns all dice to default state, not held and active, and then rerolls them
      * @param hand is the current hand of dice
      */
-<<<<<<< HEAD:src/groupthree/GameLogic.java
-     void resetRound(ArrayList<Dice> hand){ //@TODO this doesn't really need to be called in the beginning. It should only be used when the turn is over (farkle or bankPoints).
-        for(Dice j: hand){
-=======
+
     public void resetRound(final ArrayList<Dice> hand) {
         for (Dice j: hand) {
->>>>>>> CheckstyleCode:src/farklegame/FarkleDiceLogic.java
             j.releaseDice();
             j.setActive();
             j.roll();
@@ -320,31 +299,6 @@ public class FarkleDiceLogic {
     }
 
     /**
-<<<<<<< HEAD:src/groupthree/GameLogic.java
-     * getBankedPoints returns banked points
-     * @return banked points
-     */
-    int getBankedPoints () {
-        return bankedPoints;
-    }
-
-    /**
-     * getRoundPoints returns round points
-     * @return roundPoints
-     */
-    int getRoundPoints () {
-        return roundPoints;
-    }
-
-    /**
-     * wonGameStatus is called to check to see if the game has been won yet.
-     * @return wonGame
-     */
-    boolean wonGameStatus(){
-         return wonGame;
-}
-
-=======
      * Returns the current amount of banked points.
      * @return the current amount of banked points.
      */
@@ -367,5 +321,4 @@ public class FarkleDiceLogic {
     public int getFarkle() {
         return farkleCounter;
     }
->>>>>>> CheckstyleCode:src/farklegame/FarkleDiceLogic.java
 }

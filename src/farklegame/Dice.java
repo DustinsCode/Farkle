@@ -1,4 +1,4 @@
-package groupthree;
+package farklegame;
 
 /**
  * The dice class represents what we use to keep track of "Dice". It has
