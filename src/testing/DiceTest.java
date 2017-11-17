@@ -3,15 +3,9 @@ package testing;
 import farklegame.Dice;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-<<<<<<< HEAD
 
-
-/**
- * Test class for Dice Object
- */
-=======
 // @TODO Dustin or Bryce, run CheckStyle config file on this and fix problems.
->>>>>>> CheckstyleCode
+
 class DiceTest {
 
     private final Dice dice1 = new Dice();
