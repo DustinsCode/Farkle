@@ -8,8 +8,9 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import java.util.*; // We use every class inside of util.
 
-import java.util.*;
+
 
 /**
  * The Model class interfaces with Controller and
@@ -22,13 +23,14 @@ public class Model {
      */
     private static final List<Image> DICE_IMAGES = new ArrayList<>(6);
     /**
-     * The hash map that contains our Images and integers from 1-6.
+     * The hash map that contains our DiceImages and integers from 1-6.
      */
     private static final Map<Integer, Image> IMAGE_HASH_MAP = new HashMap<>(6);
     /**
      * ArrayList of JavaFX rList.
      */
     private List<Rectangle> rList = new ArrayList<>(6);
+
     /**
      * This method gets the list of rectangles.
      * @return The list of current JavaFX rectangles.
@@ -36,62 +38,84 @@ public class Model {
     public List<Rectangle> getrList() {
         return this.rList;
     }
+
     /**
      * This is an instance of our FarkleDiceLogic class so we can run
      * computations in the data.
      */
     private final FarkleDiceLogic logic = new FarkleDiceLogic();
-
     /**
      * List of Dice representing our hand.
      */
     private final ArrayList<Dice> hand = new ArrayList<>(6);
+
+    /**
+     * This gives the mapping of the current dice and rectangles.
+     * @return Linked Hash Map that contains the above.
+     */
+    public LinkedHashMap<Rectangle, Dice> getrMap() {
+        return rMap;
+    }
+
     /**
      *
      */
-    public final LinkedHashMap< Rectangle, Dice> rMap = new LinkedHashMap<>();
+    private final LinkedHashMap<Rectangle, Dice> rMap = new LinkedHashMap<>();
 
+    /**
+     * The variable the keeps track of how many rolls we've performed.
+     */
     private int rollCount = 0;
-
-    final Image d1 = new Image("d1.png");
-    final Image d2 = new Image("d2.png");
-    final Image d3 = new Image("d3.png");
-    final Image d4 = new Image("d4.png");
-    final Image d5 = new Image("d5.png");
-    final Image d6 = new Image("d6.png");
+    /**
+     * The alerts class of our application (visual).
+     */
+    private GameAlerts alerts = new GameAlerts();
+    /**
+     * This contains our dice images in Java.
+     */
+    private DiceImages dImages = new DiceImages();
 
 
     /**
-     * Constructor that adds all the Dice images to an arrayList and maps them to integers from 1-6,
+     * Constructor that adds all the Dice images
+     * to an arrayList and maps them to integers from 1-6,
      * as well as obtains the rectangle of javafx objects.
+     * @param  controller that will be communicating with the model.
      */
-     public Model(FarkleControllerInterface controller){
+     public Model(final FarkleControllerInterface controller) {
 
-        DICE_IMAGES.add(d1);
-        DICE_IMAGES.add(d2);
-        DICE_IMAGES.add(d3);
-        DICE_IMAGES.add(d4);
-        DICE_IMAGES.add(d5);
-        DICE_IMAGES.add(d6);
+        DICE_IMAGES.add(dImages.getD1());
+        DICE_IMAGES.add(dImages.getD2());
+        DICE_IMAGES.add(dImages.getD3());
+        DICE_IMAGES.add(dImages.getD4());
+        DICE_IMAGES.add(dImages.getD5());
+        DICE_IMAGES.add(dImages.getD6());
 
-        for (int i = 0; i < DICE_IMAGES.size(); i++){
-            IMAGE_HASH_MAP.put(i + 1 , DICE_IMAGES.get(i));
+        for (int i = 0; i < DICE_IMAGES.size(); i++) {
+            IMAGE_HASH_MAP.put(i + 1, DICE_IMAGES.get(i));
         }
 
         rList = controller.getRectangles();
 
-        for(int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             hand.add(new Dice());
         }
      }
+    /**
+     * Just defining a default constructor for use by child classes.
+     */
+    public Model() {
 
+     }
 
     /**
-     * This method simultaneously sets the fill for each die within the ArrayList to a specific image. It
-     * also checks if any of the Dice in the current hand are held, if so, it will skip over animating these rList.
+     * This method simultaneously sets the fill for each
+     * die within the ArrayList to a specific image. It
+     * also checks if any of the Dice in the current hand
+     * are held, if so, it will skip over animating these rList.
      * @param dnum the Image being passed that the rList will be set to.
      */
-    public void setRectFill(Image dnum) {
+    public void setRectFill(final Image dnum) {
         for (int i = 0; i < hand.size(); i++) {
 
             // Checks if the dice is held before setting the new fill property.
@@ -112,23 +136,29 @@ public class Model {
     }
 
     /**
-     * This method takes the hand of Dice objects and rolls the values using the game instance of the FarkleDiceLogic class.
+     * This method takes the hand of Dice objects and rolls
+     * the values using the game instance of the FarkleDiceLogic class.
      */
-    public void setHand(){
+    public void setHand() {
         logic.rollHandStatus(hand);
     }
 
-
     /**
-     * This method sets the fill of our rList to the correct image based on if it's not held (if Dice are rolled
+     * This method sets the fill of our rList to the correct
+     * image based on if it's not held (if Dice are rolled
      * again, then it will need to update the pictures).
-     * @param rect An ArrayList of Rectangles that will have their fill property updated.
+     * @param rect An ArrayList of Rectangles that will have
+     *            their fill property updated.
      */
-
     public void getHandFill(final ArrayList<Rectangle> rect) {
         for (int i = 0; i < hand.size(); i++) {
             if (!hand.get(i).isHeld()) {
-               rect.get(i).setFill(new ImagePattern(IMAGE_HASH_MAP.get(hand.get(i).getVal())));
+
+               rect.get(i).setFill(
+                       new ImagePattern(
+                               IMAGE_HASH_MAP.get(hand.get(i).getVal())
+                       )
+               );
 
             }
         }
@@ -136,9 +166,9 @@ public class Model {
 
     /**
      * This method determines what state the rectangle that was clicked was in.
-     * @param r the Rectangle being passed to check.
+     * @param r the Rectangle being passed to check the hold status.
      */
-    public void setHoldStatus(final Rectangle r) {
+    public void modHoldStatus(final Rectangle r) {
 
         int depth = 70;
 
@@ -156,23 +186,21 @@ public class Model {
             if (rect.equals(r)) {
 
 
-                // Sets the glow and attributes of the dice corresponding with it's status when clicked.
-                if ( rMap.get(r).isHeld() && !rMap.get(r).isInactive() ) {
+                // Sets the glow and attributes of the dice
+                // corresponding with it's status when clicked.
+                if (rMap.get(r).isHeld() && !rMap.get(r).isInactive()) {
                     rMap.get(r).releaseDice();
                     r.setEffect(null);
 
-                } else if (!rMap.get(r).isHeld() && !rMap.get(r).isInactive() ) {
-                    r.setEffect(borderGlow);
-                    rMap.get(r).holdDice();
+                } else if (
+                        !rMap.get(r).isHeld() && !rMap.get(r).isInactive()
+                        ) {
+                                r.setEffect(borderGlow);
+                                rMap.get(r).holdDice();
 
 
                 } else if (rMap.get(r).isHeld() && rMap.get(r).isInactive()) {
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.initOwner(FarkleApp.getPrimaryStage());
-                    alert.setTitle("Action Not Allowed");
-                    alert.setHeaderText("Unable to Release Dice");
-                    alert.setContentText("You are not allowed to release a dice after rolling!");
-                    alert.show();
+                    alerts.afterRollTriedRelease();
                 }
             }
 
@@ -180,8 +208,10 @@ public class Model {
     }
 
     /**
-     * This method checks to see if we have rolled or not yet for the first time since the game start.
-     * If it has, then you are not allowed to un-hold a dice, and it prompts with an alert.
+     * This method checks to see if we have rolled or
+     * not yet for the first time since the game start.
+     * If it has, then you are not allowed to
+     * un-hold a dice, and it prompts with an alert.
      */
    public void checkRolled() {
 
@@ -190,7 +220,9 @@ public class Model {
             alert.initOwner(FarkleApp.getPrimaryStage());
             alert.setTitle("Action Not Allowed");
             alert.setHeaderText("Must Roll Dice");
-            alert.setContentText("You are not allowed to select a dice before rolling. Please roll first.");
+            alert.setContentText(
+                    "You are not allowed to select a dice before rolling."
+                            + " Please roll first.");
             alert.show();
         }
     }
@@ -204,21 +236,24 @@ public class Model {
     }
 
     /**
-     * This method keeps track of how many times we've rolled the hand in a round.
+     * This method keeps track of how many times
+     * we've rolled the hand in a round.
      */
     public void setRolled() {
         rollCount++;
     }
 
     /**
-     * This method calls bankPoints in our logic instance of the FarkleDiceLogic class.
+     * This method calls bankPoints in our logic
+     * instance of the FarkleDiceLogic class.
      */
     public void setBankScore() {
         logic.bankPoints();
     }
 
     /**
-     * This method calls a logic method that tallies up and returns the current bank score.
+     * This method calls a logic method that tallies
+     * up and returns the current bank score.
      * @return the Integer value representing the bank score.
      */
    public int getBankScore() {
@@ -226,7 +261,8 @@ public class Model {
     }
 
     /**
-     * This method calls logic.resetRound and sets all of the rList' effects to null (not held or clicked anymore)
+     * This method calls logic.resetRound and sets all of the
+     * rList' effects to null (not held or clicked anymore).
      */
     void resetHand() {
         logic.resetRound(hand);
@@ -245,7 +281,8 @@ public class Model {
     }
 
     /**
-     * This is a pass-through for logic.wonGameStatus that determines if we've won the game.
+     * This is a pass-through for logic.wonGameStatus
+     * that determines if we've won the game.
      * @return yes or no if we've won the game.
      */
     boolean wonGameStatus() {
@@ -262,7 +299,8 @@ public class Model {
     }
 
     /**
-     * Method for setting the variable that keeps track of how many rolls we've performed.
+     * Method for setting the variable that keeps
+     * track of how many rolls we've performed.
      * @param count the variable that will pass on how many rolls we have.
      */
     public void setRollCount(final int count) {
@@ -270,8 +308,8 @@ public class Model {
     }
 
     /**
-     * Returns the rollCount variable;
-     * @return the int count of our rolls.
+     * Returns the rollCount variable.
+     * @return The count of our rolls.
      */
     int getRollCount() {
         return rollCount;
@@ -286,6 +324,7 @@ public class Model {
     }
 
     /**
+
      * This sets all of the rectangles in A source
      * View to the rectangles in RList.
      * @param rList the array list of javafx
