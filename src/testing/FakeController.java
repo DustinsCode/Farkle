@@ -37,17 +37,6 @@ public class FakeController implements FarkleControllerInterface {
     }
 
     @Override
-    public void setRectangleArray() {
-        rectangles.clear();
-        rectangles.add(rect1);
-        rectangles.add(rect2);
-        rectangles.add(rect3);
-        rectangles.add(rect4);
-        rectangles.add(rect5);
-        rectangles.add(rect6);
-    }
-
-    @Override
     public void rollTheDiceButtonPushed(final ActionEvent event) {
 
     }
@@ -64,8 +53,11 @@ public class FakeController implements FarkleControllerInterface {
 
     @Override
     public ArrayList<Rectangle> getRectangles() {
-        setRectangleArray();
+        setUp();
         return rectangles;
 
     }
+
+    private void setUp() {}
+
 }

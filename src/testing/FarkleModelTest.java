@@ -91,7 +91,7 @@ public class FarkleModelTest extends Application {
         game.mapDice();
         assertEquals("The dice array is not equal to what it should be.", 6, game.getHand().size());
         assertEquals("The rectangle array is not what it should be.", 6, game.getrList().size());
-        assertEquals("Dice -> Rectangle map is not set properly", 6, game.rMap.size());
+        assertEquals("Dice -> Rectangle map is not set properly", 6, game.getrMap().size());
 
 
     }

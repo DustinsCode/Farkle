@@ -4,10 +4,12 @@ import javafx.scene.control.Alert;
 
 
 /**
- * This class is an Alerts helper class for our model.
+ * This class is a Model to View Alerts helper class for our model.
+ *
  *
  */
 public class GameAlerts extends FarkleApp {
+
 
     /**
      * Method that displays alert window for
@@ -23,6 +25,37 @@ public class GameAlerts extends FarkleApp {
         alert.setContentText(
                 "You are not allowed to release"
                         + " a dice after rolling!");
+        alert.show();
+    }
+
+    /**
+     * Displays the alert notifying the user that there's been a farkle.
+     */
+    void farkleAlert() {
+
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.initOwner(super.getPrimaryStage());
+        alert.setTitle("Farkle!");
+        alert.setHeaderText("You have Farkled: Round Reset");
+        alert.setContentText(
+                "Try again! If you farkle 3 times,"
+                        + " you lose 1,000 from bank!"
+        );
+        alert.show();
+    }
+
+    /**
+     * This displays the alert for winning the game.
+     */
+    void wonGame() {
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.initOwner(super.getPrimaryStage());
+        alert.setTitle("You win!");
+        alert.setHeaderText("Bank Reached 10,000!");
+        alert.setContentText(
+                "You have won the model, "
+                        + "please exit and start a new model!");
         alert.show();
     }
 

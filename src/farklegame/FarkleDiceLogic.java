@@ -9,12 +9,12 @@ import java.util.ArrayList;
  */
 public class FarkleDiceLogic {
 
-    /** BankedPoints is the amount of points you have in the bank.*/
+    /** bankedPoints is the amount of points you have in the bank.*/
     private int bankedPoints = 0;
-    /** RoundPoints is the amount of points you have in current round.*/
+    /** roundPoints is the amount of points you have in current round*/
     private int roundPoints = 0;
     /**
-     * This keeps track of the number of farkles.
+     * This keeps track of the number of farkles
      */
     private int farkleCounter = 0;
     /**
@@ -43,7 +43,7 @@ public class FarkleDiceLogic {
             if (farkleCounter >= 3) {
                 bankedPoints -= 1000;
                 farkleCounter = 0;
-            }
+                }
             resetRound(hand);
             return true;
 

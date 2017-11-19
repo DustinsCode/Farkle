@@ -16,8 +16,6 @@ public interface FarkleControllerInterface {
 
     void enterGameScreenButtonPushed(ActionEvent event);
 
-    void setRectangleArray();
-
     void rollTheDiceButtonPushed( final ActionEvent event );
 
     void bankPointsButtonPushed( final ActionEvent event );

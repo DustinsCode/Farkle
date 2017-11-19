@@ -11,8 +11,8 @@ import javafx.stage.Stage;
  * FarkleApp is the base class for the Farkle game. This allows for the basic construction of an FXML-assisted GUI
  * development as afforded by JavaFX Scene Builder 9.0. The class extends javafx.application.Application,
  * thus the start method is overridden to follow syntax.
- * @author Wes Harrison
- * @version 1.0
+ * @author CIS 350 Group 3
+ * @version 1.1
  */
 public class FarkleApp extends Application {
 

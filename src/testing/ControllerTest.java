@@ -64,6 +64,7 @@ static void setUp() throws InterruptedException {
      * the rectangles into the rectangles array.
      * It verifies that the size of the rectangle array is correct.
      */
+    /*
     @Test
     public void setRectanglesTest() {
         controller.setRectangleArray();
@@ -72,6 +73,7 @@ static void setUp() throws InterruptedException {
         assertTrue(controller.getRectangles().size() == 6);
 
     }
+    */
 
     /**
      * This test determines whether or not the rollDice
