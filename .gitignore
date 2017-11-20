@@ -8,12 +8,9 @@ workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
 
-<<<<<<< HEAD
 .idea/workspace.xml
 Farkle.iml
 .idea/workspace.xml
 
 *.class
-=======
-.idea/workspace.xml
->>>>>>> CheckstyleCode
+
