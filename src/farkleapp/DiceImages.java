@@ -8,8 +8,8 @@ import javafx.scene.image.Image;
 public class DiceImages {
 
     /**
-     * Gets d1
-     * @return
+     * Gets d1.
+     * @return returns the first dice image.
      */
     public Image getD1() {
         return d1;
