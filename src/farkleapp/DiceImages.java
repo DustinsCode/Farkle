@@ -1,19 +1,13 @@
 package farkleapp;
 
 import javafx.scene.image.Image;
+import javafx.scene.layout.BackgroundImage;
 
 /**
  * This class contains the images for our application and our model to use.
  */
 public class DiceImages {
 
-    /**
-     * Gets d1.
-     * @return returns the first dice image.
-     */
-    public Image getD1() {
-        return d1;
-    }
 
     /**
      * Image for a single side of a die.
@@ -39,6 +33,14 @@ public class DiceImages {
      * Image for a single side of a die.
      */
     private final Image d6 = new Image("d6.png");
+
+    /**
+     * Gets d1.
+     * @return returns the first dice image.
+     */
+    public Image getD1() {
+        return d1;
+    }
 
     /**
      * Returns dice face image.
@@ -75,5 +77,7 @@ public class DiceImages {
     public Image getD6() {
         return d6;
     }
+
+
 
 }
