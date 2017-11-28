@@ -1,0 +1,16 @@
+.game {
+    -fx-background-image: url("../felt.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: stretch;
+    -fx-background-position: center center;
+
+}
+
+.home {
+    -fx-background-image: url("../felt_home.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: stretch;
+    -fx-background-position: center center;
+
+}
+

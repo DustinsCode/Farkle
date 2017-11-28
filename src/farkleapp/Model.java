@@ -295,7 +295,7 @@ public class Model {
         return logic.getRoundPoints();
     }
 
-    public int getEstRoundScore(){
+    public int getEstRoundScore() {
         logic.tallyRoundPoints(hand);
         return logic.getEstRoundPoints();
     }
