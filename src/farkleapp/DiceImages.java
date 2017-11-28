@@ -7,13 +7,6 @@ import javafx.scene.image.Image;
  */
 public class DiceImages {
 
-    /**
-     * Gets d1
-     * @return
-     */
-    public Image getD1() {
-        return d1;
-    }
 
     /**
      * Image for a single side of a die.
