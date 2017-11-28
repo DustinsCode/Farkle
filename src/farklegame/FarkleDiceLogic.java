@@ -44,7 +44,6 @@ public class FarkleDiceLogic extends Observable {
 
 
     public boolean isFarkle(final ArrayList<Dice> hand) {
-        System.out.println("I");
         if (scoreHand(hand) == farkle) {
             farkleCounter++;
             roundPoints = 0;
