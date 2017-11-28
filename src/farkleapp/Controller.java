@@ -145,13 +145,6 @@ public class Controller implements FarkleControllerInterface {
      */
     public void rollTheDiceButtonPushed(final ActionEvent event) {
 
-        // Adds all rectangles to the RECTANGLE_LIST,
-        // maps our dice, rolls our dice,
-        // and sets the hand in our model.
-        setUp();
-
-        //Animates the Dice
-        model.animateView();
 
         // Checks for farkle for each roll. Both must be true.
        if ((model.getRollCount() > 0) && model.isFarkle(RECTANGLE_LIST)) {
