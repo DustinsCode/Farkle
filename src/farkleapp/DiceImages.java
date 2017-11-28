@@ -41,6 +41,14 @@ public class DiceImages {
     private final Image d6 = new Image("d6.png");
 
     /**
+     * Gets d1.
+     * @return returns the first dice image.
+     */
+    public Image getD1() {
+        return d1;
+    }
+
+    /**
      * Returns dice face image.
      * @return  dice image corresponding to it's number.
      */
@@ -75,5 +83,7 @@ public class DiceImages {
     public Image getD6() {
         return d6;
     }
+
+
 
 }

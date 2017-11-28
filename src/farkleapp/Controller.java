@@ -1,7 +1,5 @@
 package farkleapp;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,10 +7,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -124,6 +123,7 @@ public class Controller implements FarkleControllerInterface {
             Stage window = (Stage) ((Node)
                     event.getSource()).getScene().getWindow();
             window.setScene(gameScreen);
+            gameScreen.setFill(new ImagePattern(new Image("felt.jpg")));
             window.show();
 
         } catch (IOException e) {
@@ -144,6 +144,14 @@ public class Controller implements FarkleControllerInterface {
      *             by pressing the Roll Dice button.
      */
     public void rollTheDiceButtonPushed(final ActionEvent event) {
+
+        // Adds all rectangles to the RECTANGLE_LIST,
+        // maps our dice, rolls our dice,
+        // and sets the hand in our model.
+        setUp();
+
+        //Animates the Dice
+        model.animateView();
 
         // Checks for farkle for each roll. Both must be true.
        if ((model.getRollCount() > 0) && model.isFarkle(RECTANGLE_LIST)) {
