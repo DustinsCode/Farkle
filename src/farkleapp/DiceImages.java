@@ -1,7 +1,6 @@
 package farkleapp;
 
 import javafx.scene.image.Image;
-import javafx.scene.layout.BackgroundImage;
 
 /**
  * This class contains the images for our application and our model to use.
