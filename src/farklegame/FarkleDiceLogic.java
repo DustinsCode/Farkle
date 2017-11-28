@@ -1,18 +1,22 @@
 package farklegame;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * The FarkleDiceLogic class performs our actual game
  * logic on Dice class objects. The requirements
  * for this was obtained from an external source on Farkle game rules.
  */
-public class FarkleDiceLogic {
+public class FarkleDiceLogic extends Observable {
 
     /** bankedPoints is the amount of points you have in the bank.*/
     private int bankedPoints = 0;
     /** roundPoints is the amount of points you have in current round*/
     private int roundPoints = 0;
+    /** estRoundPoints is estimated round points after you roll*/
+    private int estRoundPoints = 0;
     /**
      * This keeps track of the number of farkles
      */
@@ -21,6 +25,8 @@ public class FarkleDiceLogic {
      * This keeps track of if it's currently farkled.
      */
     private boolean wonGame = false;
+
+    final int farkle = 0;
 
 
     /**
@@ -35,9 +41,11 @@ public class FarkleDiceLogic {
      * @param hand is the arraylist of dice being passed to isFarkle
      * @return Returns whether or not there has been a farkle.
      */
+
+
     public boolean isFarkle(final ArrayList<Dice> hand) {
-        int points = scoreHandAll(hand);
-        if (points == roundPoints) {
+        System.out.println("I");
+        if (scoreHand(hand) == farkle) {
             farkleCounter++;
             roundPoints = 0;
             if (farkleCounter >= 3) {
@@ -52,14 +60,26 @@ public class FarkleDiceLogic {
         }
     }
 
+
+
+
     /**
      * This tallies the current hand of dice and sets the roundPoints
      * variable accordingly.
      * @param hand The ArrayList<Dice> representing our current hand.
      */
     public void tallyRoundPoints(final ArrayList<Dice> hand) {
-        roundPoints = scoreHand(hand);
+        estRoundPoints = (roundPoints + scoreHand(hand));
     }
+
+    /**
+     * This function tallies the current hand of dice and sets the roundPoints
+     * variable to it.
+     */
+    public void finalTallyRoundPoints(final ArrayList<Dice> hand){
+        roundPoints += scoreHand(hand);
+    }
+
 
     /**
      * rollHandStatus will go through the hand of dice passed to it and change
@@ -100,7 +120,7 @@ public class FarkleDiceLogic {
         int straightCount = 0;
         int[] diceCount = new int[6];
         for (Dice j: hand) {
-            if (j.isHeld()) {
+            if (j.isHeld() && !(j.isInactive())) {
                 diceCount[j.getVal() - 1] += 1;
             }
         }
@@ -122,6 +142,9 @@ public class FarkleDiceLogic {
                     case 1: score += 100;
                         straightCount++;
                         break;
+                    case 0:
+                        straightCount = 0;
+                        break;
                     default: throw new IllegalArgumentException(
                             "Number of dice must be between 0 and 6.");
                 }
@@ -142,6 +165,9 @@ public class FarkleDiceLogic {
                     case 1: score += 50;
                       straightCount++;
                     break;
+                    case 0:
+                        straightCount = 0;
+                        break;
                     default: throw new IllegalArgumentException(
                             "Number of dice must be between 0 and 6.");
                 }
@@ -185,104 +211,6 @@ public class FarkleDiceLogic {
         return score;
     }
 
-    /**
-     * scoreHandAll does a similar job to scoreHand, except it counts all
-     * dice, held or not.
-     * @see #scoreHand(ArrayList)
-     * @param hand is the hand of dice that is passed to scoreHandAll
-     * @return returns the total score value of all dice currently in hand.
-     */
-    private int scoreHandAll(final ArrayList<Dice> hand) {
-
-        int score = 0;
-        int pairCount = 0;
-        int straightCount = 0;
-
-        int[] diceCount = new int[6];
-        for (Dice j: hand) {
-                diceCount[j.getVal() - 1] += 1;
-        }
-
-        for (int i = 0;  i < diceCount.length; i++) {
-            if (i == 0) {
-                switch (diceCount[0]) {
-                    case 6: score += 2000;
-                        break;
-                    case 5: score += 1200;
-                        break;
-                    case 4: score += 1100;
-                        pairCount += 2;
-                        break;
-                    case 3: score += 1000;
-                        break;
-                    case 2: score += 200;
-                        pairCount += 2;
-                        break;
-                    case 1: score += 100;
-                        straightCount++;
-                        break;
-                    default: throw new IllegalArgumentException(
-                            "Number of dice must be between 0 and 6.");
-                }
-            }
-            if (i == 4) {
-                switch (diceCount[4]) {
-                    case 6: score += 1000;
-                        break;
-                    case 5: score += 600;
-                        break;
-                    case 4: score += 550;
-                        pairCount += 2;
-                        break;
-                    case 3: score += 500;
-                        break;
-                    case 2: score += 100;
-                        pairCount++;
-                    case 1: score += 50;
-                        straightCount++;
-                        break;
-                    default: throw new IllegalArgumentException(
-                            "Number of dice must be between 0 and 6.");
-                }
-            }
-            if (i != 0 && i != 4) {
-                switch (diceCount[i]) {
-                    case 6: score += ((i + 1) * 100) * 2;
-                        break;
-                    case 5: score += ((i + 1) * 100);
-                        break;
-                    case 4: score += ((i + 1) * 100);
-                        pairCount += 2;
-                        break;
-                    case 3:
-                        score += ((i + 1) * 100);
-                        break;
-                    case 2:
-                        pairCount++;
-                        break;
-                    case 1:
-                        straightCount++;
-                        break;
-                    case 0:
-                        straightCount = 0;
-                        break;
-                    default: throw new IllegalArgumentException(
-                            "Number of dice must be between 0 and 6.");
-                }
-                if (pairCount == 3) {
-                    if (score < 500) {
-                        score = 500;
-                    }
-                }
-                if (straightCount == 6) {
-                    if (score < 1000) {
-                        score = 1000;
-                    }
-                }
-            }
-        }
-        return score;
-    }
 
     /** bankPoints is used to take the current round points and point them into
      *  the total bankpoints. It will also reset your round points and check to
@@ -328,6 +256,12 @@ public class FarkleDiceLogic {
     public int getRoundPoints() {
         return roundPoints;
     }
+
+    /**
+     * getEstRoundPoints is a getter for estimated round points
+     * @return the number of estimated round points (round points + held dice)
+     */
+    public int getEstRoundPoints(){return estRoundPoints;}
 
     /**
      * Is a getter for whether or not the game has won.

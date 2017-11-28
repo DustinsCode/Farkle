@@ -145,12 +145,6 @@ public class Controller implements FarkleControllerInterface {
      */
     public void rollTheDiceButtonPushed(final ActionEvent event) {
 
-        // Adds all rectangles to the RECTANGLE_LIST, maps our dice, rolls our dice and sets the hand in our model.
-        setUp();
-
-        //Animates the Dice
-        model.animateView();
-
         // Checks for farkle for each roll. Both must be true.
        if ((model.getRollCount() > 0) && model.isFarkle(RECTANGLE_LIST)) {
 
@@ -159,7 +153,13 @@ public class Controller implements FarkleControllerInterface {
             bankPoints.setText(Integer.toString(model.getBankScore()));
 
         }
+        roundPoints.setText(Integer.toString(model.getRoundScore()));
 
+        // Adds all rectangles to the RECTANGLE_LIST, maps our dice, rolls our dice and sets the hand in our model.
+        setUp();
+
+        //Animates the Dice
+        model.animateView();
 
         model.setRolled(); // Increments the rolled variable.
 
@@ -194,7 +194,7 @@ public class Controller implements FarkleControllerInterface {
 
             model.checkRolled();
             model.modHoldStatus(rectX);
-            roundPoints.setText(Integer.toString(model.getRoundScore()));
+            roundPoints.setText(Integer.toString(model.getEstRoundScore()));
 
 
 

@@ -291,9 +291,15 @@ public class Model {
      * @return the Integer value representing the current score of your hand.
      */
     public int getRoundScore() {
-        logic.tallyRoundPoints(hand);
+        logic.finalTallyRoundPoints(hand);
         return logic.getRoundPoints();
     }
+
+    public int getEstRoundScore(){
+        logic.tallyRoundPoints(hand);
+        return logic.getEstRoundPoints();
+    }
+
     /**
      * This is a pass-through for logic.wonGameStatus
      * that determines if we've won the game.
