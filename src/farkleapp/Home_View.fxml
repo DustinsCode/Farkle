@@ -13,29 +13,29 @@
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="home" stylesheets="@style.css">
          <children>
-            <Button layoutX="250.0" layoutY="261.0" mnemonicParsing="false" onAction="#enterGameScreenButtonPushed" prefHeight="40.0" prefWidth="100.0" text="Play">
+            <Button layoutX="250.0" layoutY="261.0" mnemonicParsing="false" onAction="#enterGameScreenButtonPushed" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Play" textAlignment="CENTER" textFill="RED">
                <font>
-                  <Font name="Showcard Gothic" size="19.0" />
+                  <Font name="Broadway" size="20.0" />
                </font>
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Button layoutX="250.0" layoutY="330.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="100.0" text="Exit">
+            <Button layoutX="250.0" layoutY="330.0" mnemonicParsing="false" onAction="#exitHandler" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Exit" textAlignment="CENTER" textFill="RED">
                <font>
-                  <Font name="Showcard Gothic" size="18.0" />
+                  <Font name="Broadway" size="20.0" />
                </font>
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Text layoutX="93.0" layoutY="180.0" strokeType="INSIDE" strokeWidth="30.0" text="Farkle!" wrappingWidth="413.41796875">
+            <Text layoutX="93.0" layoutY="178.0" strokeType="INSIDE" strokeWidth="30.0" text="Farkle!" wrappingWidth="413.41796875">
                <font>
-                  <Font name="Showcard Gothic" size="96.0" />
+                  <Font name="Broadway" size="96.0" />
                </font>
                <stroke>
-                  <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.07142857142857142">
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0">
                      <stops>
                         <Stop color="#ff0e09" />
-                        <Stop color="#c2968c00" offset="1.0" />
+                        <Stop color="#ff000000" offset="1.0" />
                      </stops>
                   </LinearGradient>
                </stroke>

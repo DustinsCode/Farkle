@@ -7,9 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -123,7 +121,6 @@ public class Controller implements FarkleControllerInterface {
             Stage window = (Stage) ((Node)
                     event.getSource()).getScene().getWindow();
             window.setScene(gameScreen);
-            gameScreen.setFill(new ImagePattern(new Image("felt.jpg")));
             window.show();
 
         } catch (IOException e) {
@@ -156,7 +153,9 @@ public class Controller implements FarkleControllerInterface {
         }
         roundPoints.setText(Integer.toString(model.getRoundScore()));
 
-        // Adds all rectangles to the RECTANGLE_LIST, maps our dice, rolls our dice and sets the hand in our model.
+        // Adds all rectangles to the RECTANGLE_LIST,
+        // maps our dice, rolls our dice
+        // and sets the hand in our model.
         setUp();
 
         //Animates the Dice
