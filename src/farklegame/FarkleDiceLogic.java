@@ -1,15 +1,14 @@
 package farklegame;
 
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
+
 
 /**
  * The FarkleDiceLogic class performs our actual game
  * logic on Dice class objects. The requirements
  * for this was obtained from an external source on Farkle game rules.
  */
-public class FarkleDiceLogic extends Observable {
+public class FarkleDiceLogic{
 
     /** bankedPoints is the amount of points you have in the bank.*/
     private int bankedPoints = 0;
@@ -223,7 +222,6 @@ public class FarkleDiceLogic extends Observable {
         // Checks to see if we've won
         if (bankedPoints >= 10000) {
             wonGame = true; //Sets to true if we win.
-            // @Todo add observer
         }
     }
 
@@ -266,7 +264,6 @@ public class FarkleDiceLogic extends Observable {
 
     /**
      * Is a getter for whether or not the game has won.
-     * @todo make this into an observer
      * @return whether or not the game has been won.
      */
     public boolean wonGameStatus() {
