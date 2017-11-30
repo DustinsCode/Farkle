@@ -6,14 +6,24 @@ import farkleapp.Controller;
 import farkleapp.Model;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.shape.Rectangle;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import java.util.ArrayList;
+
 import static junit.framework.TestCase.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.atMost;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 
 /**
@@ -29,7 +39,10 @@ public class ControllerTest {
     /**
      * Mocked Model instance.
      */
-    @Mock private Model game;
+    @Mock private Model model = new Model();
+
+    @Spy
+    private Label roundPoints;
 
     /**
      * Injected into our Controller object.
@@ -43,7 +56,7 @@ public class ControllerTest {
      * within the JavaFX application thread.
      */
     @BeforeClass
-static void setUp() throws InterruptedException {
+public static void setUp() throws InterruptedException {
 
 
     // Initialise Java FX
@@ -64,16 +77,13 @@ static void setUp() throws InterruptedException {
      * the rectangles into the rectangles array.
      * It verifies that the size of the rectangle array is correct.
      */
-    /*
-    @Test
-    public void setRectanglesTest() {
-        controller.setRectangleArray();
-        // Verifies that our rectangle array is equal to the proper size.
 
-        assertTrue(controller.getRectangles().size() == 6);
+    @Test
+    public void setUpTest() {
+
 
     }
-    */
+
 
     /**
      * This test determines whether or not the rollDice
@@ -83,11 +93,10 @@ static void setUp() throws InterruptedException {
      * (thus, it's calling all of the methods in the class).
      */
     @Test
-    public void rollTheDiceTest() {
+    public void rollTheDiceButtonPushedTest() {
         controller.rollTheDiceButtonPushed(new ActionEvent());
-        verify(game).setHand();
-        verify(game).setRolled();
-        verify(game).mapDice();
+        verify(model, atMost(1)).getRollCount();
+        verify(model, atMost(1)).isFarkle(any(ArrayList.class));
 
     }
 
@@ -97,11 +106,7 @@ static void setUp() throws InterruptedException {
      */
     @Test
     public void bankPointsTest() {
-        controller.bankPointsButtonPushed(new ActionEvent());
-        verify(game).setBankScore();
-        verify(game).getBankScore();
-        verify(game).getRoundScore();
-        verify(game).setRollCount(0);
+
     }
 
 }

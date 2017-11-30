@@ -59,4 +59,15 @@ public class GameAlerts extends FarkleApp {
         alert.show();
     }
 
+   void notRolled() {
+       Alert alert = new Alert(Alert.AlertType.WARNING);
+       alert.initOwner(FarkleApp.getPrimaryStage());
+       alert.setTitle("Action Not Allowed");
+       alert.setHeaderText("Must Roll Dice");
+       alert.setContentText(
+               "You are not allowed to select a dice before rolling."
+                       + " Please roll first.");
+       alert.show();
+   }
+
 }

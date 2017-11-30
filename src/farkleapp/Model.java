@@ -225,14 +225,7 @@ public class Model {
    public void checkRolled() {
 
         if (getRollCount() < 1) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.initOwner(FarkleApp.getPrimaryStage());
-            alert.setTitle("Action Not Allowed");
-            alert.setHeaderText("Must Roll Dice");
-            alert.setContentText(
-                    "You are not allowed to select a dice before rolling."
-                            + " Please roll first.");
-            alert.show();
+            alerts.notRolled();
         }
     }
     /**
@@ -241,7 +234,7 @@ public class Model {
      * @param list is the hand being checked for farkle.
      * @return the boolean representing whether or not we Farkle.
      */
-    boolean isFarkle(final List<Rectangle> list) {
+   public boolean isFarkle(final List<Rectangle> list) {
 
       if (logic.isFarkle(hand)) {
           for (Rectangle rect: list) {
@@ -321,7 +314,7 @@ public class Model {
      * This accesses the number of farkles in our current round.
      * @return The number of farkles in the current round.
      */
-    int getFarkleCount() {
+    public int getFarkleCount() {
         return logic.getFarkle();
     }
     /**
@@ -336,7 +329,7 @@ public class Model {
      * Returns the rollCount variable.
      * @return The count of our rolls.
      */
-    int getRollCount() {
+    public int getRollCount() {
         return this.rollCount;
     }
     /**
