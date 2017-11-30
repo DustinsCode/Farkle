@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -21,22 +22,25 @@
                      <children>
                         <HBox prefHeight="100.0" prefWidth="600.0">
                            <children>
-                              <Label prefHeight="53.0" prefWidth="131.0" text="Bank:">
+                              <Label prefHeight="53.0" prefWidth="138.0" text="Bank:">
                                  <font>
-                                    <Font size="36.0" />
+                                    <Font name="System Bold" size="36.0" />
                                  </font>
                                  <textFill>
-                                    <LinearGradient endX="0.4857142857142857" endY="1.0" startX="0.4857142857142857" startY="0.3238095238095239">
+                                    <LinearGradient endX="0.4857142857142857" endY="1.0" startX="0.4857142857142857" startY="0.5523809523809525">
                                        <stops>
-                                          <Stop color="#ffbb00" />
-                                          <Stop color="WHITE" offset="1.0" />
+                                          <Stop color="RED" />
+                                          <Stop color="BLACK" offset="1.0" />
                                        </stops>
                                     </LinearGradient>
                                  </textFill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </Label>
-                              <Label fx:id="bankPoints" prefHeight="53.0" prefWidth="80.0" text="0000">
+                              <Label fx:id="bankPoints" prefHeight="53.0" prefWidth="343.0" text="00000">
                                  <font>
-                                    <Font size="36.0" />
+                                    <Font name="System Bold" size="36.0" />
                                  </font>
                                  <textFill>
                                     <LinearGradient endX="0.4857142857142857" endY="0.8285714285714286" startX="0.5" startY="0.5190476190476191">
@@ -46,44 +50,46 @@
                                        </stops>
                                     </LinearGradient>
                                  </textFill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </Label>
-                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#bankPointsButtonPushed" prefHeight="39.0" prefWidth="117.0" text="Bank Points">
-                                 <font>
-                                    <Font name="Courier New Bold" size="12.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="150.0" top="5.0" />
-                                 </HBox.margin>
-                              </Button>
                            </children>
                         </HBox>
                         <HBox prefHeight="165.0" prefWidth="600.0" spacing="30.0">
                            <children>
-                              <Label prefHeight="39.0" prefWidth="217.0" text="Round Score:">
+                              <Label prefHeight="53.0" prefWidth="247.0" text="Round Score:">
                                  <font>
-                                    <Font size="36.0" />
+                                    <Font name="System Bold" size="36.0" />
                                  </font>
                                  <textFill>
-                                    <LinearGradient endX="0.4857142857142857" endY="1.0" startX="0.4857142857142857" startY="0.3238095238095239">
+                                    <LinearGradient endX="0.4857142857142857" endY="1.0" startX="0.4857142857142857" startY="0.5523809523809525">
                                        <stops>
-                                          <Stop color="#ffbb00" />
-                                          <Stop color="WHITE" offset="1.0" />
+                                          <Stop color="RED" />
+                                          <Stop color="BLACK" offset="1.0" />
                                        </stops>
                                     </LinearGradient>
                                  </textFill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </Label>
-                              <Label fx:id="roundPoints" prefHeight="53.0" prefWidth="157.0" text="0000">
+                              <Label fx:id="roundPoints" prefHeight="53.0" prefWidth="117.0" text="00000">
                                  <font>
-                                    <Font size="36.0" />
+                                    <Font name="System Bold" size="36.0" />
                                  </font>
                                  <textFill>
                                     <LinearGradient endX="0.4857142857142857" endY="0.8285714285714286" startX="0.5" startY="0.5190476190476191">
                                        <stops>
                                           <Stop color="#ffbb00" />
+                                          <Stop color="#ffbb00" offset="0.007662835249042145" />
                                           <Stop color="WHITE" offset="1.0" />
                                        </stops>
                                     </LinearGradient>
                                  </textFill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </Label>
                            </children>
                            <opaqueInsets>
@@ -138,10 +144,24 @@
                <children>
                   <HBox alignment="CENTER" layoutY="8.0" prefHeight="165.0" prefWidth="600.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#rollTheDiceButtonPushed" prefHeight="39.0" prefWidth="117.0" text="Roll The Dice">
+                        <Button alignment="CENTER" layoutX="405.0" layoutY="73.0" mnemonicParsing="false" onAction="#rollTheDiceButtonPushed" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #ffbb00;" text="Roll" textFill="RED">
                            <font>
-                              <Font name="Courier New Bold" size="12.0" />
+                              <Font name="Broadway" size="24.0" />
                            </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#bankPointsButtonPushed" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #cc0404;" text="Bank" textFill="#ffbb00">
+                           <font>
+                              <Font name="Broadway" size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="150.0" top="5.0" />
+                           </HBox.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect>
                         </Button>
                      </children>
                   </HBox>
