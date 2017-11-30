@@ -6,8 +6,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Testing for the Dice class.
+ *
+ * @author Dustin Thurston
+ */
 class DiceTest {
 
+    /** Dice object undergoing tests */
     private final Dice dice1 = new Dice();
 
     /**
@@ -18,7 +24,7 @@ class DiceTest {
     void rollTest() {
         dice1.releaseDice();
         int val = dice1.roll();
-        assertTrue(val >=1 && val <=6);
+        assertTrue(val >= 1 && val <= 6);
 
         dice1.holdDice();
         int val2 = dice1.roll();
