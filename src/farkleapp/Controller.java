@@ -177,7 +177,7 @@ public class Controller implements FarkleControllerInterface {
         model.setRollCount(0);
         roundPoints.setText(Integer.toString(model.getRoundScore()));
         model.wonGameStatus();
-
+        rollTheDiceButtonPushed(event);
 
 
 
