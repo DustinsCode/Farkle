@@ -2,30 +2,25 @@ package farklegame;
 
 import java.util.ArrayList;
 
-
 /**
  * The FarkleDiceLogic class performs our actual game
  * logic on Dice class objects. The requirements
  * for this was obtained from an external source on Farkle game rules.
  */
-public class FarkleDiceLogic{
+public class FarkleDiceLogic {
 
     /** bankedPoints is the amount of points you have in the bank.*/
     private int bankedPoints = 0;
-    /** roundPoints is the amount of points you have in current round*/
+    /** roundPoints is the amount of points you have in current round.*/
     private int roundPoints = 0;
-    /** estRoundPoints is estimated round points after you roll*/
+    /** estRoundPoints is estimated round points after you roll.*/
     private int estRoundPoints = 0;
-    /**
-     * This keeps track of the number of farkles
-     */
+    /** This keeps track of the number of farkles.*/
     private int farkleCounter = 0;
-    /**
-     * This keeps track of if it's currently farkled.
-     */
+    /** This keeps track of if it's currently farkled.*/
     private boolean wonGame = false;
-
-    final int farkle = 0;
+    /** This keeps track of subsequent farkles. */
+    private final int farkle = 0;
 
 
     /**
@@ -40,8 +35,6 @@ public class FarkleDiceLogic{
      * @param hand is the arraylist of dice being passed to isFarkle
      * @return Returns whether or not there has been a farkle.
      */
-
-
     public boolean isFarkle(final ArrayList<Dice> hand) {
         if (scoreHand(hand) == farkle) {
             farkleCounter++;
@@ -58,9 +51,6 @@ public class FarkleDiceLogic{
         }
     }
 
-
-
-
     /**
      * This tallies the current hand of dice and sets the roundPoints
      * variable accordingly.
@@ -73,11 +63,11 @@ public class FarkleDiceLogic{
     /**
      * This function tallies the current hand of dice and sets the roundPoints
      * variable to it.
+     * @param hand The ArrrayList<Dice> representing our current hand.
      */
-    public void finalTallyRoundPoints(final ArrayList<Dice> hand){
+    public void finalTallyRoundPoints(final ArrayList<Dice> hand) {
         roundPoints += scoreHand(hand);
     }
-
 
     /**
      * rollHandStatus will go through the hand of dice passed to it and change
@@ -210,14 +200,14 @@ public class FarkleDiceLogic{
         return score;
     }
 
-
     /** bankPoints is used to take the current round points and point them into
      *  the total bankpoints. It will also reset your round points and check to
      *  see if points are over 10,000 which would be a victory
      */
    public void bankPoints() {
 
-        bankedPoints += getEstRoundPoints(); //Adds current round points to our bank.
+       //Adds current round points to our bank.
+        bankedPoints += getEstRoundPoints();
         roundPoints = 0; //resets round points when you bank.
         // Checks to see if we've won
         if (bankedPoints >= 10000) {
@@ -256,11 +246,12 @@ public class FarkleDiceLogic{
     }
 
     /**
-     * getEstRoundPoints is a getter for estimated round points
+     * getEstRoundPoints is a getter for estimated round points.
      * @return the number of estimated round points (round points + held dice)
      */
-    public int getEstRoundPoints(){
-        return estRoundPoints;}
+    public int getEstRoundPoints() {
+        return estRoundPoints;
+    }
 
     /**
      * Is a getter for whether or not the game has won.
