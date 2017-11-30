@@ -1,15 +1,14 @@
 package farklegame;
 
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
+
 
 /**
  * The FarkleDiceLogic class performs our actual game
  * logic on Dice class objects. The requirements
  * for this was obtained from an external source on Farkle game rules.
  */
-public class FarkleDiceLogic extends Observable {
+public class FarkleDiceLogic{
 
     /** bankedPoints is the amount of points you have in the bank.*/
     private int bankedPoints = 0;
@@ -153,17 +152,18 @@ public class FarkleDiceLogic extends Observable {
                     case 6: score += 1000;
                         break;
                     case 5: score += 600;
-                     break;
+                        break;
                     case 4: score += 550;
                       pairCount += 2;
-                     break;
+                        break;
                     case 3: score += 500;
-                      break;
+                        break;
                     case 2: score += 100;
                        pairCount++;
+                       break;
                     case 1: score += 50;
                       straightCount++;
-                    break;
+                        break;
                     case 0:
                         straightCount = 0;
                         break;
@@ -217,12 +217,11 @@ public class FarkleDiceLogic extends Observable {
      */
    public void bankPoints() {
 
-        bankedPoints += roundPoints; //Adds current round points to our bank.
+        bankedPoints += getEstRoundPoints(); //Adds current round points to our bank.
         roundPoints = 0; //resets round points when you bank.
         // Checks to see if we've won
         if (bankedPoints >= 10000) {
             wonGame = true; //Sets to true if we win.
-            // @Todo add observer
         }
     }
 
@@ -260,11 +259,11 @@ public class FarkleDiceLogic extends Observable {
      * getEstRoundPoints is a getter for estimated round points
      * @return the number of estimated round points (round points + held dice)
      */
-    public int getEstRoundPoints(){return estRoundPoints;}
+    public int getEstRoundPoints(){
+        return estRoundPoints;}
 
     /**
      * Is a getter for whether or not the game has won.
-     * @todo make this into an observer
      * @return whether or not the game has been won.
      */
     public boolean wonGameStatus() {

@@ -11,7 +11,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-
 import java.util.*; // We use every class inside of util.
 
 
@@ -239,9 +238,10 @@ public class Model {
     /**
      * This method checks our logic to see if we've Farkled.
      * If we do, it alerts view.
+     * @param list is the hand being checked for farkle.
      * @return the boolean representing whether or not we Farkle.
      */
-    boolean isFarkle(List<Rectangle> list) {
+    boolean isFarkle(final List<Rectangle> list) {
 
       if (logic.isFarkle(hand)) {
           for (Rectangle rect: list) {
@@ -295,6 +295,10 @@ public class Model {
         return logic.getRoundPoints();
     }
 
+    /**
+     * Gets the amount of points you have with held dice.
+     * @return the estimated round score.
+     */
     public int getEstRoundScore() {
         logic.tallyRoundPoints(hand);
         return logic.getEstRoundPoints();
