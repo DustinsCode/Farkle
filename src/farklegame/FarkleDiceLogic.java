@@ -226,6 +226,7 @@ public class FarkleDiceLogic {
             j.releaseDice();
             j.setActive();
             j.roll();
+            estRoundPoints = 0;
         }
     }
 
