@@ -68,6 +68,8 @@ public class FakeController implements FarkleControllerInterface {
 
     }
 
+
+
     @Override
     public ArrayList<Rectangle> getRectangles() {
         setUp();

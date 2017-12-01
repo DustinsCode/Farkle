@@ -177,7 +177,6 @@ public class Controller implements FarkleControllerInterface {
         bankPoints.setText(Integer.toString(model.getBankScore()));
         roundPoints.setText(Integer.toString(model.getRoundScore()));
         model.setRollCount(0);
-
         model.resetHand();
         model.wonGameStatus();
         rollTheDiceButtonPushed(event);
@@ -190,15 +189,12 @@ public class Controller implements FarkleControllerInterface {
      */
     public void holdRectangles(final MouseEvent event) {
 
-
-       Rectangle rectX = (Rectangle) event.getSource();
-
-            model.checkRolled();
+        if (event != null) {
+            Rectangle rectX = (Rectangle) event.getSource();
             model.modHoldStatus(rectX);
+        }
+            model.checkRolled();
             roundPoints.setText(Integer.toString(model.getEstRoundScore()));
-
-
-
 }
     /**
      * This method is to return our ArrayList of
