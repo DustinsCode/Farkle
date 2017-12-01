@@ -268,4 +268,19 @@ public class FarkleDiceLogic {
     public int getFarkle() {
         return farkleCounter;
     }
+
+    /**
+     * Sets the banked score
+     * @param score to set the game to
+     */
+    public void setScore(final int score) {
+        this.bankedPoints = score;
+        if (this.bankedPoints >= 10000) {
+            this.wonGame = true;
+            return;
+        }
+        this.wonGame = false;
+
+
+    }
 }
