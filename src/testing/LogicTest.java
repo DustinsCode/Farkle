@@ -16,16 +16,44 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class LogicTest {
 
+    /**
+     * d1 represents dice one.
+     */
     private final Dice d1 = new Dice();
+    /**
+     * d2 represents dice two.
+     */
     private final Dice d2 = new Dice();
+    /**
+     * d3 represents dice three.
+     */
     private final Dice d3 = new Dice();
+    /**
+     * d4 represents dice four.
+     */
     private final Dice d4 = new Dice();
+    /**
+     * d5 represents dice five.
+     */
     private final Dice d5 = new Dice();
+    /**
+     * d6 represents dice six.
+     */
     private final Dice d6 = new Dice();
+    /**
+     * d7 represents dice seven.
+     */
     private final Dice d7 = new Dice();
+    /**
+     * hold is the array list that holds the dice,
+     * otherwise known as the hand.
+     */
     private final ArrayList<Dice> hold = new ArrayList<>();
-
-    FarkleDiceLogic gl = new FarkleDiceLogic();
+    /**
+     * gl is an instantiation of the game logic,
+     * used in order to test the DiceLogic class.
+     */
+    private FarkleDiceLogic gl = new FarkleDiceLogic();
 
     /**
      * scoringTest is a basic scoringTest that makes sure
@@ -34,7 +62,7 @@ class LogicTest {
      */
     @Test
     void scoringTest() {
-        /**
+        /*
          * Tests to make sure a straight is scored correctly.
          */
         d1.setDice(1);
@@ -129,14 +157,15 @@ class LogicTest {
             gl.scoreHand(hold);
             fail("Expected an IllegalArgumentException.");
         } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "Number of dice must be between 0 and 6.");
+            assertEquals(e.getMessage(),
+                    "Number of dice must be between 0 and 6.");
         }
 
     }
 
     /**
      * fiveDiceScoresTest tests to make sure that all possible combinations
-     * of dice with a 5 on them give the correct score
+     * of dice with a 5 on them give the correct score.
      */
     @Test
     void fiveDiceScoresTest() {
@@ -164,7 +193,7 @@ class LogicTest {
         hold.add(d4);
         assertEquals(550, gl.scoreHand(hold));
         hold.add(d5);
-        assertEquals(600 , gl.scoreHand(hold));
+        assertEquals(600, gl.scoreHand(hold));
         hold.add(d6);
         assertEquals(1000, gl.scoreHand(hold));
         try {
@@ -172,7 +201,8 @@ class LogicTest {
             gl.scoreHand(hold);
             fail("Expected an IllegalArgumentException.");
         } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "Number of dice must be between 0 and 6.");
+            assertEquals(e.getMessage(),
+                    "Number of dice must be between 0 and 6.");
         }
 
     }
@@ -184,8 +214,9 @@ class LogicTest {
     @Test
     void genericScoreTest() {
         for (int i = 2; i <= 5; i++) {
-            if (i == 5)
+            if (i == 5) {
                 i = 6;
+            }
             d1.setDice(i);
             d2.setDice(i);
             d3.setDice(i);
@@ -218,7 +249,8 @@ class LogicTest {
                 gl.scoreHand(hold);
                 fail("Expected an IllegalArgumentException.");
             } catch (IllegalArgumentException e) {
-                assertEquals(e.getMessage(), "Number of dice must be between 0 and 6.");
+                assertEquals(e.getMessage(),
+                        "Number of dice must be between 0 and 6.");
             }
             hold.clear();
         }
@@ -243,7 +275,7 @@ class LogicTest {
 
         d1.holdDice();
         score = gl.scoreHand(hold);
-        assertEquals(100 , score);
+        assertEquals(100, score);
     }
 
     /**
@@ -263,7 +295,7 @@ class LogicTest {
 
     /**
      *tallyRoundPoints tests to make sure that the tallyRoundPoints and
-     * finalTallyRoundPoints properly updates roundpoints and estRoundPoints
+     * finalTallyRoundPoints properly updates roundpoints and estRoundPoints.
      */
     @Test
     void tallyRoundPointsTest() {
@@ -304,7 +336,7 @@ class LogicTest {
      * won the game.
      */
     @Test
-    void wonGametest(){
+    void wonGametest() {
         d1.setDice(1);
         d2.setDice(1);
         d3.setDice(1);
