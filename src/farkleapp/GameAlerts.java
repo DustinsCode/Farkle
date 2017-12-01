@@ -10,7 +10,6 @@ import javafx.scene.control.Alert;
  */
 public class GameAlerts extends FarkleApp {
 
-
     /**
      * Method that displays alert window for
      * when a user tries to release after rolling.

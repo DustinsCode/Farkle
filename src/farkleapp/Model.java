@@ -18,7 +18,7 @@ import java.util.*; // We use every class inside of util.
 /**
  * The Model class interfaces with Controller and
  * FarkleDiceLogic to map the numerical logic done on our dice to
- * a visual representation useable by our JavaFX controller.
+ * a visual representation usable by our JavaFX controller.
  */
 public class Model {
 
@@ -50,7 +50,7 @@ public class Model {
     private final ArrayList<Dice> hand = new ArrayList<>(6);
 
     /**
-     *
+     * HashMap of Rectangle objects and their appropriate Dice objects.
      */
     private final LinkedHashMap<Rectangle, Dice> rMap = new LinkedHashMap<>();
 
@@ -58,11 +58,11 @@ public class Model {
      * The variable the keeps track of how many rolls we've performed.
      */
     private int rollCount = 0;
+
     /**
      * The alerts class of our application (visual).
      */
     private GameAlerts alerts = new GameAlerts();
-
 
     /**
      * Constructor that adds all the Dice images
@@ -111,6 +111,7 @@ public class Model {
             }
         }
     }
+
     /**
      * Animates the dice with our images in the view.
      */
@@ -133,7 +134,6 @@ public class Model {
                         // Calls getHand from our model
                         // instance and sets the fills.
                         ae -> getHandFill(rList))
-
         );
         diceAnimate.setCycleCount(1);
         diceAnimate.play();
@@ -190,11 +190,7 @@ public class Model {
         borderGlow.setHeight(depth);
 
         for (Rectangle rect: rList) {
-
-
-
             if (rect.equals(r)) {
-
 
                 // Sets the glow and attributes of the dice
                 // corresponding with it's status when clicked.
@@ -207,7 +203,6 @@ public class Model {
                         ) {
                                 r.setEffect(borderGlow);
                                 rMap.get(r).holdDice();
-
 
                 } else if (rMap.get(r).isHeld() && rMap.get(r).isInactive()) {
                     alerts.afterRollTriedRelease();
@@ -223,11 +218,11 @@ public class Model {
      * un-hold a dice, and it prompts with an alert.
      */
    public void checkRolled() {
-
         if (getRollCount() < 1) {
             alerts.notRolled();
         }
     }
+
     /**
      * This method checks our logic to see if we've Farkled.
      * If we do, it alerts view.
@@ -375,6 +370,11 @@ public class Model {
         this.rList = rList;
     }
 
+    /**
+     * Returns the game's reference to FarkleDiceLogic.
+     * @return logic
+     */
+    public FarkleDiceLogic getLogic() { return this.logic; }
 
 }
 
