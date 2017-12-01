@@ -27,10 +27,13 @@ class LogicTest {
 
     FarkleDiceLogic gl = new FarkleDiceLogic();
 
-
+    /**
+     * scoringTest is a basic scoringTest that makes sure
+     * that pairs, straights, one-die, and five-die all
+     * give the current score.
+     */
     @Test
-    void scoringTest(){
-
+    void scoringTest() {
         /**
          * Tests to make sure a straight is scored correctly.
          */
@@ -56,7 +59,7 @@ class LogicTest {
         int score = gl.scoreHand(hold);
         assertEquals(1000, score);
 
-        /**
+        /*
          * Tests for correct three pair score
          */
         hold.get(0).setDice(2);
@@ -68,9 +71,9 @@ class LogicTest {
 
         score = gl.scoreHand(hold);
 
-        assertEquals(500,score);
+        assertEquals(500, score);
 
-        /**
+        /*
          * Tests for correct one one-dice score.
          */
         hold.get(0).setDice(1);
@@ -78,7 +81,7 @@ class LogicTest {
         score = gl.scoreHand(hold);
         assertEquals(100, score);
 
-        /**
+        /*
          * Tests for correct one five-dice score.
          */
         hold.get(0).setDice(5);
@@ -93,7 +96,7 @@ class LogicTest {
      * correct score.
      */
     @Test
-    void oneDiceScoresTest(){
+    void oneDiceScoresTest() {
         d1.setDice(1);
         d2.setDice(1);
         d3.setDice(1);
@@ -108,24 +111,24 @@ class LogicTest {
         d5.holdDice();
         d6.holdDice();
         d7.holdDice();
-        assertEquals(0,gl.scoreHand(hold));
+        assertEquals(0, gl.scoreHand(hold));
         hold.add(d1);
-        assertEquals(100,gl.scoreHand(hold));
+        assertEquals(100, gl.scoreHand(hold));
         hold.add(d2);
-        assertEquals(200,gl.scoreHand(hold));
+        assertEquals(200, gl.scoreHand(hold));
         hold.add(d3);
-        assertEquals(1000,gl.scoreHand(hold));
+        assertEquals(1000, gl.scoreHand(hold));
         hold.add(d4);
-        assertEquals(1100,gl.scoreHand(hold));
+        assertEquals(1100, gl.scoreHand(hold));
         hold.add(d5);
-        assertEquals(1200,gl.scoreHand(hold));
+        assertEquals(1200, gl.scoreHand(hold));
         hold.add(d6);
         assertEquals(2000, gl.scoreHand(hold));
-        try{
+        try {
             hold.add(d7);
             gl.scoreHand(hold);
             fail("Expected an IllegalArgumentException.");
-        }catch(IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             assertEquals(e.getMessage(), "Number of dice must be between 0 and 6.");
         }
 
@@ -136,7 +139,7 @@ class LogicTest {
      * of dice with a 5 on them give the correct score
      */
     @Test
-    void fiveDiceScoresTest(){
+    void fiveDiceScoresTest() {
         d1.setDice(5);
         d2.setDice(5);
         d3.setDice(5);
@@ -151,27 +154,74 @@ class LogicTest {
         d5.holdDice();
         d6.holdDice();
         d7.holdDice();
-        assertEquals(0,gl.scoreHand(hold));
+        assertEquals(0, gl.scoreHand(hold));
         hold.add(d1);
-        assertEquals(50,gl.scoreHand(hold));
+        assertEquals(50, gl.scoreHand(hold));
         hold.add(d2);
-        assertEquals(100,gl.scoreHand(hold));
+        assertEquals(100, gl.scoreHand(hold));
         hold.add(d3);
-        assertEquals(500,gl.scoreHand(hold));
+        assertEquals(500, gl.scoreHand(hold));
         hold.add(d4);
-        assertEquals(550,gl.scoreHand(hold));
+        assertEquals(550, gl.scoreHand(hold));
         hold.add(d5);
-        assertEquals(600,gl.scoreHand(hold));
+        assertEquals(600 , gl.scoreHand(hold));
         hold.add(d6);
         assertEquals(1000, gl.scoreHand(hold));
-        try{
+        try {
             hold.add(d7);
             gl.scoreHand(hold);
             fail("Expected an IllegalArgumentException.");
-        }catch(IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             assertEquals(e.getMessage(), "Number of dice must be between 0 and 6.");
         }
 
+    }
+
+    /**
+     * genericScoreTest tests for three-pairs and more for any dice
+     * that's not a 1 or a five.
+     */
+    @Test
+    void genericScoreTest() {
+        for (int i = 2; i <= 5; i++) {
+            if (i == 5)
+                i = 6;
+            d1.setDice(i);
+            d2.setDice(i);
+            d3.setDice(i);
+            d4.setDice(i);
+            d5.setDice(i);
+            d6.setDice(i);
+            d7.setDice(i);
+            d1.holdDice();
+            d2.holdDice();
+            d3.holdDice();
+            d4.holdDice();
+            d5.holdDice();
+            d6.holdDice();
+            d7.holdDice();
+            assertEquals(0, gl.scoreHand(hold));
+            hold.add(d1);
+            assertEquals(0, gl.scoreHand(hold));
+            hold.add(d2);
+            assertEquals(0, gl.scoreHand(hold));
+            hold.add(d3);
+            assertEquals((i * 100), gl.scoreHand(hold));
+            hold.add(d4);
+            assertEquals((i * 100), gl.scoreHand(hold));
+            hold.add(d5);
+            assertEquals((i * 100), gl.scoreHand(hold));
+            hold.add(d6);
+            assertEquals((i * 200), gl.scoreHand(hold));
+            try {
+                hold.add(d7);
+                gl.scoreHand(hold);
+                fail("Expected an IllegalArgumentException.");
+            } catch (IllegalArgumentException e) {
+                assertEquals(e.getMessage(), "Number of dice must be between 0 and 6.");
+            }
+            hold.clear();
+        }
     }
 
 
@@ -181,10 +231,10 @@ class LogicTest {
      * the scoring will only count the dice once.
      */
     @Test
-    void holdDiceScoreTest(){
+    void holdDiceScoreTest() {
         d1.setDice(1);
         hold.add(d1);
-        for(int i = 0; i < 6; i++){
+        for (int i = 0; i < 6; i++) {
             d1.holdDice();
             d1.releaseDice();
         }
@@ -193,7 +243,7 @@ class LogicTest {
 
         d1.holdDice();
         score = gl.scoreHand(hold);
-        assertEquals(100,score);
+        assertEquals(100 , score);
     }
 
     /**
@@ -201,7 +251,7 @@ class LogicTest {
      * to the banked points.
      */
     @Test
-    void bankPointsTest(){
+    void bankPointsTest() {
         d1.setDice(1);
         d1.holdDice();
         hold.add(d1);
@@ -216,7 +266,7 @@ class LogicTest {
      * finalTallyRoundPoints properly updates roundpoints and estRoundPoints
      */
     @Test
-    void tallyRoundPointsTest(){
+    void tallyRoundPointsTest() {
         d1.setDice(1);
         d1.holdDice();
         hold.add(d1);
@@ -232,7 +282,7 @@ class LogicTest {
      * and when three farkles are detected points are reset.
      */
     @Test
-    void farkleTest(){
+    void farkleTest() {
         d1.setDice(1);
         d1.holdDice();
         hold.add(d1);
@@ -241,12 +291,12 @@ class LogicTest {
         gl.bankPoints();
         d1.setDice(3);
         d1.releaseDice();
-        assertEquals(true,gl.isFarkle(hold));
+        assertEquals(true, gl.isFarkle(hold));
         gl.isFarkle(hold);
         assertEquals(2, gl.getFarkle());
         gl.isFarkle(hold);
         assertEquals(-900, gl.getBankedPoints());
-        assertEquals(0,gl.getFarkle());
+        assertEquals(0, gl.getFarkle());
 
     }
     /**
@@ -266,7 +316,7 @@ class LogicTest {
         d3.holdDice();
 
         gl.tallyRoundPoints(hold);
-        for(int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             gl.bankPoints();
         }
         assertEquals(true, gl.wonGameStatus());
@@ -277,7 +327,7 @@ class LogicTest {
      * make sure that it turning held dice into inactive dice.
      */
     @Test
-    void handStatusTest(){
+    void handStatusTest() {
         d1.setDice(1);
         d1.holdDice();
         hold.add(d1);
