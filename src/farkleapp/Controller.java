@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class Controller implements FarkleControllerInterface {
 
-    
+
     /**
      * The java-FXML accessor variable for the first rectangle.
      */
@@ -82,7 +82,7 @@ public class Controller implements FarkleControllerInterface {
     /**
      * This method simply adds our RECTANGLE_LIST into the rectangle ArrayList.
      */
-    private void setUp() {
+     public void setUp() {
         RECTANGLE_LIST.clear();
         RECTANGLE_LIST.add(rect1);
         RECTANGLE_LIST.add(rect2);
@@ -122,6 +122,7 @@ public class Controller implements FarkleControllerInterface {
                     event.getSource()).getScene().getWindow();
             window.setScene(gameScreen);
             window.show();
+            System.out.print("A New Game Has Been Started");
 
         } catch (IOException e) {
             System.out.println("The GameScreen FXML file was not found.");
@@ -151,6 +152,7 @@ public class Controller implements FarkleControllerInterface {
             bankPoints.setText(Integer.toString(model.getBankScore()));
 
         }
+
         roundPoints.setText(Integer.toString(model.getRoundScore()));
 
         // Adds all rectangles to the RECTANGLE_LIST,
@@ -172,14 +174,13 @@ public class Controller implements FarkleControllerInterface {
      */
     public void bankPointsButtonPushed(final ActionEvent event) {
         model.setBankScore();
-       bankPoints.setText(Integer.toString(model.getBankScore()));
-        model.resetHand();
-        model.setRollCount(0);
+        bankPoints.setText(Integer.toString(model.getBankScore()));
         roundPoints.setText(Integer.toString(model.getRoundScore()));
+        model.setRollCount(0);
+
+        model.resetHand();
         model.wonGameStatus();
         rollTheDiceButtonPushed(event);
-
-
 
     }
     /**

@@ -273,11 +273,22 @@ public class Model {
      * This method calls logic.resetRound and sets all of the
      * rList' effects to null (not held or clicked anymore).
      */
-    void resetHand() {
+    public void resetHand() {
         logic.resetRound(hand);
+        setRectGlow();
+    }
+
+    /**
+     * This method sets rectangle effects to null.
+     */
+    private void setRectGlow() {
+
         for (Rectangle rectangle : rList) {
-            rectangle.setEffect(null);
+            if (rectangle != null) {
+                rectangle.setEffect(null);
+            }
         }
+
     }
     /**
      * This method tallies up and returns the current round score.
@@ -302,7 +313,7 @@ public class Model {
      * that determines if we've won the game.
      * @return yes or no if we've won the game.
      */
-    boolean wonGameStatus() {
+    public boolean wonGameStatus() {
         if (logic.wonGameStatus()) {
             alerts.wonGame();
             return true;
