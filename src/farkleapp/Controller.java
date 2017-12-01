@@ -172,7 +172,7 @@ public class Controller implements FarkleControllerInterface {
      */
     public void bankPointsButtonPushed(final ActionEvent event) {
         model.setBankScore();
-       bankPoints.setText(Integer.toString(model.getBankScore()));
+        bankPoints.setText(Integer.toString(model.getBankScore()));
         model.resetHand();
         model.setRollCount(0);
         roundPoints.setText(Integer.toString(model.getRoundScore()));
