@@ -58,6 +58,9 @@ public class GameAlerts extends FarkleApp {
         alert.show();
     }
 
+    /**
+     * Created alert for when the dice are not rolled and you try to select one.
+     */
    void notRolled() {
        Alert alert = new Alert(Alert.AlertType.WARNING);
        alert.initOwner(FarkleApp.getPrimaryStage());

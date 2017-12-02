@@ -17,7 +17,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.ArrayList;
 import static junit.framework.TestCase.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.*; //We actually use every freaking part of Mockito so...
 
 
 /**
@@ -111,7 +111,8 @@ public class ControllerTest {
     @Test
     public void setUpTest() {
         controller.setUp();
-        assertTrue("The number of rectangles should be 6.", controller.getRectangles().size() == 6);
+        assertTrue("The number of rectangles should be 6.",
+                controller.getRectangles().size() == 6);
 
     }
 

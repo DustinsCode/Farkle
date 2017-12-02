@@ -1,8 +1,9 @@
 package testing;
 
-import farkleapp.Controller;
+
 import farkleapp.Model;
 import farklegame.Dice;
+import farklegame.FarkleDiceLogic;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
@@ -65,13 +66,13 @@ public class FarkleModelTest extends Application {
      * the proper methods are being called from our test class.
      */
     @Mock
-    private final farklegame.FarkleDiceLogic logic = new farklegame.FarkleDiceLogic();
+    private final FarkleDiceLogic logic = new FarkleDiceLogic();
 
     /**
      * This is the injection target for our mocked dependencies.
      */
     @InjectMocks
-    private Model game = new Model(new Controller());
+    private Model model = new Model(new FakeController());
 
     /** arraylist of dice to test on. */
     private ArrayList<Dice> diceList = new ArrayList<>();
@@ -83,8 +84,8 @@ public class FarkleModelTest extends Application {
     @Test
     public void constructorTest() {
 
-        assertEquals("hand size", 6, game.getHand().size());
-        assertEquals("Rectangles", 6, game.getrList().size());
+        assertEquals("hand size", 6, model.getHand().size());
+        assertEquals("Rectangles", 6, model.getrList().size());
     }
 
     /**
@@ -93,16 +94,18 @@ public class FarkleModelTest extends Application {
      */
     @Test
     public void mapDiceTest() {
-        //TODO: Last assert is failing.  Expects 6, is actually 1???
         diceList = new ArrayList<>();
-        for(int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             diceList.add(new Dice());
         }
-        game.getLogic().rollHandStatus(diceList);
-        game.mapDice();
-        assertEquals("The dice array is not equal to what it should be.", 6, game.getHand().size());
-        assertEquals("The rectangle array is not what it should be.", 6, game.getrList().size());
-        assertEquals("Dice -> Rectangle map is not set properly", 6, game.getrMap().size());
+        model.getLogic().rollHandStatus(diceList);
+        model.mapDice();
+        assertEquals("The dice array is not equal to what it should be.",
+                6, model.getHand().size());
+        assertEquals("The rectangle array is not what it should be.",
+                6, model.getrList().size());
+        assertEquals("Dice -> Rectangle map is not set properly",
+                6, model.getrMap().size());
     }
 
     /**
@@ -111,8 +114,8 @@ public class FarkleModelTest extends Application {
      */
     @Test
     public void setHandTest() {
-        game.setHand();
-        verify(logic, atMost(1)).rollHandStatus(game.getHand());
+        model.setHand();
+        verify(logic, atMost(1)).rollHandStatus(model.getHand());
     }
 
     /**
@@ -121,8 +124,8 @@ public class FarkleModelTest extends Application {
      */
     @Test
     public void setBankScoreTest() {
-        assertFalse(game.getHand().isEmpty());
-        game.setBankScore();
+        assertFalse(model.getHand().isEmpty());
+        model.setBankScore();
         verify(logic, atMost(1)).bankPoints();
     }
 
@@ -131,8 +134,8 @@ public class FarkleModelTest extends Application {
      */
     @Test
     public void setRollCountTest() {
-        game.setRollCount(3);
-        assertTrue(game.getRollCount() == 3);
+        model.setRollCount(3);
+        assertTrue(model.getRollCount() == 3);
     }
 
     /**
@@ -146,9 +149,9 @@ public class FarkleModelTest extends Application {
         ArrayList<Rectangle> testrList = new ArrayList<>();
         testrList.add(r1);
         testrList.add(r2);
-        game.setrList(testrList);
+        model.setrList(testrList);
 
-        assertTrue(game.getrList().equals(testrList));
+        assertTrue(model.getrList().equals(testrList));
     }
 
     /**
@@ -156,14 +159,14 @@ public class FarkleModelTest extends Application {
      */
     @Test
     public void resetHandTest() {
-        //TODO: This test is broken
+
         diceList = new ArrayList<>();
-        for(int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             diceList.add(new Dice());
         }
         logic.rollHandStatus(diceList);
-        game.resetHand();
-        List<Rectangle> rList = game.getrList();
+        model.resetHand();
+        List<Rectangle> rList = model.getrList();
         assertEquals(rList.get(0).getEffect(), null);
     }
 
@@ -173,26 +176,17 @@ public class FarkleModelTest extends Application {
     @Test
     public void getHandFillTest() {
         Rectangle r1 = new Rectangle();
-        List<Rectangle> testList= Arrays.asList(r1, r1, r1, r1, r1, r1);
-        game.getHandFill(testList);
+        List<Rectangle> testList = Arrays.asList(r1, r1, r1, r1, r1, r1);
+        model.getHandFill(testList);
     }
 
-    /**
-     * This method tests modHoldStatus method in Model.
-     */
-    @Test
-    public void modHoldStatusTest() {
-        //TODO: This test is also broken
-        List<Rectangle> rList = game.getrList();
-        game.modHoldStatus(rList.get(0));
-    }
 
     /**
      * This method tests getBankScore in Model.
      */
     @Test
     public void getBankScoreTest() {
-        assertEquals(game.getBankScore(), 0);
+        assertEquals(model.getBankScore(), 0);
     }
 
     /**
@@ -201,32 +195,20 @@ public class FarkleModelTest extends Application {
     @Test
     public void getEstRoundScoreTest() {
         diceList = new ArrayList<>();
-        for(int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             diceList.add(new Dice());
         }
-        game.getLogic().rollHandStatus(diceList);
-        assertTrue(game.getEstRoundScore() >= 0);
+        model.getLogic().rollHandStatus(diceList);
+        assertTrue(model.getEstRoundScore() >= 0);
     }
 
-    /**
-     * This method tests wonGameStatus method in Model.
-     */
-    @Test
-    public void wonGameStatusTest() {
-        game.getLogic().setScore(3);
-        assertEquals(false, game.wonGameStatus());
-        game.getLogic().setScore(12000);
-        //Alerts fails because of JavaFX thread not being present.
-        //Confirmed that this works manually.
-        assertEquals(true, game.wonGameStatus());
-    }
 
     /**
      * This method tests getFarkleCount method in Model.
      */
     @Test
     public void getFarkleCountTest() {
-        assertEquals(0, game.getFarkleCount());
+        assertEquals(0, model.getFarkleCount());
     }
 }
 

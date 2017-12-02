@@ -4,7 +4,6 @@ import farklegame.Dice;
 import farklegame.FarkleDiceLogic;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.scene.control.Alert;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -374,7 +373,9 @@ public class Model {
      * Returns the game's reference to FarkleDiceLogic.
      * @return logic
      */
-    public FarkleDiceLogic getLogic() { return this.logic; }
+    public FarkleDiceLogic getLogic() {
+        return this.logic;
+    }
 
 }
 

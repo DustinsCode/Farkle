@@ -271,7 +271,7 @@ public class FarkleDiceLogic {
     }
 
     /**
-     * Sets the banked score
+     * Sets the banked score.
      * @param score to set the game to
      */
     public void setScore(final int score) {

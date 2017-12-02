@@ -13,7 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 class DiceTest {
 
-    /** Dice object undergoing tests */
+    /** Dice object undergoing tests.
+     *
+     */
     private final Dice dice1 = new Dice();
 
     /**
@@ -77,7 +79,8 @@ class DiceTest {
     }
 
     /**
-     * Tests setActive(), setInactive(), and isInactive() methods in the Dice class.
+     * Tests setActive(), setInactive(), and
+     * isInactive() methods in the Dice class.
      */
     @Test
     void diceActiveTests() {
