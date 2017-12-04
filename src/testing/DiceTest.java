@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Testing for the Dice class.
  *
  * @author Dustin Thurston
+ * @version 1.9
  */
 class DiceTest {
 

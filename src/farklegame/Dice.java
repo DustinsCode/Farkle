@@ -3,6 +3,7 @@ package farklegame;
 /**
  * The dice class represents what we use to keep track of "Dice". It has
  * certain attributes that allow us to replicate a dice numerically.
+ * @version 1.9
  */
 public class Dice {
 

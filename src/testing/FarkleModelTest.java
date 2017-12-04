@@ -24,6 +24,7 @@ import static org.mockito.internal.verification.VerificationModeFactory.atMost;
 
 /**
  * This Runner enables us to inject mock dependencies into our objects.
+ * @version 1.9
  */
 @RunWith(MockitoJUnitRunner.class)
 public class FarkleModelTest extends Application {

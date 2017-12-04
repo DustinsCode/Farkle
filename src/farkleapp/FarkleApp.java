@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  * The class extends javafx.application.Application,
  * thus the start method is overridden to follow syntax.
  * @author CIS 350 Group 3
- * @version 1.1
+ * @version 1.9
  */
 public class FarkleApp extends Application {
 

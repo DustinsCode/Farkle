@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * the local variables and objects in Java
  * via the @FXML annotation.
  * @author Wes Harrison
- * @version 1.0
+ * @version 1.9
  */
 
 public class Controller implements FarkleControllerInterface {

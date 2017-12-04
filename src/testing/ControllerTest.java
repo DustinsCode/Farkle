@@ -25,6 +25,7 @@ import static org.mockito.Mockito.*; //We actually use every freaking part of Mo
  * It implements both JUnit 4 and Mockito 2.11.
  * It "mocks" the dependency object in the controller so I can verify
  * it's calling the proper methods inside of the Model class.
+ * @version 1.9
  *
  */
 @RunWith(MockitoJUnitRunner.class)

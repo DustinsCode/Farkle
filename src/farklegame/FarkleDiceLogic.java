@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * The FarkleDiceLogic class performs our actual game
  * logic on Dice class objects. The requirements
  * for this was obtained from an external source on Farkle game rules.
+ * @version 1.9
  */
 public class FarkleDiceLogic {
 
@@ -54,7 +55,7 @@ public class FarkleDiceLogic {
     /**
      * This tallies the current hand of dice and sets the roundPoints
      * variable accordingly.
-     * @param hand The ArrayList<Dice> representing our current hand.
+     * @param hand Representing our current hand.
      */
     public void tallyRoundPoints(final ArrayList<Dice> hand) {
         estRoundPoints = (roundPoints + scoreHand(hand));
@@ -63,7 +64,7 @@ public class FarkleDiceLogic {
     /**
      * This function tallies the current hand of dice and sets the roundPoints
      * variable to it.
-     * @param hand The ArrrayList<Dice> representing our current hand.
+     * @param hand Representing our current hand.
      */
     public void finalTallyRoundPoints(final ArrayList<Dice> hand) {
         roundPoints += scoreHand(hand);
@@ -72,7 +73,7 @@ public class FarkleDiceLogic {
     /**
      * rollHandStatus will go through the hand of dice passed to it and change
      * held dice to inactive dice, and then roll active dice.
-     * @param hand The ArrayList<Dice> representing our current hand.
+     * @param hand Representing our current hand.
      */
     public void rollHandStatus(final ArrayList<Dice> hand) {
         for (Dice j: hand) {

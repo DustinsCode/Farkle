@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test case for the logic in the game.
+ * @version 1.9
  */
 class LogicTest {
 

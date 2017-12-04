@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 
 /**
  * This class contains the images for our application and our model to use.
+ *
  */
 public class DiceImages {
 

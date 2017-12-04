@@ -18,6 +18,7 @@ import java.util.*; // We use every class inside of util.
  * The Model class interfaces with Controller and
  * FarkleDiceLogic to map the numerical logic done on our dice to
  * a visual representation usable by our JavaFX controller.
+ * @version 1.9
  */
 public class Model {
 
