@@ -36,7 +36,7 @@ public class FarkleApp extends Application {
         primary = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("Home_View.fxml"));
         primaryStage.setScene(new Scene(root));
-        primaryStage.setTitle("Farkle Alpha Release 1.0");
+        primaryStage.setTitle("Farkle Beta Release 2.0");
         primaryStage.show();
 
     }
