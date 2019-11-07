@@ -10,7 +10,6 @@ import javafx.scene.control.Alert;
  */
 public class GameAlerts extends FarkleApp {
 
-
     /**
      * Method that displays alert window for
      * when a user tries to release after rolling.
@@ -58,5 +57,19 @@ public class GameAlerts extends FarkleApp {
                         + "please exit and start a new model!");
         alert.show();
     }
+
+    /**
+     * Created alert for when the dice are not rolled and you try to select one.
+     */
+   void notRolled() {
+       Alert alert = new Alert(Alert.AlertType.WARNING);
+       alert.initOwner(FarkleApp.getPrimaryStage());
+       alert.setTitle("Action Not Allowed");
+       alert.setHeaderText("Must Roll Dice");
+       alert.setContentText(
+               "You are not allowed to select a dice before rolling."
+                       + " Please roll first.");
+       alert.show();
+   }
 
 }

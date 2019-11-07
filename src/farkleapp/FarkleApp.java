@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  * The class extends javafx.application.Application,
  * thus the start method is overridden to follow syntax.
  * @author CIS 350 Group 3
- * @version 1.1
+ * @version 1.9
  */
 public class FarkleApp extends Application {
 
@@ -36,7 +36,7 @@ public class FarkleApp extends Application {
         primary = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("Home_View.fxml"));
         primaryStage.setScene(new Scene(root));
-        primaryStage.setTitle("Farkle Alpha Release 1.0");
+        primaryStage.setTitle("Farkle Beta Release 2.0");
         primaryStage.show();
 
     }
